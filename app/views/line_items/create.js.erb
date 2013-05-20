@@ -1,8 +1,7 @@
 
-   
-$('#cart').hide();
+
 $('#cart').html("<%= escape_javascript(render(@cart))  %>");
-$('#cart').show("slide",300);
+$('#cart').show("slide",400);
 
 
 $('#current_item').effect("highlight", 3500);
