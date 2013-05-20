@@ -13,12 +13,13 @@
   <div id="banner">
     <%= image_tag("logo.jpg") %>
     <%= @page_title || "Pragmatic Bookshelf" %><!-- <label id="code.depot.e.title"/> -->
-	<b>---------->you have visited:<%= @visits %> time(s)<b>
   </div>
   <div id="columns">
     <div id="side">
 		<div id="cart">
-			<%= render @cart %>
+			<% unless @cart.line_items.empty? %>
+				<%= render @cart %>
+			<% end %>
 		</div>
       <a href="http://www....">Home</a><br />
       <a href="http://www..../faq">Questions</a><br />
