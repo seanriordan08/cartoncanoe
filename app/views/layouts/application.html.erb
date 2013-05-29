@@ -11,16 +11,18 @@
 </head>
 <body id="store">
   <div id="banner">
-    <%= image_tag("logo.jpg") %>
-    <%= @page_title || "Pragmatic Bookshelf" %><!-- <label id="code.depot.e.title"/> -->
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Online Store Demo" %><!-- <label id="code.depot.e.title"/> -->
   </div>
   <div id="columns">
     <div id="side">
 		<div id="cart">
+		 <% if @cart%>
 			<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%>
 			<script>$('#cart').hide();</script>
 				<%= render @cart %>
 			<% end %>
+		 <% end %>
 		</div>
       <a href="http://www....">Home</a><br />
       <a href="http://www..../faq">Questions</a><br />

@@ -81,12 +81,13 @@
 /* Styles for main page */
 
 #banner {
-  background: #9c9;
+  background: #99CCFF;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-bottom: 60px;
   border-bottom: 2px solid;
   font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
+  color: #000066;
   text-align: center;
 }
 
@@ -95,7 +96,7 @@
 }
 
 #columns {
-  background: #141;
+  background: #003366;
 }
 
 #main {
@@ -111,11 +112,11 @@
   padding-left: 1em;
   padding-bottom: 1em;
   width: 16em;
-  background: #141;
+  background: #003366;
 }
 
 #side a {
-  color: #bfb;
+  color: #99FFFF;
   font-size: small;
 }
 /* END:mainlayout */
@@ -138,7 +139,6 @@
   margin-bottom: 5px;
   float: left;
 }
-
 
 #store .entry h3 {
  margin-top: 0;
@@ -180,4 +180,36 @@
   border-bottom: 1px dotted #595;
   margin-bottom: 10px;
   margin-right: 10px;
+}
+
+.depot_form fieldset{
+  background: #efe;
+}
+
+.depot_form legend{
+  color: #dfd;
+  background: #000066;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+.depot_form label{
+  width: 5em;
+  float: left;
+  text-align: right;
+  padding-top: 0.2em;
+  margin-right: 0.1em;
+  display: block;
+}
+
+.depot_form select, .depot_form textarea, .depot_form input{
+  margin-left: 0.5em;
+}
+
+.depot_form .submit{
+  margin-left: 4em;
+}
+
+.depot_form div{
+  margin: 0.5em 0;
 }

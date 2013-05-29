@@ -1,10 +1,11 @@
-
+$('#notice').hide();
 
 $('#cart').html("<%= escape_javascript(render(@cart))  %>");
-$('#cart').show("slide",400);
+$('#cart').show("bounce", 1000);
+
+$('#current_item').effect("highlight", 2000);
 
 
-$('#current_item').effect("highlight", 3500);
 
 
 
