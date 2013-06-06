@@ -52,7 +52,4 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
   assert_equal 'Sam Ruby <depot@example.com>', mail[:from].value
   assert_equal "Venuzip Confimation", mail.subject
   
-  # test "the truth" do
-  #   assert true
-  # end
 end
