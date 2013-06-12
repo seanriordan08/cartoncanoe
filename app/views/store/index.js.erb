@@ -1,0 +1,18 @@
+//$('#notice').hide();
+
+$('#cart').html("<%= escape_javascript(
+	if @cart != nil
+	render(@cart)
+	end
+)%>");
+$('#cart').show("bounce", 1000);
+
+$('#current_item').effect("highlight", 2000);
+
+
+
+
+
+
+
+
