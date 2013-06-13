@@ -2,6 +2,7 @@ require 'digest/sha2'
 
 class User < ActiveRecord::Base
   attr_accessible :name, :password, :password_confirmation
+  after_destroy :ensure_an_admin_remains
 
   validates :name, :presence => true, :uniqueness=> true
   
@@ -33,6 +34,12 @@ class User < ActiveRecord::Base
 		end
 	end
   
+    def ensure_an_admin_remains
+		if User.count.zero?
+			raise "Can't delete the last User!"
+		end
+	end
+	
   private
   
 	def password_must_be_present
