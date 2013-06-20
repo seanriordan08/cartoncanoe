@@ -63,7 +63,7 @@
 /* START:mainlayout */
 /* Styles for main page */
 #banner {
-  background: #99CCFF;
+  background: #EEEEEE;
   padding-top: 10px;
   padding-left: 10px;
   padding-bottom: 60px;
@@ -76,7 +76,7 @@
   float: left;
 }
 #columns {
-  background: #003366;
+  background: #888888;
 }
 #main {
   margin-left: 17em;
@@ -90,7 +90,7 @@
   padding-left: 1em;
   padding-bottom: 1em;
   width: 16em;
-  background: #003366;
+  background: #888888;
 }
 #side a {
   color: #99FFFF;
@@ -143,14 +143,14 @@
   margin-bottom: 20px;
 }
 #cart table{
-  border-top: 1px dotted #595;
-  border-bottom: 1px dotted #595;
+  border-top: 1px dotted #FFF;
+  border-bottom: 1px dotted #FFF;
   margin-bottom: 10px;
   margin-right: 10px;
 }
 #adminOptions{
-  border-top: 1px dotted #595;
-  border-bottom: 1px dotted #595;
+  border-top: 1px dotted #FFF;
+  border-bottom: 1px dotted #FFF;
 }
 .depot_form fieldset{
   background: #efe;

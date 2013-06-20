@@ -4,14 +4,14 @@
   <title>The VenuZip Store Front</title>
 <!-- START:stylesheet -->
   <%= stylesheet_link_tag "scaffold" %>
-  <%= stylesheet_link_tag "depot", :media => "all" %><!-- <label id="code.slt"/> -->
+  <%= stylesheet_link_tag "recipower", :media => "all" %><!-- <label id="code.slt"/> -->
 <!-- END:stylesheet -->
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tag %><!-- <label id="code.csrf"/> -->
 </head>
 <body id="store">
   <div id="banner">
-    <%= image_tag("logo.png") %>
+    <%= image_tag("logo.jpg") %>
     <%= @page_title || "Online Store Demo" %><!-- <label id="code.depot.e.title"/> -->
   </div>
   <div id="columns">
@@ -24,11 +24,8 @@
 			<% end %>
 		 <% end %>
 		</div>
-      <a href="http://www....">Home</a><br />
-      <a href="http://www..../faq">Questions</a><br />
-      <a href="http://www..../news">News</a><br />
-      <a href="http://www..../contact">Contact</a><br />
-	  <a text><u>Time:</u><%= Time.now %></a>
+      <!--<a href="http://www....">Home</a><br />
+	  <a text><u>Time:</u><%= Time.now %></a>-->
 	  <br /><br />
 		<div id="adminOptions"> 
 		  <% if session[:user_id] %>
