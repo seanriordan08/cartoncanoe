@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  email: MyString
+  time: 1
+  money: 1
+  allergy: 1
+
+two:
+  email: MyString
+  time: 1
+  money: 1
+  allergy: 1

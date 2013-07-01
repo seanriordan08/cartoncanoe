@@ -1,5 +1,7 @@
-<h1>Welcome</h1>
-
-It's <%= Time.now %>
-We have <%= pluralize(@total_orders, "order") %>.
+<div id="main">
+	<h1>Welcome Guest</h1>
+	<script>$('#side').show("drop",1000)</script>
+	Time: <%= Time.now %><br><br>
+	We have: <%= pluralize(@total_orders, "order") %>.
+</div>
 

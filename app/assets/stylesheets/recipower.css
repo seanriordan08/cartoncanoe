@@ -1,8 +1,8 @@
-/* Global styles */
+﻿/* Global styles */
 #store #notice {
         color: #000;
         border: 2px solid red;
-        padding: 1em;
+        padding: 12px;
         margin-bottom: 2em;
         background-color: #f0f0f0;
         font: bold smaller sans-serif;
@@ -28,8 +28,8 @@
         border-collapse: collapse;
 }
 #product_list table tr td {
-        padding: 5px;
-        vertical-align: top;
+	padding: 5px;
+	vertical-align: top;
 }
 #product_list .list_image {
   width:        60px;
@@ -39,7 +39,7 @@
   width:        60%;
 }
 #product_list .list_description dl {
-        margin: 0;
+    margin: 0;
 }
 #product_list .list_description dt {
 	color:        #244;
@@ -47,7 +47,7 @@
 	font-size:    larger;
 }
 #product_list .list_description dd {
-        margin: 0;
+    margin: 0;
 }
 #product_list .list_actions {
   font-size:    x-small;
@@ -64,7 +64,7 @@
 /* Styles for main page */
 #banner {
   background: #EEEEEE;
-  padding-top: 10px;
+  padding-top: 0px;
   padding-left: 10px;
   padding-bottom: 60px;
   border-bottom: 2px solid;
@@ -76,20 +76,24 @@
   float: left;
 }
 #columns {
-  background: #888888;
+  background: #FFF;
+  min-width: 225px;
+  min-height: 100%;
+  overflow:  auto;
 }
 #main {
-  margin-left: 17em;
-  padding-top: 4ex;
-  padding-left: 2em;
-  background: white;
+  position:  absolute;
+  min-width:  65%;
+  margin-left: 250px;
+  padding: 0px 0px 8px 25px;
+  background: #FFF;
+  overflow:  auto;
 }
 #side {
   float: left;
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-bottom: 1em;
-  width: 16em;
+  padding: 0px 0px 12px 10px;
+  min-width: 230px;
+  min-height:  100%;
   background: #888888;
 }
 #side a {
@@ -99,9 +103,14 @@
 /* END:mainlayout */
 /* An entry in the store catalog */
 #store  .entry {
-  overflow: auto;
-  margin-top: 1em;
-  border-bottom: 1px dotted #77d;
+  display:  inline;
+  float:  left;
+  min-width:  161px;
+  min-height:  98px;
+  margin: 8px 8px 0px 0px;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 }
 #store  .title {
   font-size: 120%;
@@ -114,12 +123,12 @@
   float: left;
 }
 #store .entry h3 {
- margin-top: 0;
+ margin-top: 0px;
  margin-bottom: 2px;
  color: #227;
 }
 #store .entry p {
- margin-top: 0.5em; 
+ margin-top: 8px; 
  margin-bottom: 0.8em; 
 }
 #store .entry .price_line {
@@ -159,13 +168,13 @@
   color: #dfd;
   background: #000066;
   font-family: sans-serif;
-  padding: 0.2em 1em;
+  padding: 2px 4px;
 }
 .depot_form label{
   width: 5em;
   float: left;
   text-align: right;
-  padding-top: 0.2em;
+  padding-top: 4px;
   margin-right: 0.1em;
   display: block;
 }
@@ -176,5 +185,6 @@
   margin-left: 4em;
 }
 .depot_form div{
-  margin: 0.5em 0;
+  margin-top: 5px;
+  min-height:  50px;
 }

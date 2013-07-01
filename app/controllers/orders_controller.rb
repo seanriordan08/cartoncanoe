@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   skip_before_filter :authorize
   # GET /orders
   # GET /orders.json
+  
   def index
     @orders = Order.paginate :page => params[:page], :order => 'created_at desc',
 		:per_page => 10
@@ -55,7 +56,7 @@ class OrdersController < ApplicationController
       if @order.save
 		Cart.destroy(session[:cart_id])
 		session[:cart_id] = nil
-		Notifier.order_shipped(@order).deliver
+		#Notifier.order_shipped(@order).deliver
         format.html { redirect_to(store_index_url, :notice => 'Your Order Has Been Received!') }
         format.json { render json: @order, status: :created, location: @order }
       else
@@ -92,4 +93,14 @@ class OrdersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def ReciPower_Orders
+	@product = Product.find(params[:id])
+	@orders = Order.all
+	respond_to do |format|
+		format.atom
+		format.xml {render :xml => @product, :xml => @orders}
+	end
+  end
+  
 end

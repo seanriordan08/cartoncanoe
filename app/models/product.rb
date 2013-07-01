@@ -1,4 +1,4 @@
-class Product < ActiveRecord::Base
+﻿class Product < ActiveRecord::Base
 	default_scope :order => 'title'
 	has_many :line_items
 	has_many :orders, :through => :line_items

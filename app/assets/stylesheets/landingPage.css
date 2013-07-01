@@ -1,0 +1,144 @@
+﻿@font-face {
+	font-family: Caviar_Dreams_Bold;
+	src: url('Caviar_Dreams_Bold.ttf');
+}
+@font-face {
+	font-family: Caviar_Dreams_Bold;
+	src: url('http://www.recipower.com/public_html/Caviar_Dreams_Bold.ttf');
+}
+.myFontClass{
+	font-family: Caviar_Dreams_Bold, Arial;
+	font-size:  100%;
+	color: #000;
+}
+.navElements{
+	float:  left;
+	max-width:  inherit;
+	margin-top:  32px;
+	vertical-align:  middle;
+	color:  #00CCFF;
+	border-right-style:  solid;
+	border-right-width:  2px;
+	border-right-color:  #000;
+}
+.floatLT{float:left; padding-top:30px;}
+.floatRT{float:right;}
+.underline{
+	border-bottom-style:  solid;
+	border-bottom-width:  2px;
+	border-bottom-color:  #000;
+}
+.leftTxt{
+	float:  left;
+	max-width: 66%;
+}
+.rightTxt{
+	float:  left;
+	max-width:  66%;
+	padding-left: 14px;
+}
+.curtail{
+	max-width:  100%;
+	max-height:  100%;
+	padding-top:  30px;
+	padding-bottom:  30px;
+	border-bottom-style:  solid;
+	border-bottom-width:  2px;
+	border-bottom-color:  #000;
+	overflow:  auto;
+}
+#header-fixed{
+	position:  fixed;
+	top:  0px;
+	margin-top:  0px;
+	width:  92%;
+}
+#menu-style{
+	height:  80px;
+	background-image:  url('menuFadeBG.png');
+	background-repeat:  repeat-x;
+}
+#header{
+	min-height:  85px;
+	float:  left; 
+	min-width:  100%;
+	overflow:  auto;
+}
+#logo{
+	float:left;
+	max-width:  210px;
+	max-height:  78px;
+	border-style:  solid;
+	border-color:  #000;
+	border-width:  1px;
+	opacity:.95;
+}
+#home:hover,#health:hover,#time:hover,#money:hover,#contact:hover{
+	background-color:  #EEE;
+}
+#mainBanner{
+	clear:  both;
+	max-width:  100%;
+	max-height:  100%;
+	padding-top:  85px;
+}
+#container{
+	float:  right;
+	padding-left:  14px;
+	max-width:  100%;
+	overflow:  auto;
+}
+#featuredPartner{ 
+	clear:  right;
+	max-width:  100%;
+	line-height:  0%;	
+}
+#containerText{
+	float:  left;
+	max-width:  65%;
+}
+#contactUs{
+	float:  left; 
+	max-width:  65%;
+}
+#connectwUs{
+	margin-left:  30px;
+	padding-left:  25px;
+	max-width:  26%;
+	height:  200px;
+	float:  left;
+	border-left-style:  solid;
+	border-left-width:  2px;
+	border-left-color:  #000;
+}
+#email{
+	width:  100%;
+	height: 41px;
+	margin-top:  16px;
+	border: 1px solid #999;
+	text-align:  center;
+	font-size:  30px;
+	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+#submit {
+	width:  100%;
+	height:  41px;
+	margin-top:  16px;
+	border:  2px solid #000;
+	clear:  both;
+	background-color:  #03A7EE;
+	background-position:  center;
+	background-image:  url('btnSubmit.jpg');
+	background-repeat:  no-repeat;
+	color:  #fff;
+	font-family: Tahoma, Geneva, sans-serif;
+	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+#submit:hover {
+	background-image:  url('btnSubmit_hover.jpg');
+	color:  #FFF;
+}

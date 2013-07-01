@@ -1,5 +1,7 @@
-Depot::Application.routes.draw do
+﻿Depot::Application.routes.draw do
 
+  root :to => 'polls#face', :as => 'polls'
+	
   get 'admin' => 'admin#index'
   
   controller :sessions do
@@ -8,12 +10,18 @@ Depot::Application.routes.draw do
 	delete 'logout' => :destroy
   end
   
+  #Resources
+  resources :polls
   resources :users
   resources :orders
   resources :line_items
   resources :carts
   get "store/index"
 
+  resources :orders do
+	get :ReciPower_Orders, :on => :member
+  end
+  
   resources :products do
 	get :who_bought, :on => :member
   end

@@ -1,45 +1,58 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-  <title>The VenuZip Store Front</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>ReciPower Store Front</title>
 <!-- START:stylesheet -->
   <%= stylesheet_link_tag "scaffold" %>
   <%= stylesheet_link_tag "recipower", :media => "all" %><!-- <label id="code.slt"/> -->
-<!-- END:stylesheet -->
+  <%= stylesheet_link_tag "landingPage", :media => "all" %><!-- <label id="code.slt"/> -->
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <!-- END:stylesheet -->
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "navigate" %>
+  <!--JQuery Src File-->
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  
   <%= csrf_meta_tag %><!-- <label id="code.csrf"/> -->
+  <meta name="Description" content="ReciPower is an app that empowers each health-seeking individual with a dynamic new tool to plan healthy meals in less than 5 minutes on a budget." />
+  <meta name="Keywords" content="recipower, healthy recipes, nutrition, healthy meals, dinner" />
+  
 </head>
-<body id="store">
-  <div id="banner">
-    <%= image_tag("logo.jpg") %>
-    <%= @page_title || "Online Store Demo" %><!-- <label id="code.depot.e.title"/> -->
-  </div>
+<body>
+ <div id="store" style="min-height:100%">
   <div id="columns">
-    <div id="side">
-		<div id="cart">
-		 <% if @cart%>
-			<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%>
-			
-				<%= render @cart %>
-			<% end %>
-		 <% end %>
-		</div>
-      <!--<a href="http://www....">Home</a><br />
-	  <a text><u>Time:</u><%= Time.now %></a>-->
-	  <br /><br />
-		<div id="adminOptions"> 
+	<div id="side" style="min-height:100%">
+		<script>$('#side').hide()</script>
+			<%= image_tag("logo.jpg") %>
+			<div id="cart">
+			 <% if @cart%>
+				<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%>			
+					<%= render @cart %>
+				<% end %>
+			 <% end %>
+			</div>
+		  <!--<a href="http://www....">Home</a><br />
+		  <a text><u>Time:</u><%= Time.now %></a>-->
+		  <br /><br />
+		<div id="adminOptions" style="min-height:100%">			
 		  <% if session[:user_id] %>
-			<%= link_to 'Products', products_path %><br />
+		  <script>$('#side').show()</script>
+			<%= link_to 'Select Recipes', store_index_path %><br />
+			<%= link_to 'Edit Recipes', products_path %><br />
 			<%= link_to 'Orders', orders_path %><br />
-			<%= link_to 'Users', users_path %><br />
+			<%= link_to 'Users', users_path %><br />			
 			<br />
 			<%= button_to 'Logout', logout_path, :method => :delete %>
+			<div style="min-height:100%"></div><!--extend column whitespace-->
 		  <% end %>
 		</div>
     </div>
     <div id="main">
-      <%= yield %><!-- <label id="code.depot.e.include"/> -->
+		<%= yield %><!-- <label id="code.depot.e.include"/> -->
     </div>
+  </div>
   </div>
 </body>
 </html>

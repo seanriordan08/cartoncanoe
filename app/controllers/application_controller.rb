@@ -1,6 +1,8 @@
-class ApplicationController < ActionController::Base
+﻿class ApplicationController < ActionController::Base
   before_filter :authorize
+  helper :all # include all helpers, all the time
   protect_from_forgery
+  config.encoding = "utf-8"
   
   private
   
