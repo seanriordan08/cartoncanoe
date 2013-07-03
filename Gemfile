@@ -15,7 +15,7 @@ end
 
 group :production do
   gem 'mysql2'
-  gem 'activerecord-mysql-adapter'
+  gem 'activerecord-mysql2-adapter'
 end
 
 # Gems used only for assets and not required
