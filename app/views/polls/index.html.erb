@@ -1,5 +1,4 @@
-﻿
-<div class="myFontClass" style="max-width:92%; padding-left:30px;">
+﻿<div class="myFontClass" style="max-width:92%; height:100%; padding-left:30px">
 	<div id="header-fixed">
 	<div id="menu-style">
 		<div id="header">
@@ -29,14 +28,14 @@
 				recipes that fit within your budget.
 			</div>
 			<div id="container">
-				<div id="featuredPartner"><h1>Featured Partner</h1></div>
+				<div id="featuredPartner" style="min-height:20px"><span style="line-height:100%; font-size:20px">Featured Partner</span></div><p>
 				<div id="companyLogo" style="clear:right;"><img src="companyLogo.jpg"></div>
 			</div>
 		</div>
 		
 		<div id="row1" class="curtail" style="clear:both">
 			<img src="standardPic.jpg" style="float:left">
-			<h1  style="float:left; line-height:0%; padding-left:14px">Your Health & Wellness</h1>
+			<div style="min-height:20px"><span  style="float:left; line-height:100%; padding-left:14px; font-size:20px">Your Health & Wellness</span></div><p>
 			<div class="rightTxt">
 				Eating healthy means something different for
 				everyone. For those who swear by the Paleo diet, "healthy" is different from
@@ -48,7 +47,7 @@
 		
 		<div id="row2" class="curtail">
 			<div id="containerText">
-				<p><h1 style="line-height:0%">Save Time</h1>
+				<p><span style="line-height:100%; font-size:20px">Save Time</span>
 				<div style="float:left">
 					Time Savings Pillar: Finding healthy meals that taste good and fit your dietary
 					needs requires time. Our tool takes the time out of planning healthy meals so
@@ -61,7 +60,7 @@
 		
 		<div id="row3" class="curtail">
 			<img src="standardPic.jpg" style="float:left">
-			<h1  style="float:left; line-height:0%; padding-left:14px">Save Money</h1>
+			<div style="min-height:20px"><span  style="float:left; line-height:100%; padding-left:14px; font-size:20px">Save Money</span></div><p>
 			<div class="rightTxt">
 				Cost Savings Pillar: Healthy food is an investment in your overall well-being.  
 				However, we believe that eating healthy does not need to be a luxury. Our 
@@ -73,17 +72,26 @@
 		
 		<div id="row4" class="curtail">
 			<div id="contactUs" >
-			<p><h1 style="line-height:0%">Contact Us</h1></p>
+			<p><span style="line-height:0%; font-size:20px">Contact Us</span></p>
 				<div>
 					ReciPower is still in Beta development. If you are like us, and can't wait for delicious healthy food to browse through, then please leave your email address, and you'll be one of the first to know it's ready!
 				</div>
-				<form size="40">
-					<input id="email" type="email" alt="email" name="email@example.com">			
-				</form>
-				<div id="submit"></div>				
+				<script>
+					$(document).ready(function(){
+						$("#emailWarning").hide();
+					  });
+				</script>
+				<% if flash[:notice] %>
+					<div id="notice">
+						<%= flash[:notice] %>
+					</div>
+				<% end %>
+				<div>
+					<%= render 'form' %>
+				</div>
 			</div>
 			<div id="connectwUs">
-			<h1  style="line-height:0%; margin-top:0px;">Connect w/Us</h1>
+			<p><span style="line-height:100%; font-size:20px">Connect w/Us</span>
 			<div>
 				Stay in the loop about all things ReciPower
 			</div>
@@ -91,6 +99,8 @@
 			</div>
 		</div>
 		
-		<div id="footer" style="padding-top:14px; min-height:495px;text-align:center">Copyright 2013 ReciPower LLC.</div>
+		<div id="footer" style="padding-top:14px; min-height:495px;text-align:center">Copyright 2013 ReciPower LLC.<br />
+		<span style="text-decoration:none"><%= link_to 'Admin', login_path %></span>
+		</div>
 	</div>
 </div>

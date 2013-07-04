@@ -1,4 +1,13 @@
 ﻿/* Global styles */
+#emailWarning{
+		width:  95.3%;
+        color: #000;
+        border: 2px solid red;
+        margin: 12px 0px -10px 0px;
+		padding: 12px;
+        background-color: #f0f0f0;
+        font: bold smaller sans-serif;
+}
 #store #notice {
         color: #000;
         border: 2px solid red;

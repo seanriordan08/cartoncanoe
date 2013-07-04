@@ -1,0 +1,10 @@
+<h1>Waiting List (folks interested)</h1>
+
+<b><u>Emails</u></b>&nbsp(Total:&nbsp<%= Poll.count%>)
+<ol>
+<% @polls.each do |poll|%>
+<li>
+	<b><%= poll.email %></b>
+</li>
+<% end %>
+</ol>

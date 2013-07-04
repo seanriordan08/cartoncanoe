@@ -1,4 +1,5 @@
-﻿function doHome(){
+﻿//Index Navigation Buttons
+function doHome(){
 	$('html,body').animate({ scrollTop: $('html,body').offset().top}, 1500, 'easeOutExpo');
 };
 function doHealth(){
@@ -12,4 +13,9 @@ function doMoney(){
 };
 function doContact(){
 	$('html,body').animate({ scrollTop: $('#row4').offset().top - 80}, 1500, 'easeOutExpo');
+};
+
+//Warnings
+function emailWarningHide(){
+	$('#emailWarning').hide();
 };

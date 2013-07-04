@@ -11,23 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :email %><br />
+  <div id="email" class="field">
     <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :time %><br />
-    <%= f.number_field :time %>
+  
+  <div id="submit" class="actions">
+    <%= f.submit ""%>
   </div>
-  <div class="field">
-    <%= f.label :money %><br />
-    <%= f.number_field :money %>
-  </div>
-  <div class="field">
-    <%= f.label :allergy %><br />
-    <%= f.number_field :allergy %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  
 <% end %>
