@@ -18,7 +18,7 @@ class PollsController < ApplicationController
     respond_to do |format|
       if @poll.save
         format.html { 
-			flash[:notice] = 'Poll was successfully created.' 
+			flash[:notice] = 'Your Email Was Received - Thank You!' 
 			redirect_to polls_path
 		}
         format.json { render action: polls_path, status: :created, location: @poll }
