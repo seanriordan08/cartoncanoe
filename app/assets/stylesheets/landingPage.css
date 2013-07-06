@@ -130,7 +130,7 @@
 	clear:  both;
 	background-color:  #3090FE;
 	background-position:  center;
-	background-image:  url('btnSubmit.jpg');
+	background-image:  url('btnSubmit.png');	
 	background-repeat:  no-repeat;
 	color:  #FFF;
 	font-family: Tahoma, Geneva, sans-serif;
@@ -139,13 +139,21 @@
 	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 }
 #submit.actions input:hover {
-	background-image:  url('btnSubmit_hover.jpg');
+	background-image:  url('btnSubmit_hover.png');
+	background-position:  center;
 	color:  #FFF;
 }
 #submit.actions input:active {
-	background-image:  url('btnSubmit_hover.jpg');
+	background-image:  url('btnSubmit_hover.png');
 	color:  #FFF;
 	-webkit-box-shadow: inset 2px 2px 12px #000000;
 	-moz-box-shadow: 	inset 2px 2px 12px #000000;
 	box-shadow: 		inset 2px 2px 12px #000000;
 }
+#adminLink a{
+	color:  #DFDFDF;
+}
+#adminLink a:hover{
+	color:  #000;
+}
+

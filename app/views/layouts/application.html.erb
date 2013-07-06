@@ -38,7 +38,6 @@
  <div id="store" style="min-height:100%">
   <div id="columns">
 	<div id="side" style="min-height:100%">
-		<script>$('#side').hide()</script>
 			<%= image_tag("logo.jpg") %>
 			<div id="cart">
 			 <% if @cart%>
@@ -52,7 +51,7 @@
 		  <br /><br />
 		<div id="adminOptions" style="min-height:100%">			
 		  <% if session[:user_id] %>
-		  <script>$('#side').show()</script>
+		  <script>$('#side').show("slide","right",1000,easeOutExpo)</script>
 			<%= link_to 'Select Recipes', store_index_path %><br />
 			<%= link_to 'Edit Recipes', products_path %><br />
 			<%= link_to 'Orders', orders_path %><br />
@@ -61,10 +60,16 @@
 			<br />
 			<%= button_to 'Logout', logout_path, :method => :delete %>
 			<div style="min-height:100%"></div><!--extend column whitespace-->
+			<% else %>
+		  <script>$('#side').hide()</script>
 		  <% end %>
 		</div>
     </div>
+				  
     <div id="main">
+		<% if session[:user_id] %>
+			<script>$('#main').css("margin-left", "250px")</script>
+		<% end %>
 		<%= yield %><!-- <label id="code.depot.e.include"/> -->
     </div>
   </div>
