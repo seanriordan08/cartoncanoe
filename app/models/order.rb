@@ -3,7 +3,6 @@
   PAYMENT_TYPES = ["Check", "Credit Card", "Purchase Order"]
   
   has_many :line_items, :dependent => :destroy
-  has_and_belongs_to_many :products
   
   validates :name, :address, :email, :pay_type, :presence => true
   validates :pay_type, :inclusion => PAYMENT_TYPES
