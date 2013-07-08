@@ -15,9 +15,9 @@ end
 
 group :production do
   gem 'mysql2'
-  gem 'activerecord-mysql2-adapter'
 end
 
+# gem 'activerecord-mysql2-adapter'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
