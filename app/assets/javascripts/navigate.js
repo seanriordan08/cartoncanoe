@@ -15,6 +15,11 @@ function doContact(){
 	$('html,body').animate({ scrollTop: $('#row4').offset().top - 80}, 1500, 'easeOutExpo');
 };
 
+//Effects
+function menuSlide(){
+	$('#side').animate("slide",1000,'easeOutExpo');
+};
+
 //Warnings
 function emailWarningHide(){
 	$('#emailWarning').hide();

@@ -38,32 +38,35 @@
  <div id="store" style="min-height:100%">
   <div id="columns">
 	<div id="side" style="min-height:100%">
-			<%= image_tag("logo.jpg") %>
-			<div id="cart">
-			 <% if @cart%>
-				<%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do%>			
-					<%= render @cart %>
-				<% end %>
-			 <% end %>
-			</div>
-		  <!--<a href="http://www....">Home</a><br />
-		  <a text><u>Time:</u><%= Time.now %></a>-->
-		  <br /><br />
-		<div id="adminOptions" style="min-height:100%">			
+		<%= image_tag("logo.jpg") %>
+
+		<div id="adminOptions" style="min-height:100%">	
+		<br>		
 		  <% if session[:user_id] %>
-		  <script>$('#side').show("slide","right",1000,easeOutExpo)</script>
-			<%= link_to 'Select Recipes', store_index_path %><br />
-			<%= link_to 'Edit Recipes', products_path %><br />
+			<%= link_to 'Select Items', store_index_path %><br />
+			<%= link_to 'Edit Items', products_path %><br />
 			<%= link_to 'Orders', orders_path %><br />
 			<%= link_to 'Users', users_path %><br />
 			<%= link_to 'Waiting List', polls_show_path %><br />			
-			<br />
+			<br>
 			<%= button_to 'Logout', logout_path, :method => :delete %>
 			<div style="min-height:100%"></div><!--extend column whitespace-->
 			<% else %>
 		  <script>$('#side').hide()</script>
 		  <% end %>
 		</div>
+		<br>
+		<div id="cartIcon"><%= image_tag ("images/cartIcon.png")%></div>
+		<div id="cart">
+		<%if @cart%>
+			<% if @cart.line_items != nil %>
+				<%= render @cart %>
+				<%= image_tag ("images/cartIcon.png"), :id => "cartIcon", :style => "display: none;" %>
+			<% end %>
+		<% end %>
+		 <br>
+		</div>
+		
     </div>
 				  
     <div id="main">
