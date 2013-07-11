@@ -15,7 +15,11 @@
   resources :polls
   resources :users
   resources :orders
-  resources :line_items
+  resources :line_items do
+	member do
+		post 'decrement'
+	end
+  end
   resources :carts
   get "store/index"
 

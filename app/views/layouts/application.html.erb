@@ -38,7 +38,7 @@
  <div id="store" style="min-height:100%">
   <div id="columns">
 	<div id="side" style="min-height:100%">
-		<%= image_tag("logo.jpg") %>
+		<%= image_tag("logo.png") %>
 
 		<div id="adminOptions" style="min-height:100%">	
 		<br>		
@@ -56,12 +56,11 @@
 		  <% end %>
 		</div>
 		<br>
-		<div id="cartIcon"><%= image_tag ("images/cartIcon.png")%></div>
+		
 		<div id="cart">
 		<%if @cart%>
-			<% if @cart.line_items != nil %>
+			<% if @cart.line_items.all %>
 				<%= render @cart %>
-				<%= image_tag ("images/cartIcon.png"), :id => "cartIcon", :style => "display: none;" %>
 			<% end %>
 		<% end %>
 		 <br>

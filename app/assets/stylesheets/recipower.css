@@ -1,4 +1,52 @@
 ﻿/* Global styles */
+.depot_form fieldset{
+  background: #efe;
+}
+.depot_form legend{
+  color: #dfd;
+  background: #000066;
+  font-family: sans-serif;
+  padding: 2px 4px;
+}
+.depot_form label{
+  width: 5em;
+  float: left;
+  text-align: right;
+  padding-top: 4px;
+  margin-right: 0.1em;
+  display: block;
+}
+.depot_form select, .depot_form textarea, .depot_form input{
+  margin-left: 0.5em;
+}
+.depot_form .submit{
+  margin-left: 4em;
+}
+.depot_form div{
+  margin-top: 5px;
+  min-height:  50px;
+}
+#btnDelete{
+  width:  17px;
+  height:  20px;
+  background-image:  url('graphics/circleSlash.png');
+  background-repeat:  no-repeat;
+  background-position:  0px 9px;
+}
+#btnDelete:hover{
+  width:  17px;
+  height:  20px;
+  background-image:  url('graphics/circleSlash_hover.png');
+  background-repeat:  no-repeat;
+  background-position:  0px 9px;
+}
+#btnDelete:active{
+  width:  17px;
+  height:  20px;
+  background-image:  url('graphics/circleSlash_active.png');
+  background-repeat:  no-repeat;
+  background-position:  0px 9px;
+}
 #emailWarning{
 		width:  95.3%;
         color: #000;
@@ -26,6 +74,7 @@
 } 
 #store .item_price, #store .total_line {
 		text-align: right;
+		padding-right:  15px;
 } 
 /* Class within a class */
 #store .total_line .total_cell {
@@ -68,6 +117,15 @@
   background:   #e0f8f8;
 }
 #product_list .list_line_odd {
+  background:   #DDD;
+}
+#order_list.list_line_even  tr dt{
+  padding:  0px 18px 0px 18px;
+}
+#order_list .list_line_even {
+  background:   #f8f8f8;
+}
+#order_list .list_line_odd {
   background:   #DDD;
 }
 /* START:mainlayout */
@@ -127,7 +185,7 @@
   font-family: sans-serif;
 }
 #store .entry img {
-  max-width: 100px;
+  width: 90px;
   max-height: 60px;
   margin-right: 5px;
   margin-bottom: 5px;
@@ -171,31 +229,4 @@
 #adminOptions{
   border-top: 1px dotted #FFF;
   border-bottom: 1px dotted #FFF;
-}
-.depot_form fieldset{
-  background: #efe;
-}
-.depot_form legend{
-  color: #dfd;
-  background: #000066;
-  font-family: sans-serif;
-  padding: 2px 4px;
-}
-.depot_form label{
-  width: 5em;
-  float: left;
-  text-align: right;
-  padding-top: 4px;
-  margin-right: 0.1em;
-  display: block;
-}
-.depot_form select, .depot_form textarea, .depot_form input{
-  margin-left: 0.5em;
-}
-.depot_form .submit{
-  margin-left: 4em;
-}
-.depot_form div{
-  margin-top: 5px;
-  min-height:  50px;
 }

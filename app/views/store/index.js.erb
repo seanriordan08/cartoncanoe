@@ -2,7 +2,7 @@
 
 $('#cart').html("<%= escape_javascript(
 	if @cart != nil
-	render(@cart)
+		render(@cart)
 	end
 )%>");
 $('#cart').show("bounce", 1000);

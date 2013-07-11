@@ -1,11 +1,11 @@
-﻿@font-face {
+﻿/*@font-face {
 	font-family: Caviar_Dreams_Bold;
 	src: url('Caviar_Dreams_Bold.ttf');
 }
 @font-face {
 	font-family: Caviar_Dreams_Bold;
 	src: url('http://www.recipower.com/public_html/Caviar_Dreams_Bold.ttf');
-}
+}*/
 .myFontClass{
 	font-family: Caviar_Dreams_Bold, Arial;
 	font-size:  100%;
@@ -55,7 +55,7 @@
 }
 #menu-style{
 	height:  80px;
-	background-image:  url('menuFadeBG.png');
+	background-image:  url('graphics/menuFadeBG.png');
 	background-repeat:  repeat-x;
 }
 #header{
@@ -73,8 +73,16 @@
 	border-width:  1px;
 	opacity:.95;
 }
+#home, #health, #time, #money, #contact{
+	-moz-transition: background-color .3s ease-in;
+    -webkit-transition: background-color .3s ease-in;
+    transition: background-color .3s ease-in;
+}
 #home:hover,#health:hover,#time:hover,#money:hover,#contact:hover{
 	background-color:  #EEE;
+	-webkit-transition: background-color 0.01s;
+	transition: background-color 0.01s;
+
 }
 #mainBanner{
 	clear:  both;
@@ -142,6 +150,8 @@
 	background-image:  url('btnSubmit_hover.png');
 	background-position:  center;
 	color:  #FFF;
+	-webkit-transition: background-image 0.2s;
+	transition: background-image 0.3s;
 }
 #submit.actions input:active {
 	background-image:  url('btnSubmit_hover.png');
