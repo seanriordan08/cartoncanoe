@@ -13,6 +13,8 @@
         <dl>
           <dt><%= product.title %></dt>
           <dd><%= truncate(strip_tags(product.description), :length => 80) %></dd>
+		  <dd><%= product.image_url%></dd>
+		  <dd><%= product.price%> &nbsp(<%= product.unit_of_measure %>)</dd>
         </dl>
       </td>
 

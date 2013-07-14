@@ -1,6 +1,6 @@
 ﻿class Order < ActiveRecord::Base
-  attr_accessible :address, :email, :name, :pay_type
-  PAYMENT_TYPES = ["Check", "Credit Card", "Purchase Order"]
+  attr_accessible :address, :email, :name, :pay_type, :phone_number
+  PAYMENT_TYPES = ["Cash", "Credit Card", "Check"]
   
   has_many :line_items, :dependent => :destroy
   

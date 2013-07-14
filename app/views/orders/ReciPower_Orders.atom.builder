@@ -8,7 +8,8 @@ atom_feed do |feed|
 		feed.entry(order) do |entry|
 			entry.title "#{order.name}"
 			entry.summary :type => 'xhtml' do |xhtml|
-				xhtml.p "Deliver to #{order.address}"
+				xhtml.br "Deliver to #{order.address}"
+				xhtml.p "Phone #: #{order.phone_number}"
 				
 				xhtml.table do
 					xhtml.tr do
@@ -29,7 +30,7 @@ atom_feed do |feed|
 					end
 				end
 				
-				xhtml.p "Paid by #{order.pay_type}"
+				xhtml.p "Payment Selection: #{order.pay_type}"
 				end
 				entry.author do |author|
 					entry.name order.name

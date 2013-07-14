@@ -10,7 +10,8 @@
    <%= link_to(image_tag(product.image_url), line_items_path(:product_id => product), :method => :post) %>
    <div style="display: none; width: 10px"><%= sanitize(product.description) %></div>
    <div class="price_line">
-     <span class="price"><%= number_to_currency(product.price) %></span><br>
+     <span class="price"><%= number_to_currency(product.price) %></span>(<%= product.unit_of_measure%>)
+	 <br>
 	 <%= button_to('Add to Cart', line_items_path(:product_id => product), :remote => true) %>
    </div>
  </div>

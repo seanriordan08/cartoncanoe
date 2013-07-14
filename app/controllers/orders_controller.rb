@@ -97,10 +97,11 @@ class OrdersController < ApplicationController
   def ReciPower_Orders
 	@product = Product.find(params[:id])
 	@orders = Order.all
-	respond_to do |format|
-		format.atom
-		format.xml {render :xml => @product, :xml => @orders}
-	end
+
+		respond_to do |format|
+			format.atom
+			format.xml {render :xml => @product, :xml => @orders}
+		end
   end
   
 end
