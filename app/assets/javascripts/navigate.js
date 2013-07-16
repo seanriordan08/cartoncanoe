@@ -15,12 +15,19 @@ function doContact(){
 	$('html,body').animate({ scrollTop: $('#row4').offset().top - 80}, 1500, 'easeOutExpo');
 };
 
-//Effects
-function menuSlide(){
-	$('#side').animate("slide",1000,'easeOutExpo');
-};
+$(document).ready(function(){
+	//End Navigation Buttons
+	
+	$('.entry').draggable({ revert: true }, { containment: "document" }, { zIndex: 100 }, { helper: "clone" });
 
-//Warnings
-function emailWarningHide(){
-	$('#emailWarning').hide();
-};
+	//Effects
+	function menuSlide(){
+		$('#side').animate("slide",1000,'easeOutExpo');
+	};
+
+	//Warnings
+	function emailWarningHide(){
+		$('#emailWarning').hide();
+	};
+
+});

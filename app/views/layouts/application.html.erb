@@ -5,15 +5,10 @@
   <title>ReciPower Store Front</title>
 <!-- START:stylesheet -->
   <%= stylesheet_link_tag "scaffold" %>
-  <%= stylesheet_link_tag "recipower", :media => "all" %><!-- <label id="code.slt"/> -->
-  <%= stylesheet_link_tag "landingPage", :media => "all" %><!-- <label id="code.slt"/> -->
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <%= stylesheet_link_tag 'recipower', 'landingPage', :media => "all" %><!-- <label id="code.slt"/> -->
+  <%= stylesheet_link_tag 'jquery-ui-1.10.3.custom.min', 'jquery-ui-1.10.3.custom', :media => "all" %>
   <!-- END:stylesheet -->
-  <%= javascript_include_tag "application" %>
-  <%= javascript_include_tag "navigate" %>
-  <!--JQuery Src File-->
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+  <%= javascript_include_tag 'jquery-1.9.1', 'jquery-ui-1.10.3.custom.min', 'jquery-ui-1.10.3.custom', 'application', 'navigate'%>
   
   <%= csrf_meta_tag %><!-- <label id="code.csrf"/> -->
   <meta name="Description" content="ReciPower is an app that empowers each health-seeking individual with a dynamic new tool to plan healthy meals in less than 5 minutes on a budget." />
@@ -70,7 +65,7 @@
 				  
     <div id="main">
 		<% if session[:user_id] %>
-			<script>$('#main').css("margin-left", "250px")</script>
+			<script>$('#main').css("margin-left", "0px")</script>
 		<% end %>
 		<%= yield %><!-- <label id="code.depot.e.include"/> -->
     </div>

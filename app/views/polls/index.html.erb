@@ -1,20 +1,20 @@
 ﻿<div class="myFontClass" style="max-width:92%; height:100%; padding-left:30px">
 	<div id="header-fixed">
-	<div id="menu-style">
-		<div id="header">
-			<div id="logo"><img src="logo.jpg" style="width:100%; height:100%"></div>
-			<a href="javascript:doHome()" style="text-decoration:none;color:#00CCFF">
-				<div id="home" class="navElements" style="padding:0px 3% 0px 3%">Home</div></a>
-			<a href="javascript:doHealth()" style="text-decoration:none;color:#00CCFF">
-				<div id="health" class="navElements"style="padding:0px 3% 0px 3%">Your Health & Wellness</div></a>
-			<a href="javascript:doTime()" style="text-decoration:none;color:#00CCFF">
-				<div id="time" class="navElements"style="padding:0px 3% 0px 3%">Save Time</div></a>
-			<a href="javascript:doMoney()" style="text-decoration:none;color:#00CCFF">
-				<div id="money" class="navElements"style="padding:0px 3% 0px 3%">Save Money</div></a>
-			<a href="javascript:doContact()" style="text-decoration:none;color:#00CCFF">
-				<div id="contact" class="navElements" style="border:none;padding:0px 3% 0px 3%">Contact Us</div></a>
+		<div id="menu-style">
+			<div id="header">
+				<div id="logo"><img src="logo.jpg" style="width:100%; height:100%"></div>
+				<a href="javascript:doHome()" style="text-decoration:none;color:#00CCFF">
+					<div id="home" class="navElements" style="padding:0px 3% 0px 3%">Home</div></a>
+				<a href="javascript:doHealth()" style="text-decoration:none;color:#00CCFF">
+					<div id="health" class="navElements"style="padding:0px 3% 0px 3%">Your Health & Wellness</div></a>
+				<a href="javascript:doTime()" style="text-decoration:none;color:#00CCFF">
+					<div id="time" class="navElements"style="padding:0px 3% 0px 3%">Save Time</div></a>
+				<a href="javascript:doMoney()" style="text-decoration:none;color:#00CCFF">
+					<div id="money" class="navElements"style="padding:0px 3% 0px 3%">Save Money</div></a>
+				<a href="javascript:doContact()" style="text-decoration:none;color:#00CCFF">
+					<div id="contact" class="navElements" style="border:none;padding:0px 3% 0px 3%">Contact Us</div></a>
+			</div>
 		</div>
-	</div>
 	</div>
 	<div id="mainBanner"><img src="mainBanner1.jpg" width="100%" height="100%"></div>
 	<div style="clear:both">
@@ -76,16 +76,6 @@
 				<div>
 					ReciPower is still in Beta development. If you are like us, and can't wait for delicious healthy food to browse through, then please leave your email address, and you'll be one of the first to know it's ready!
 				</div>
-				<script>
-					$(document).ready(function(){
-						$("#emailWarning").hide();
-					  });
-				</script>
-				<% if flash[:notice] %>
-					<div id="notice">
-						<%= flash[:notice] %>
-					</div>
-				<% end %>
 				<div>
 					<%= render 'form' %>
 				</div>

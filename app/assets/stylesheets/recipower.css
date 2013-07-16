@@ -150,19 +150,26 @@
   overflow:  auto;
 }
 #main {
-  position:  absolute;
+  float:  left;
   min-width:  65%;
-  margin-left: 50px;
-  padding: 0px 0px 8px 25px;
+  min-height:  100%;
+  margin-left: 0px;
+  padding: 0px 0px 8px 0px;
   background: #FFF;
-  overflow:  auto;
+  overflow:  hidden;
 }
 #side {
   float: left;
   padding: 0px 0px 12px 10px;
+  margin: 10px 30px 10px 10px;
   min-width: 230px;
   min-height:  100%;
   background: #888888;
+  -webkit-box-shadow: 1px 1px 8px #888;
+  -moz-box-shadow: 1px 1px 8px #888;
+  box-shadow: 2px 2px 8px #333;
+  border-top-left-radius:  32px;
+  border-bottom-right-radius:  24px;
 }
 #side a {
   color: #99FFFF;
@@ -170,12 +177,15 @@
 }
 /* END:mainlayout */
 /* An entry in the store catalog */
+
 #store  .entry {
+  background-color:  #FFF;
   display:  inline;
   float:  left;
   width:  90px;
-  height:  150px;
+  max-height:  150px;
   margin: 8px 8px 0px 0px;
+  border-radius:  4px;
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
@@ -189,6 +199,8 @@
   max-height: 60px;
   margin-right: 5px;
   margin-bottom: 5px;
+  border-style: none;
+  border-width:  0px;
   float: left;
 }
 #store .entry h3 {
