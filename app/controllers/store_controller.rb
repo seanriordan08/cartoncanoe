@@ -2,7 +2,18 @@
   skip_before_filter :authorize
   
   def index
-    @products = Product.all
+	@search = Product.search do
+		fulltext params[:search]
+	end
+	@products = @search.results
+	@cart = current_cart
+  end
+ 
+  def show 
+  	@search = Product.search do
+		fulltext params[:search]
+	end
+	@products = @search.results
 	@cart = current_cart
   end
   

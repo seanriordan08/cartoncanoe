@@ -1,11 +1,10 @@
 ﻿class Product < ActiveRecord::Base
+
 	default_scope :order => 'title'
 	has_many :line_items
 	has_many :orders, :through => :line_items
 	before_destroy :ensure_not_referenced_by_any_line_item
-  
-#...
-
+	
 private
 #Ensure that there are no line items referencing this product
 def ensure_not_referenced_by_any_line_item
@@ -25,4 +24,9 @@ end
             :message => 'must be a URL for GIF, JPG or PNG image. (images/example.jpg)'}
   validates :unit_of_measure, :format => {:with => %r{(ea|EA|lb|LB|ml|bag|oz|OZ|pk|GAL|GR|yd|pt)$}i,
 			:message => 'must be a recognized unit (list is too long to mention).'}
+			
+	searchable do
+		text :title, :description
+	end
+	
 end

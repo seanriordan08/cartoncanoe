@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <b>Title:</b>
@@ -11,13 +10,17 @@
 </p>
 
 <p>
+  <%= image_tag (@product.image_url) %>
+</p>
+
+<p>
   <b>Image url:</b>
   <%= @product.image_url %>
 </p>
 
 <p>
   <b>Price:</b>
-  <%= @product.price %> &nbsp( <%= @product.unit_of_measure %> )
+  <%= number_to_currency(@product.price) %> &nbsp( <%= @product.unit_of_measure %> )
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

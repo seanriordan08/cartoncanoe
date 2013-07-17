@@ -50,7 +50,14 @@
 		  <script>$('#side').hide()</script>
 		  <% end %>
 		</div>
-		<br>
+		<br>				
+
+		<%= form_tag store_show_path, :method => :get do%>
+		<p>
+			<%= text_field_tag :search, params[:search] %>
+			<%= submit_tag "Search", :name => nil %>
+		</p>
+		<% end %>
 		
 		<div id="cart">
 		<%if @cart%>
@@ -59,8 +66,8 @@
 			<% end %>
 		<% end %>
 		 <br>
-		</div>
-		
+		</div>	
+	
     </div>
 				  
     <div id="main">

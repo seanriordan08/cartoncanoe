@@ -4,6 +4,7 @@
 	
   get 'admin' => 'admin#index'
   get 'polls_show' => 'polls#show'
+  get 'store_show' => 'store#show'
   
   controller :sessions do
 	get 'login' => :new
