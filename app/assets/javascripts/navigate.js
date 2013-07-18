@@ -18,7 +18,27 @@ function doContact(){
 $(document).ready(function(){
 	//End Navigation Buttons
 	
-	$('.entry').draggable({ revert: true }, { containment: "document" }, { zIndex: 100 }, { helper: "clone" });
+	$('.entry').draggable({ 
+		revert: true , 
+		containment: "document", 
+		zIndex: 100, 
+		helper: "clone"
+	});
+	
+	$('#cart').droppable({
+		accept: '.entry',
+		activeClass: 'active',
+		hoverClass: 'hovered',
+		drop: function( event, ui ){
+			var testable = "<%= escape_javascript(line_items_path)%>";
+			alert(testable);
+			//$.ajax({ url: "<%= line_items_path %>", data: {:product_id => product} })
+		}
+	});
+	
+	//("<%= escape_javascript(if @cart != nil render(@cart) end)%>");
+	
+	
 
 	//Effects
 	function menuSlide(){
