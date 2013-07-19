@@ -30,7 +30,7 @@ $(document).ready(function(){
 		activeClass: 'active',
 		hoverClass: 'hovered',
 		drop: function( event, ui ){
-			$('.entry').text( "test" ).remove();
+			//$('.entry').text( "test" ).remove();
 			//alert(stuff)
 		}
 	});
