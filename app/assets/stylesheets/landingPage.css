@@ -1,4 +1,20 @@
-﻿/*@font-face {
+﻿@font-face{ 
+	font-family: 'DroidSerif';
+	src: url('fonts/DroidSerif.eot');
+	src: url('fonts/DroidSerif.eot?iefix') format('eot'),
+	     url('fonts/DroidSerif.woff') format('woff'),
+	     url('fonts/DroidSerif.ttf') format('truetype'),
+	     url('fonts/DroidSerif.svg#DroidSerif') format('svg');
+}
+@font-face{ 
+	font-family: 'Folks-Normal-webfont';
+	src: url('fonts/Folks-Normal-webfont.eot');
+	src: url('fonts/Folks-Normal-webfont.eot?iefix') format('eot'),
+	     url('fonts/Folks-Normal-webfont.woff') format('woff'),
+	     url('fonts/Folks-Normal-webfont.ttf') format('truetype'),
+	     url('fonts/Folks-Normal-webfont.svg#Folks-Normal-webfont') format('svg');
+}
+/*@font-face {
 	font-family: Caviar_Dreams_Bold;
 	src: url('Caviar_Dreams_Bold.ttf');
 }
@@ -28,11 +44,26 @@
 	border-bottom-width:  2px;
 	border-bottom-color:  #000;
 }
+.folksText{
+	font-family: 'Folks-Normal-webfont';
+	font-size:  3em;
+}
+.droidTextSm{
+	font-family: 'DroidSerif';
+	font-size:  1.3em;
+	line-height:  150%;
+}
 .leftTxt{
+	font-family: 'DroidSerif';
+	font-size:  1.3em;
+	line-height:  150%;
 	float:  left;
-	max-width: 66%;
+	max-width: 100%;
 }
 .rightTxt{
+	font-family: 'DroidSerif';
+	font-size:  1.3em;
+	line-height:  150%;
 	float:  left;
 	max-width:  66%;
 	padding-left: 14px;
@@ -46,6 +77,15 @@
 	border-bottom-width:  2px;
 	border-bottom-color:  #000;
 	overflow:  auto;
+}
+.landingImage{
+	margin: 8px;
+	padding:  0px;
+	border: solid 1px #555;
+	border-radius:  6px;
+	-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.9);
+	-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.9);
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.9);
 }
 #header-fixed{
 	position:  fixed;
@@ -87,7 +127,7 @@
 #mainBanner{
 	clear:  both;
 	margin:  75px 0px 50px 0px;
-	padding:  272px 0px 50px 0px;
+	padding:  293px 0px 105px 0px;
 	background-image:  url('mainBanner1.jpg');
 	background-size: cover;
 	background-position:  center;
@@ -106,7 +146,7 @@
 }
 #containerText{
 	float:  left;
-	max-width:  65%;
+	width:  65%;
 }
 #contactUs{
 	float:  left; 

@@ -14,6 +14,7 @@
 	 <br>
 	 <%= button_to('Add to Cart', line_items_path(:product_id => product), :remote => true) %>
    </div>
+   <script>$(this).data("test",<%= product.title%>)</script>
  </div>
    <p>
 <%  end %>

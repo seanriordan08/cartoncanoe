@@ -22,7 +22,7 @@ $(document).ready(function(){
 		revert: true , 
 		containment: "document", 
 		zIndex: 100, 
-		helper: "clone"
+		helper: "clone",
 	});
 	
 	$('#cart').droppable({
@@ -30,9 +30,8 @@ $(document).ready(function(){
 		activeClass: 'active',
 		hoverClass: 'hovered',
 		drop: function( event, ui ){
-			var testable = "<%= escape_javascript(line_items_path)%>";
-			alert(testable);
-			//$.ajax({ url: "<%= line_items_path %>", data: {:product_id => product} })
+			$('.entry').text( "test" ).remove();
+			//alert(stuff)
 		}
 	});
 	
