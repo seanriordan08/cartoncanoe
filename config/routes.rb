@@ -1,11 +1,12 @@
 ﻿Depot::Application.routes.draw do
 
-  root :to => 'polls#index'#, :as => 'polls'
+  root :to => 'polls#index'
 	
   get 'admin' => 'admin#index'
   get 'polls_show' => 'polls#show'
   get 'store_show' => 'store#show'
-  
+  get "store/index"
+	
   controller :sessions do
 	get 'login' => :new
 	post 'login' => :create
@@ -22,7 +23,6 @@
 	end
   end
   resources :carts
-  get "store/index"
 
   resources :orders do
 	get :ReciPower_Orders, :on => :member

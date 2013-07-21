@@ -17,12 +17,23 @@ function doContact(){
 
 $(document).ready(function(){
 	//End Navigation Buttons
-	
-	$('.entry').draggable({ 
-		revert: true , 
+
+	/*$('.entry').selectable({
+		selected: function( event, ui ){
+			$(this).toggleClass(gotit)
+		}
+	});*/
+		
+	var dragDrop;
+	$('.entry').draggable({
+		revert: false,
+		revertDuration: 500,
 		containment: "document", 
 		zIndex: 100, 
 		helper: "clone",
+		start: function(){
+			dragDrop = $(this).data('id');
+		},
 	});
 	
 	$('#cart').droppable({
@@ -30,14 +41,18 @@ $(document).ready(function(){
 		activeClass: 'active',
 		hoverClass: 'hovered',
 		drop: function( event, ui ){
-			//$('.entry').text( "test" ).remove();
-			//alert(stuff)
+			$.ajax({
+				type: "POST",
+				url: '/line_items',
+				beforeSend: function(xhr){
+					xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+				data: {product_id: dragDrop, remote: true},
+				dataType: "script"
+			});
 		}
 	});
 	
-	//("<%= escape_javascript(if @cart != nil render(@cart) end)%>");
-	
-	
+	//$(this).html("<%= escape_javascript(if @cart != nil render(@cart))%>");
 
 	//Effects
 	function menuSlide(){
@@ -48,5 +63,4 @@ $(document).ready(function(){
 	function emailWarningHide(){
 		$('#emailWarning').hide();
 	};
-
 });

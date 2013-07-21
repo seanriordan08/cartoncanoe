@@ -39,11 +39,13 @@
 		<div id="adminOptions" style="min-height:100%">	
 		<br>		
 		  <% if session[:user_id] %>
-			<%= link_to 'Select Items', store_index_path %><br />
-			<%= link_to 'Edit Items', products_path %><br />
-			<%= link_to 'Orders', orders_path %><br />
-			<%= link_to 'Users', users_path %><br />
-			<%= link_to 'Waiting List', polls_show_path %><br />			
+		  <ol class="adminClass">
+			<li onclick="javascript:location.href='/store/index'">Select Items</li><br/>
+			<li onclick="javascript:location.href='/products'">Edit Items</li><br/>
+			<li onclick="javascript:location.href='/orders'">Order History</li><br/>
+			<li onclick="javascript:location.href='/users'">Admins</li><br/>
+			<li onclick="javascript:location.href='/polls_show'">Waiting List</li><br/>
+		  </ol>
 			<br>
 			<%= button_to 'Logout', logout_path, :method => :delete %>
 			<div style="min-height:100%"></div><!--extend column whitespace-->
