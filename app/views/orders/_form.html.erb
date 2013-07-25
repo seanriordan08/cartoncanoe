@@ -11,10 +11,21 @@
     </div>
   <% end %>
 
+<div style="display:inline">
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, :size => 40 %>
+	<%= f.label "Title" %><br />
+    <%= f.text_field :prefix, :size => 5 %>
   </div>
+  <div class="field">
+    <%= f.label :first %><br />
+    <%= f.text_field :first_name, :size => 20 %>
+  </div>
+  <div class="field">
+    <%= f.label :last %><br />
+    <%= f.text_field :last_name, :size => 20 %>
+  </div>
+</div>
+
   <div class="field">
     <%= f.label :address %><br />
     <%= f.text_area :address, :rows => 3, :cols => 40 %>
@@ -26,6 +37,14 @@
   <div class="field">
     <%= f.label :phone %><br />
     <%= f.text_field :phone_number, :size => 10 %>
+  </div>
+  <div class="field">
+	<%= f.label :delivery_date %><br />
+	<%= f.text_field :date_of_delivery, :size => 10 %>(eg. 7/21/13)
+  </div>
+  <div class="field">
+	<%= f.label :delivery_time %><br />
+	<%= f.text_field :delivery_time, :size => 10 %>(eg. 4pm)
   </div>
   <div class="field">
     <%= f.label :pay_type %><br />

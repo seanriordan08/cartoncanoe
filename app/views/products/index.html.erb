@@ -14,7 +14,8 @@
           <dt><%= product.title %></dt>
           <dd><%= truncate(strip_tags(product.description), :length => 80) %></dd>
 		  <dd><%= product.image_url%></dd>
-		  <dd><%= number_to_currency(product.price) %> &nbsp(<%= product.unit_of_measure %>)</dd>
+		  <dd><%= number_to_currency(product.price) %>
+				&nbsp(<%= product.portion_size %> <%= product.unit_of_measure %>)</dd>
         </dl>
       </td>
 

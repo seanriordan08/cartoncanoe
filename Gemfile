@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem 'masonry-rails', '~> 0.2.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

@@ -2,10 +2,12 @@
 <div id="order_list">
 <table>
   <tr>
-    <th>Name</th>
+    <th>Full Name</th>
     <th>Address</th>
     <th>Email</th>
 	<th>Phone</th>
+	<th>Delivery Date</th>
+	<th>Delivery Time</th>
     <th>Pay type</th>
 	<th></th>
     <th></th>
@@ -13,10 +15,12 @@
   </tr>
 <% @orders.each do |order| %>
   <tr class="<%= cycle('list_line_odd','list_line_even') %>">
-    <td><%= order.name %></td>
+    <td><%= order.prefix %> <%= order.first_name %> <%= order.last_name %></td>
     <td><%= order.address %></td>
     <td><%= order.email %></td>
 	<td><%= order.phone_number %></td>
+	<td><%= order.date_of_delivery %></td>
+	<td><%= order.delivery_time %></td>
     <td><%= order.pay_type %></td>
     <td><%= link_to 'Show', order %></td>
     <td><%= link_to 'Edit', edit_order_path(order) %></td>

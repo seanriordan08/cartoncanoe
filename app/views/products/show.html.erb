@@ -20,7 +20,8 @@
 
 <p>
   <b>Price:</b>
-  <%= number_to_currency(@product.price) %> &nbsp( <%= @product.unit_of_measure %> )
+  <%= number_to_currency(@product.price) %>
+	&nbsp(<%= @product.portion_size %> <%= @product.unit_of_measure %>)
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

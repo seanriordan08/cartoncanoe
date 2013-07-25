@@ -14,24 +14,29 @@ function doMoney(){
 function doContact(){
 	$('html,body').animate({ scrollTop: $('#row4').offset().top - 80}, 1500, 'easeOutExpo');
 };
+//End Navigation Buttons
 
 $(document).ready(function(){
-	//End Navigation Buttons
 
-	/*$('.entry').selectable({
-		selected: function( event, ui ){
-			$(this).toggleClass(gotit)
-		}
-	});*/
-		
+	var $container = $('#masonry-container');
+	$container.masonry({
+		containerStyle:  null,
+		itemSelector: '.entry',
+		columnWidth:  1
+	});
+	
+	$.when( $('html').ready() ).then(function() { 
+		$container.masonry();
+	});
+	
 	var dragDrop;
 	$('.entry').draggable({
 		revert: false,
 		revertDuration: 500,
-		containment: "document", 
+		containment: 'document', 
 		zIndex: 100, 
 		helper: "clone",
-		start: function(){
+		start: function(e, ui){
 			dragDrop = $(this).data('id');
 		},
 	});
