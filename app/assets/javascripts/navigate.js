@@ -17,17 +17,6 @@ function doContact(){
 //End Navigation Buttons
 
 $(document).ready(function(){
-
-	var $container = $('#masonry-container');
-	$container.masonry({
-		containerStyle:  null,
-		itemSelector: '.entry',
-		columnWidth:  1
-	});
-	
-	$.when( $('html').ready() ).then(function() { 
-		$container.masonry();
-	});
 	
 	var dragDrop;
 	$('.entry').draggable({
