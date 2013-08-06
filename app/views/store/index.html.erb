@@ -1,18 +1,20 @@
+<div style="width:95%">
+	<h1>Select Items</h1>
 
-<h1>Select Items</h1>
-<div>
-	<% @products.each do |product| %>
-	 <div id="itemBox" class="entry" data-id="<%= product.id %>">
-	   <h3><%= product.title %> </h3>
-	   <%= image_tag(product.image_url )%>
-	   <div style="display: none; width: 10px"><%= sanitize(product.description) %></div>
-	   <div class="price_line">
-		 <span class="price"><%= number_to_currency(product.price)%></span>
-			(<%= product.portion_size%> <%= product.unit_of_measure%>)
-		 
-	   </div>
+	<div>
+		<% @products.each do |product| %>
+		 <div id="itemBox" class="entry" data-id="<%= product.id %>">
+		   <h3><%= product.title %> </h3>
+		   <%= image_tag(product.image_url )%>
+		   <div style="display: none; width: 10px"><%= sanitize(product.description) %></div>
+		   <div class="price_line">
+			 <span class="price"><%= number_to_currency(product.price)%></span>
+				(<%= product.portion_size%> <%= product.unit_of_measure%>)
+			 
+		   </div>
 
-	 </div>
-	   <p>
-	<%  end %>
+		 </div>
+		   <p>
+		<%  end %>
+	</div>
 </div>

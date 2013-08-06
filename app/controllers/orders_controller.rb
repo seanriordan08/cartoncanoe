@@ -28,9 +28,14 @@ class OrdersController < ApplicationController
   # GET /orders/new.json
   def new
 	@cart = current_cart
-	if @cart.line_items.empty?
-		redirect_to Store_index_url, :notice => "Your Cart is Empty"
-	return
+		if @cart.line_items.empty?
+			redirect_to store_index_url, :notice => "Your Cart is Empty"
+		return
+			
+		elsif Order.count == 5
+			redirect_to store_index_url, :notice => "No Orders Available"		
+		return
+		
 	end
 	
     @order = Order.new

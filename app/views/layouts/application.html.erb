@@ -72,13 +72,20 @@
 		</div>	
 	
     </div>
-				  
-    <div id="main">
-		<% if session[:user_id] %>
-			<script>$('#main').css("margin-left", "0px")</script>
-		<% end %>
-		<%= yield %><!-- <label id="code.depot.e.include"/> -->
-    </div>
+	
+	<div id="mainContainer">
+		<div id="ordersLeftBadge1" class="ordersLeftBadge"><%= 5 - Order.count %></div>
+			<div id="ordersLeftBadge2" class="ordersLeftBadge"><span><%= 10 - (Order.count)%></span></div>
+				<div id="ordersLeftBadge3" class="ordersLeftBadge"><span><%= 15 - (Order.count)%></span></div>
+				<div id="main">
+					<% if session[:user_id] %>
+						<script>$('#main').css("width", "310%")</script>
+					<% else %>
+						<script>$('#main').css("width", "410%")</script>
+					<% end %>
+					<%= yield %><!-- <label id="code.depot.e.include"/> -->
+				</div>
+	</div>
   </div>
   </div>
 </body>

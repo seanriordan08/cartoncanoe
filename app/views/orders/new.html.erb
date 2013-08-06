@@ -1,5 +1,14 @@
 <h1>New order</h1>
-
+<script>
+	$('h1').after("<h2></h2>");
+	$('h2').html("NOTICE: Prices may vary due to sales added or removed within the last 24 hrs");
+	$('h2').hide();
+	$('h2').slideDown(800);
+	
+	$('h2').click(function() {
+	  $('h2').slideUp(200)
+	});
+</script>
 <div class="depot_form">
  <fieldset>
    <legend>Please Enter Your Details</legend>

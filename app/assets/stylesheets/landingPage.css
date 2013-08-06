@@ -23,9 +23,11 @@
 	src: url('http://www.recipower.com/public_html/Caviar_Dreams_Bold.ttf');
 }*/
 .myFontClass{
-	font-family: Caviar_Dreams_Bold, Arial;
 	font-size:  100%;
 	color: #000;
+	width:  95%; 
+	height:  100%; 
+	padding-left:  30px
 }
 .navElements{
 	float:  left;
@@ -91,7 +93,7 @@
 	position:  fixed;
 	top:  0px;
 	margin-top:  0px;
-	width:  92%;
+	width:  100%;
 	background-image:  url('graphics/menuFadeBG.png');
 	background-repeat:  repeat-x;
 }
@@ -122,12 +124,11 @@
 	background-color:  #EEE;
 	-webkit-transition: background-color 0.01s;
 	transition: background-color 0.01s;
-
 }
 #mainBanner{
 	clear:  both;
-	margin:  75px 0px 50px 0px;
-	padding:  293px 0px 105px 0px;
+	margin:  75px 0px 0px 0px;
+	padding:  293px 100px 105px 0px;
 	background-image:  url('mainBanner1.jpg');
 	background-size: cover;
 	background-position:  center;

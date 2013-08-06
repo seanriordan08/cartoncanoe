@@ -4,6 +4,8 @@
   protect_from_forgery
   config.encoding = "utf-8"
   
+  helper_method :order_limit
+  
   private
   
 	def current_cart

@@ -1,4 +1,18 @@
 
+<% if notice %>
+	<div id="cartNotice"></div>
+	<script>
+		$('#cartNotice').hide();
+		$('#cartNotice').append("<%= notice %>");
+		$('#cartNotice').delay(700);
+		$('#cartNotice').show("blind", 300);
+		
+		$('#cartNotice').click(function() {
+		  $('#cartNotice').hide('blind',300)
+		});
+	</script>
+<% end %>
+
 <div class="cart_title">Your Cart</div>
 <table>
 
