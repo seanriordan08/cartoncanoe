@@ -27,17 +27,16 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.json
   def new
-	@cart = current_cart
-		if @cart.line_items.empty?
-			redirect_to store_index_url, :notice => "Your Cart is Empty"
-		return
-			
-		elsif Order.count == 5
-			redirect_to store_index_url, :notice => "No Orders Available"		
-		return
-		
-	end
-	
+	@cart = current_cart	
+		if Order.count == 5
+			flash[:error] = "No Orders Left Today"
+			redirect_to store_index_url		
+		return		
+		elsif @cart.line_items.empty?
+			flash[:error] = "Your Cart is Empty"
+			redirect_to store_index_url
+		return				
+	end	
     @order = Order.new
 
     respond_to do |format|
@@ -62,7 +61,8 @@ class OrdersController < ApplicationController
 		Cart.destroy(session[:cart_id])
 		session[:cart_id] = nil
 		#Notifier.order_shipped(@order).deliver
-        format.html { redirect_to(store_index_url, :notice => 'Your Order Has Been Received!') }
+		flash[:notice] = 'Thank You for your order! You will be contacted shortly for payment details'
+        format.html { redirect_to(store_index_url) }
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }

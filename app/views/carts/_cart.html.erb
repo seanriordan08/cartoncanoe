@@ -1,11 +1,10 @@
 
-<% if notice %>
+<% if flash[:error] %>
 	<div id="cartNotice"></div>
 	<script>
 		$('#cartNotice').hide();
-		$('#cartNotice').append("<%= notice %>");
-		$('#cartNotice').delay(700);
-		$('#cartNotice').show("blind", 300);
+		$('#cartNotice').append("<%= flash[:error] %>");
+		$('#cartNotice').show("blind", 600);
 		
 		$('#cartNotice').click(function() {
 		  $('#cartNotice').hide('blind',300)
