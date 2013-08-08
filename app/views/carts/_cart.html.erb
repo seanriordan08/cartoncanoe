@@ -1,9 +1,21 @@
 
 <% if flash[:error] %>
+	<div id="cartError"></div>
+	<script>
+		$('#cartError').hide();
+		$('#cartError').append("<%= flash[:error] %>");
+		$('#cartError').show("blind", 600);
+		
+		$('#cartError').click(function() {
+		  $('#cartError').hide('blind',300)
+		});
+	</script>
+<% end %>	
+<% if flash[:alert] %>
 	<div id="cartNotice"></div>
 	<script>
 		$('#cartNotice').hide();
-		$('#cartNotice').append("<%= flash[:error] %>");
+		$('#cartNotice').append("<%= flash[:alert] %>");
 		$('#cartNotice').show("blind", 600);
 		
 		$('#cartNotice').click(function() {
@@ -23,5 +35,5 @@
  </tr>
  
 </table>
-<%= button_to 'Checkout', new_order_path, :method => :get %>
+<%= button_to 'Checkout', new_order_path, :method => :get, :remote => true %>
 <%= button_to 'Empty Cart', cart, :method => :delete, :confirm => 'Are you sure?'%>

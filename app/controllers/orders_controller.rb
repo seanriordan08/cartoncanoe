@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   
   def index
     @orders = Order.paginate :page => params[:page], :order => 'created_at desc',
-		:per_page => 10
+		:per_page => 10	
 
     respond_to do |format|
       format.html # index.html.erb
@@ -31,18 +31,23 @@ class OrdersController < ApplicationController
 		if Order.count == 5
 			flash[:error] = "No Orders Left Today"
 			redirect_to store_index_url		
-		return		
+			return		
 		elsif @cart.line_items.empty?
 			flash[:error] = "Your Cart is Empty"
 			redirect_to store_index_url
-		return				
-	end	
-    @order = Order.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @order }
-    end
+			return
+		elsif @cart.total_price < 25.00
+			flash[:alert] = "Minimum Order is $25"
+			redirect_to store_index_url
+			return
+		else
+			@order = Order.new
+			respond_to do |format|
+				format.js	{ render :js => "window.location = '/orders/new'"}
+				format.html # new.html.erb
+				format.json { render json: @order }
+			end
+		end
   end
 
   # GET /orders/1/edit

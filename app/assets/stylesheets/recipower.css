@@ -56,7 +56,7 @@
         background-color: #f0f0f0;
         font: bold smaller sans-serif;
 }
-#store #notice, #cartNotice {
+#store #notice, #cartError {
         color: #000;
         border: 2px solid red;
 		border-radius:  16px 0px 2px 0px;
@@ -64,6 +64,18 @@
         margin-bottom: 2em;
         background-color: #F29F95;
 		background-image: url('graphics/circleSlash_hover.png');
+		background-position:  95% 50%;
+		background-repeat: no-repeat;
+        font: bold smaller sans-serif;
+}
+#store #cartNotice {
+        color: #000;
+        border: 2px solid #DAA520;
+		border-radius:  16px 0px 2px 0px;
+        padding: 8px;
+        margin-bottom: 2em;
+        background-color: #FFE4B5;
+		background-image: url('graphics/triangleWarning.png');
 		background-position:  95% 50%;
 		background-repeat: no-repeat;
         font: bold smaller sans-serif;
