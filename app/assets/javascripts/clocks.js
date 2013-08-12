@@ -12,10 +12,7 @@
 		else if (currentHours == 7 ){ currentHoursPosition = 15; }
 		else if (currentHours == 8 ){ currentHoursPosition = 30; }
 		else if (currentHours == 9 ){ currentHoursPosition = 65; }
-		else if (currentHours == 10 ){ 
-			currentHoursPosition = 98;  
-			alert("check");
-		}
+		else if (currentHours == 10 ){ currentHoursPosition = 98; }
 		else if (currentHours == 11 ){ currentHoursPosition = 132; }
 		else if (currentHours == 12 ){ currentHoursPosition = 166; }
 		else { currentHoursPosition = 17; }
