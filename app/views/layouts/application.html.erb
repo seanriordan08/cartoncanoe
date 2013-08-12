@@ -6,10 +6,10 @@
   <title>ReciPower Store Front</title>
 <!-- START:stylesheet -->
   <%= stylesheet_link_tag "scaffold" %>
-  <%= stylesheet_link_tag 'recipower', 'landingPage', :media => "all" %><!-- <label id="code.slt"/> -->
+  <%= stylesheet_link_tag 'recipower', 'landingPage', 'counters', :media => "all" %><!-- <label id="code.slt"/> -->
   <%= stylesheet_link_tag 'jquery-ui-1.10.3.custom.min', 'jquery-ui-1.10.3.custom', :media => "all" %>
   <!-- END:stylesheet -->
-  <%= javascript_include_tag 'jquery-1.9.1', 'jquery-ui-1.10.3.custom.min', 'jquery-ui-1.10.3.custom', 'application', 'navigate' %>
+  <%= javascript_include_tag 'jquery-1.9.1', 'jquery-ui-1.10.3.custom.min', 'jquery-ui-1.10.3.custom', 'application', 'navigate', 'clocks' %>
   
   <%= csrf_meta_tag %><!-- <label id="code.csrf"/> -->
   <meta name="Description" content="ReciPower is an app that empowers each health-seeking individual with a dynamic new tool to plan healthy meals in less than 5 minutes on a budget." />
@@ -74,9 +74,16 @@
     </div>
 	
 	<div id="mainContainer">
-		<div id="ordersLeftBadge1" class="ordersLeftBadge"><%= 5 - Order.count %></div>
-			<div id="ordersLeftBadge2" class="ordersLeftBadge"><span><%= 10 - (Order.count)%></span></div>
-				<div id="ordersLeftBadge3" class="ordersLeftBadge"><span><%= 15 - (Order.count)%></span></div>
+		<div id="counterBG1" class="counterBG"><%= 5 - Order.where(:date_of_delivery => @day0).count %></div>
+		<div id="counterClock">
+			<script type="text/javascript">updateClock();</script><div id="counterNeedle"></div>
+		</div>
+		<div id="counterOverlay" class="counterBG"></div>
+		<div id="postItNotes1" class="postItNotes"></div>
+			<div id="counterBG2" class="counterBG"><span><%= 5 - Order.where(:date_of_delivery => @day1).count %></span></div>
+			<div id="postItNotes2" class="postItNotes"></div>
+				<div id="counterBG3" class="counterBG"><span><%= 5 - Order.where(:date_of_delivery => @day2).count %></span></div>
+				<div id="postItNotes3" class="postItNotes"></div>
 				<div id="main">
 					<% if session[:user_id] %>
 						<script>$('#main').css("width", "310%")</script>

@@ -1,0 +1,93 @@
+﻿.counterBG {
+  position: absolute;
+  width:  201px;
+  height:  202px;
+  right:  80px;
+  background-repeat:  no-repeat;
+}
+#counterBG1 {
+  top:  0px;
+  padding-top:  90px;
+  text-align:  center;
+  color:  #990000;
+  font-size:  1000%;
+  background-image:  url('graphics/counterBG1.png');
+  z-index: 101;
+}
+#counterOverlay{
+  top:  0px;
+  padding-top:  90px;
+  background-image:  url('graphics/counterOverlay.png');
+  z-index: 102;
+}
+#counterBG2 {
+  top:  190px;
+  padding-top:  30px;
+  text-align:  center;
+  background-image:  url('graphics/counterBG2or3.png');
+  z-index: 100;
+}
+#counterBG2 span{
+  color:  #990000;
+  font-size:  600%;
+}
+#counterBG3 {
+  top:  275px;
+  padding-top:  30px;
+  text-align:  center;
+  background-image:  url('graphics/counterBG2or3.png');
+  z-index: 99;
+}
+#counterBG3 span{
+  color:  #990000;
+  font-size:  600%;
+}
+#counterClock{
+  position: absolute;
+  top:  0px;
+  width:  62px;
+  height:  202px;
+  right:  271px;
+  background-repeat:  no-repeat;
+  background-image:  url('graphics/counterClock.png');
+  z-index: 100;
+}
+#counterNeedle{
+  position: absolute;
+  top:  0px;
+  width:  34px;
+  height:  23px;
+  right:  30px;
+  background-repeat:  no-repeat;
+  background-image:  url('graphics/counterNeedle.png');
+  z-index: 101;
+}
+.postItNotes {
+  position: absolute;
+  width:  97px;
+  height:  75px;
+  background-repeat:  no-repeat;
+}
+#postItNotes1 {
+  top:  100px;
+  right:  40px;
+  text-align:  center;
+  color:  #990000;
+  font-size:  1000%;
+  background-image:  url('graphics/noteToday.png');
+  z-index: 103;
+}
+#postItNotes2 {
+  top:  195px;
+  right:  25px;
+  text-align:  center;
+  background-image:  url('graphics/noteTomorrow.png');
+  z-index: 100;
+}
+#postItNotes3 {
+  top:  285px;
+  right:  25px;
+  text-align:  center;
+  background-image:  url('graphics/noteIn2days.png');
+  z-index: 99;
+}

@@ -13,11 +13,11 @@
 
 <div style="display:inline">
   <div class="field">
-	<%= f.label "Title" %><br />
+	<%= f.label "Title" %>
     <%= f.text_field :prefix, :size => 5 %>
   </div>
   <div class="field">
-    <%= f.label :first %><br />
+    <%= f.label :first %>
     <%= f.text_field :first_name, :size => 20 %>
   </div>
   <div class="field">
@@ -40,11 +40,32 @@
   </div>
   <div class="field">
 	<%= f.label :delivery_date %><br />
-	<%= f.text_field :date_of_delivery, :size => 10 %>(eg. 7/21/13)
+	<% if Order.where(:date_of_delivery => @day0).count == 5 || Time.now.hour > 11 %>
+		<%= f.radio_button :date_of_delivery, @day0, :disabled => true %>Today
+	<% else %>
+		<%= f.radio_button :date_of_delivery, @day0 %>Today
+	<% end %>
+	
+	<% if Order.where(:date_of_delivery => @day1).count == 5%>
+		<%= f.radio_button :date_of_delivery, @day1, :disabled => true %>Tomorrow
+	<% else %>
+		<%= f.radio_button :date_of_delivery, @day1 %>Tomorrow
+	<% end %>
+	
+	<% if Order.where(:date_of_delivery => @day2).count == 5%>
+		<%= f.radio_button :date_of_delivery, @day2, :disabled => true %><%= @day2 %>
+	<% else %>
+		<%= f.radio_button :date_of_delivery, @day2 %><%= @day2 %>
+	<% end %>
+	
   </div>
   <div class="field">
 	<%= f.label :delivery_time %><br />
-	<%= f.text_field :delivery_time, :size => 10 %>(eg. 4pm)
+	<%= f.radio_button :delivery_time, '3:30pm' %>3:30pm
+	<%= f.radio_button :delivery_time, '4:00pm' %>4:00pm
+	<%= f.radio_button :delivery_time, '4:30pm' %>4:30pm
+	<%= f.radio_button :delivery_time, '5:00pm' %>5:00pm
+	<%= f.radio_button :delivery_time, '5:30pm' %>5:30pm
   </div>
   <div class="field">
     <%= f.label :pay_type %><br />

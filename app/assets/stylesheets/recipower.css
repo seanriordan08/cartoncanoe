@@ -199,46 +199,6 @@
   margin-left: auto;
   overflow:  visible;
 }
-.ordersLeftBadge {
-  position: absolute;
-  height:  290px;
-  width:  300px;
-  background-repeat:  no-repeat;
-}
-#ordersLeftBadge1 {
-  top:  0px;
-  padding-top:  90px;
-  right:  10px;
-  text-align:  center;
-  font-size:  1000%;
-  background-image:  url('graphics/ordersLeftBadge.png');
-  z-index: 101;
-}
-#ordersLeftBadge2 {
-  top:  155px;
-  padding-top:  135px;
-  padding-left:  0px;
-  right:  -14px;
-  background-image:  url('graphics/ordersLeftBadge2Tier.png');
-  z-index: 100;
-}
-#ordersLeftBadge2 span{
-  text-align:  left;
-  padding-left:  30px;
-  font-size:  700%;
-}
-#ordersLeftBadge3 {
-  top:  260px;
-  padding-top:  140px;
-  right:  -14px;
-  background-image:  url('graphics/ordersLeftBadge3Tier.png');
-  z-index: 99;
-}
-#ordersLeftBadge3 span{
-  text-align:  left;
-  padding-left:  30px;
-  font-size:  600%;
-}
 #main {
   height:  100%;
   margin-right: auto;

@@ -4,8 +4,9 @@ class OrdersController < ApplicationController
   # GET /orders.json
   
   def index
+	@orders = Order.find(:all, :order => 'date_of_delivery')
     @orders = Order.paginate :page => params[:page], :order => 'created_at desc',
-		:per_page => 10	
+		:per_page => 25	
 
     respond_to do |format|
       format.html # index.html.erb
@@ -27,11 +28,15 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.json
   def new
-	@cart = current_cart	
-		if Order.count == 5
-			flash[:error] = "No Orders Left Today"
-			redirect_to store_index_url		
-			return		
+	@cart = current_cart
+	@day0 = Time.new.getlocal.strftime("%a, %b #{Time.now.day.ordinalize}")
+	@day1 = 1.day.from_now.strftime("%a, %b #{1.day.from_now.day.ordinalize}")
+	@day2 = 2.days.from_now.strftime("%a, %b #{2.days.from_now.day.ordinalize}")
+	
+		if Order.where(:date_of_delivery => @day0).count == 5 && Order.where(:date_of_delivery => @day1).count == 5 && Order.where(:date_of_delivery => @day2).count == 5
+			flash[:error] = "Sorry, today we're booked!"
+			redirect_to store_index_url
+			return
 		elsif @cart.line_items.empty?
 			flash[:error] = "Your Cart is Empty"
 			redirect_to store_index_url

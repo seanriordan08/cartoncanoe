@@ -3,7 +3,7 @@
 <div>
 	<% @products.each do |product| %>
 	 <div id="itemBox" class="entry" data-id="<%= product.id %>">
-	   <h3><%= product.title %> </h3>
+	   <div><b><%= product.title %></b></div>
 	   <%= image_tag(product.image_url )%>
 	   <div style="display: none; width: 10px"><%= sanitize(product.description) %></div>
 	   <div class="price_line">
