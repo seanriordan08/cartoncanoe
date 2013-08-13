@@ -40,7 +40,7 @@
   </div>
   <div class="field">
 	<%= f.label :delivery_date %><br />
-	<% if Order.where(:date_of_delivery => @day0).count == 5 || Time.now.hour > 11 %>
+	<% if Order.where(:date_of_delivery => @day0).count == 5 || (Time.now.hour > 11) || (Time.now.hour < 8) %>
 		<%= f.radio_button :date_of_delivery, @day0, :disabled => true %>Today
 	<% else %>
 		<%= f.radio_button :date_of_delivery, @day0 %>Today
