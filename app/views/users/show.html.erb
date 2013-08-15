@@ -1,4 +1,15 @@
-<p id="notice"><%= notice %></p>
+<% if flash[:notice] %>
+	<script>
+		$('h1').after("<h3></h3>");
+		$('h3').html("<%= flash[:notice] %>");
+		$('h3').hide();
+		$('h3').slideDown(600);
+		
+		$('h3').click(function() {
+		  $('h3').slideUp(200)
+		});
+	</script>
+<% end %>
 
 <p>
   <b>Name:</b>

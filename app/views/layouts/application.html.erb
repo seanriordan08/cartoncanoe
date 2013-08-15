@@ -37,21 +37,21 @@
 		<%= image_tag("logo.png") %>
 
 		<div id="adminOptions" style="min-height:100%">	
-		<br>		
-		  <% if session[:user_id] %>
-		  <ol class="adminClass">
-			<li onclick="javascript:location.href='/store/index'">Select Items</li><br/>
-			<li onclick="javascript:location.href='/products'">Edit Items</li><br/>
-			<li onclick="javascript:location.href='/orders'">Order History</li><br/>
-			<li onclick="javascript:location.href='/users'">Admins</li><br/>
-			<li onclick="javascript:location.href='/polls_show'">Waiting List</li><br/>
-		  </ol>
-			<br>
-			<%= button_to 'Logout', logout_path, :method => :delete %>
-			<div style="min-height:100%"></div><!--extend column whitespace-->
+			<br>		
+			<% if session[:user_id] %>
+				<ol class="adminClass">
+					<li onclick="javascript:location.href='/store/index'">Select Items</li><br/>
+					<li onclick="javascript:location.href='/products'">Edit Items</li><br/>
+					<li onclick="javascript:location.href='/orders'">Order History</li><br/>
+					<li onclick="javascript:location.href='/users'">Admins</li><br/>
+					<li onclick="javascript:location.href='/polls_show'">Waiting List</li><br/>
+				</ol>
+				<br>
+				<%= button_to 'Logout', logout_path, :method => :delete %>
+				<div style="min-height:100%"></div><!--extend column whitespace-->
 			<% else %>
-		  <script>$('#side').hide()</script>
-		  <% end %>
+			  <script>$('#side').hide()</script>
+			<% end %>
 		</div>
 		<br>
 

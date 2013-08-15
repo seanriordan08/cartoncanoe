@@ -27,25 +27,25 @@
   min-height:  50px;
 }
 #btnDelete{
-  width:  17px;
-  height:  20px;
-  background-image:  url('graphics/circleSlash.png');
+  width:  21px;
+  height:  21px;
+  background:  url('graphics/circleSlashes.png');
   background-repeat:  no-repeat;
-  background-position:  0px 9px;
+  background-position:  0px 7px;
 }
 #btnDelete:hover{
-  width:  17px;
-  height:  20px;
-  background-image:  url('graphics/circleSlash_hover.png');
+  width:  21px;
+  height:  21px;
+  background:  url('graphics/circleSlashes.png');
   background-repeat:  no-repeat;
-  background-position:  0px 9px;
+  background-position:  -23px 7px;
 }
 #btnDelete:active{
-  width:  17px;
-  height:  20px;
-  background-image:  url('graphics/circleSlash_active.png');
+  width:  21px;
+  height:  21px;
+  background-image:  url('graphics/circleSlashes.png');
   background-repeat:  no-repeat;
-  background-position:  0px 9px;
+  background-position:  -46px 7px;
 }
 #emailWarning{
 		width:  95.3%;

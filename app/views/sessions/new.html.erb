@@ -1,12 +1,21 @@
 <div class="depot_form">
 
-	<% if flash[:alert]%>
-		<p id="notice"> <%= flash[:alert]%> </p>
-	<% end %>
-
 	<%= form_tag do %>
 		<fieldset>
 			<legend>Please Log In</legend>
+			
+			<% if flash[:alert] %>
+				<script>
+					$('legend').after("<h2></h2>");
+					$('h2').html("<%= flash[:alert] %>");
+					$('h2').hide();
+					$('h2').slideDown(600);
+					
+					$('h2').click(function() {
+					  $('h2').slideUp(200)
+					});
+				</script>
+			<% end %>
 			
 			<div>
 				<label for="name">Name:</label>

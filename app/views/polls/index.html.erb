@@ -1,4 +1,21 @@
-﻿<div class="myFontClass">
+﻿<ul></ul>
+<% if flash[:notice] %>
+	<script>
+		$('ul').after().css("height", "+=50");
+		$('ul').after("<h3></h3>");
+		$('h3').html("<%= flash[:notice] %>");
+		$('h3').hide();
+		$('h3').slideDown(600);
+		
+		$('h3').click(function() {
+			$('h3').slideUp(200);
+			$('h1').slideUp(400);
+			$('ul').css("height", "-=50");
+		});
+	</script>
+<% end %>
+
+<div class="myFontClass">
 	<div id="header-fixed">
 		<div id="menu-style">
 			<div id="header">
@@ -16,6 +33,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div id="mainBanner" class="landingImage"></div>
 	<div style="clear:both">
 		<div id="row0" class="curtail" style="width:100%; height:100%; clear:both">
