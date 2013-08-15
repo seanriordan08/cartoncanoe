@@ -4,4 +4,5 @@ class ProductUpdate < ActiveRecord::Migration
 	add_column :products, :portion_size, :decimal
 	add_column :products, :priority, :string
   end
+  
 end
