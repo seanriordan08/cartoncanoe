@@ -1,4 +1,50 @@
-﻿/* Global styles */
+﻿/* Generic Browser Style Reset
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Global styles */
 .depot_form fieldset{
   background: #efe;
 }
@@ -9,10 +55,10 @@
   padding: 2px 4px;
 }
 .depot_form label{
-  width: 5em;
   float: left;
   text-align: right;
   padding-top: 4px;
+  margin-left: 0.1em;
   margin-right: 0.1em;
   display: block;
 }
@@ -225,7 +271,7 @@
   font-size: small;
 }
 .adminClass li{
-  margin:  0px 40px 0px -40px;
+  margin:  0px 40px 0px 0px;
   padding-left:  10px;
   list-style-position:  inside;
   list-style-type:  none;
@@ -233,11 +279,19 @@
   -webkit-box-shadow: 2px 2px 8px #333;
   -moz-box-shadow: 2px 2px 8px #333;
   box-shadow: 2px 2px 8px #333;
-  border-radius:  32px 4px 32px 4px;
-  /*border-bottom-right-radius:  24px;*/
+  border-radius:  16px 16px 16px 16px;
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+}
+.shopper li{
+  background-color:  #FFCDCD;
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  transition-duration: 0.1s;
 }
 .adminClass li:hover{
-  margin:  0px 35px 0px -35px;
+  margin:  0px 35px 0px 5px;
   padding-left:  10px;
   list-style-position:  inside;
   list-style-type:  none;
@@ -246,10 +300,12 @@
   -moz-box-shadow: 1px 1px 8px #888;
   box-shadow: 2px 2px 8px #333;
   border-radius:  32px 4px 32px 4px;
-  -webkit-transition-duration: 0.1s;
-  -moz-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  /*border-bottom-right-radius:  24px;*/
+  -webkit-transition-duration: 0.25s;
+  -moz-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+}
+.shopper li:hover{
+  background-color:  #FF9999;
 }
 #adminOptions{
   border-top: 1px dotted #FFF;
@@ -261,8 +317,8 @@
 #store  .entry {
   background-color:  #FFF;
   float:  left;
-  width:  100px;
-  height:  170px;
+  width:  150px;
+  height:  130px;
   margin: 8px 8px 0px 0px;
   border-radius:  4px;
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
@@ -310,7 +366,7 @@
 }
 #cart{
   background-color:  #EEEEEE;
-  margin: 0px 10px 0px 0px;
+  margin: 10px 10px 0px 0px;
   padding: 10px 10px 5px 10px;
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
@@ -359,4 +415,13 @@
   border-bottom: 1px dotted #FF2200;
   margin-bottom: 10px;
   margin-right: 10px;
+}
+#side table tbody td{
+  padding-bottom: 4px;
+}
+#side table tbody #total_line{
+  border-top: 1px solid black;
+}
+#side table tbody #total_line td{
+  padding-top: 4px;
 }

@@ -11,35 +11,49 @@
     </div>
   <% end %>
 
-<div style="display:inline">
-  <div class="field">
-	<%= f.label "Title" %>
-    <%= f.text_field :prefix, :size => 5 %>
+<div>
+  <div class="field"  style="float:left">
+    <%= f.label :Title %><p/>
+	<%= f.select :prefix, Order::PREFIX, :prompt => '' %>
   </div>
-  <div class="field">
-    <%= f.label :first %>
+  <div class="field"  style="float:left">
+    <%= f.label :first %>*<p/>
     <%= f.text_field :first_name, :size => 20 %>
   </div>
-  <div class="field">
-    <%= f.label :last %><br />
+  <div class="field"  style="float:left">
+    <%= f.label :last %>*<p/>
     <%= f.text_field :last_name, :size => 20 %>
   </div>
+  <div></div>
 </div>
 
-  <div class="field">
-    <%= f.label :address %><br />
-    <%= f.text_area :address, :rows => 3, :cols => 40 %>
+<div>
+  <div class="field"  style="float:left">
+    <%= f.label :address %>*<p/>
+    <%= f.text_area :address, :rows => 1, :cols => 40 %>
   </div>
-  <div class="field">
-    <%= f.label :email %><br />
+  <div class="field"  style="float:left;">
+    <%= f.label :city %>*<p/>
+	<%= f.select :city, Order::DELIVERY_LOCATIONS, :prompt => 'Select City' %>
+  </div>
+  <div class="field"  style="float:left;">
+    <%= f.label :zip %>*<p/>
+	<%= f.text_field :zip, :size => 5%>
+  </div>
+  <div></div>
+</div>
+
+<div>
+  <div class="field"  style="clear:both">
+    <%= f.label :email %>
     <%= f.text_field :email, :size => 40 %>
   </div>
-  <div class="field">
-    <%= f.label :phone %><br />
+  <div class="field"  style="clear:both">
+    <%= f.label :phone %>*
     <%= f.text_field :phone_number, :size => 10 %>
   </div>
   <div class="field">
-	<%= f.label :delivery_date %><br />
+	<%= f.label :delivery_date %>*<br />
 	<% if Order.where(:date_of_delivery => @day0).count == 5 || (Time.now.hour > 11) || (Time.now.hour < 8) %>
 		<%= f.radio_button :date_of_delivery, @day0, :disabled => true %>Today
 	<% else %>
@@ -56,11 +70,10 @@
 		<%= f.radio_button :date_of_delivery, @day2, :disabled => true %><%= @day2 %>
 	<% else %>
 		<%= f.radio_button :date_of_delivery, @day2 %><%= @day2 %>
-	<% end %>
-	
+	<% end %>	
   </div>
   <div class="field">
-	<%= f.label :delivery_time %><br />
+	<%= f.label :delivery_time %>*<br />
 	<%= f.radio_button :delivery_time, '3:30pm' %>3:30pm
 	<%= f.radio_button :delivery_time, '4:00pm' %>4:00pm
 	<%= f.radio_button :delivery_time, '4:30pm' %>4:30pm
@@ -69,10 +82,10 @@
   </div>
   <div class="field">
     <%= f.label :pay_type %><br />
-    <%= f.select :pay_type, Order::PAYMENT_TYPES, 
-						:prompt => 'Select a payment method' %>
+    <%= f.radio_button :pay_type, 'Credit Card'%>Credit Card Only
   </div>
-  
+  <div>Terms & Conditions</div>
+</div>  
   <div class="actions">
     <%= f.submit 'Place Order'%>
   </div>

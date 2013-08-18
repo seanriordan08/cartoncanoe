@@ -1,13 +1,17 @@
 ﻿class Order < ActiveRecord::Base
   attr_accessible :prefix, :first_name, :last_name, :address, :email, :phone_number,
-	:date_of_delivery, :delivery_time, :pay_type
+	:date_of_delivery, :delivery_time, :pay_type, :city, :zip, :terms
+  PREFIX = ["Mrs.", "Miss", "Ms.", "Mr."]
   PAYMENT_TYPES = ["Credit Card"]
+  DELIVERY_LOCATIONS = ["Boulder", "Gunbarrel", "Longmont",  "Louisville", "Superior", "N/A"]
   
   has_many :line_items, :dependent => :destroy
   
-  validates :first_name, :last_name, :address, :email, 
+  validates :first_name, :last_name, :address, :city, :zip, :email, 
 	:phone_number, :date_of_delivery, :delivery_time, :pay_type, :presence => true
   validates :pay_type, :inclusion => PAYMENT_TYPES
+  validates :city, :inclusion => DELIVERY_LOCATIONS
+  validates :zip, length: { is:5 }
   
   def add_line_items_from_cart(cart)
 	cart.line_items.each do |item|
