@@ -8,6 +8,7 @@
   <%= stylesheet_link_tag "scaffold" %>
   <%= stylesheet_link_tag 'recipower', 'landingPage', 'counters', :media => "all" %><!-- <label id="code.slt"/> -->
   <%= stylesheet_link_tag 'jquery-ui-1.10.3.custom.min', 'jquery-ui-1.10.3.custom', :media => "all" %>
+  <%= stylesheet_link_tag 'print', :media => "print" %>
   <!-- END:stylesheet -->
   <%= javascript_include_tag 'jquery-1.9.1', 'jquery-ui-1.10.3.custom.min', 'jquery-ui-1.10.3.custom', 'application', 'navigate', 'clocks' %>
   
@@ -34,7 +35,7 @@
  <div id="store" style="min-height:100%">
   <div id="columns">
 	<div id="side" style="min-height:100%">
-		<%= image_tag("logo.png") %>
+		<span id="sideLogo"><%= image_tag("logo.png") %></span>
 
 		<div id="adminOptions" style="min-height:100%">	
 			<br>		

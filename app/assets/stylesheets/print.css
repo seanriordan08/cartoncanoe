@@ -73,12 +73,7 @@ table {
   min-height:  50px;
 }
 #side #sideLogo img{
-  margin: 10px 10px 10px 0px;
-  background-color:  #AAA;
-  border-radius:  16px 0px 16px 0px;
-  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  display:  none;
 }
 #btnDelete{
   width:  21px;
@@ -260,7 +255,11 @@ table {
   background: #FFF;
   overflow:  hidden;
 }
+#main a{
+  display:  none;
+}
 #side {
+  display:  none;
   float: left;
   padding: 0px 0px 12px 10px;
   margin: 10px 10px 10px 10px;
@@ -274,6 +273,7 @@ table {
   border-bottom-right-radius:  24px;
 }
 #side a {
+  display:  none;
   text-decoration:  none;
   color: #555;
   font-size: small;
@@ -379,7 +379,6 @@ table {
   width:  14px;
   height:  15px;
   margin:  1px 1px 0px 0px;
-  padding:  0px 0px 0px 0px;
   background-color:  transparent;
   background: url(graphics/tinyGrnAdd.png) 0px 0px;
   background-repeat:  no-repeat;
@@ -443,12 +442,15 @@ table {
   margin-right: 10px;
 }
 #side table tbody td{
+  display:  none;
   padding-bottom: 4px;
 }
 #side table tbody #total_line{
+  display:  none;
   border-top: 1px solid black;
 }
 #side table tbody #total_line td{
+  display:  none;
   padding-top: 4px;
 }
 #showOrderDetails{
@@ -503,9 +505,25 @@ table {
   padding-left:  8px;
 }
 #cartContents table img{
+  display:  none;
   text-decoration:  none;
   width:  16px;
   height:  16px;
   background:  url('graphics/tinyCart.png') 0px 0px;
   background-repeat:  no-repeat;
+}
+#mainContainer #counterClock{
+  display:  none;
+}
+#mainContainer #counterOverlay{
+  display:  none;
+}
+#mainContainer #counterBG1{
+  display:  none;
+}
+#mainContainer #counterBG2{
+  display:  none;
+}
+#mainContainer #counterBG3{
+  display:  none;
 }

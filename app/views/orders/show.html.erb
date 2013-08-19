@@ -1,28 +1,50 @@
-<p>
-  <b>Name:</b>
-  <%= @order.prefix %><%= @order.first_name %>  <%= @order.last_name %>
-</p>
+<h1><%= @order.prefix %> <%= @order.first_name %> <%= @order.last_name %></h1>
+<div id="showOrderDetails">
+   <legend>Customer Contact</legend>
+	<p>
+	 <b>Name:</b>
+	  <%= @order.prefix %><%= @order.first_name %><%= @order.last_name %>
+	</p>
+	<p>
+	 <b>Address:</b>
+	  <%= @order.address %>
+	</p>
+	<p>
+	<b>Email:</b>
+	  <%= @order.email %>
+	</p>
+	<p>
+	<b>Phone:</b>
+	  <%= @order.phone_number %>
+	</p>
+	<p>
+	<b>Pay type:</b>
+	  <%= @order.pay_type %>
+	</p>
+</div>
 
-<p>
-  <b>Address:</b>
-  <%= @order.address %>
-</p>
+<div id="cartContents">
+   <legend>Customer Cart</legend>
+	<table>
+		<tr style="text-align:left; border-bottom:1px solid black; font-weight:bold">
+			<th>Title</th>
+			<th>Brand</th>
+			<th>Description</th>
+			<th>Qty</th>
+			<th>UPC</th>
+			<th><img> In Cart?</img></th>
+		</tr>
+			<% @order.line_items.each do |item| %>
+				<tr class="<%= cycle('list_line_odd','list_line_even') %>">
+					<td><%= item.product.title %></td>
+					<td><%= item.product.brand %></td>
+					<td><%= item.product.description %></td>
+					<td><%= item.quantity %> (<%= item.product.unit_of_measure %>)</td>
+					<td><%= item.product.upc %></td>
+					<td><form style="text-align:center"><input type="checkbox" name="tracker"></form></td>
+				</tr></p>
+			<% end %>
+	</table>
+</div>
 
-<p>
-  <b>Email:</b>
-  <%= @order.email %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @order.phone_number %>
-</p>
-
-<p>
-  <b>Pay type:</b>
-  <%= @order.pay_type %>
-</p>
-
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
