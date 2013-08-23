@@ -45,33 +45,6 @@ table {
 }
 
 /* Global styles */
-.depot_form fieldset{
-  background: #efe;
-}
-.depot_form legend{
-  color: #dfd;
-  background: #000066;
-  font-family: sans-serif;
-  padding: 2px 4px;
-}
-.depot_form label{
-  float: left;
-  text-align: right;
-  padding-top: 4px;
-  margin-left: 0.1em;
-  margin-right: 0.1em;
-  display: block;
-}
-.depot_form select, .depot_form textarea, .depot_form input{
-  margin-left: 0.5em;
-}
-.depot_form .submit{
-  margin-left: 4em;
-}
-.depot_form div{
-  margin-top: 5px;
-  min-height:  50px;
-}
 #side #sideLogo img{
   margin: 10px 10px 10px 0px;
   background-color:  #AAA;
@@ -102,37 +75,37 @@ table {
   background-position:  -46px 7px;
 }
 #emailWarning{
-		width:  95.3%;
-        color: #000;
-        border: 2px solid red;
-        margin: 12px 0px -10px 0px;
-		padding: 12px;
-        background-color: #f0f0f0;
-        font: bold smaller sans-serif;
+  width:  95.3%;
+  color: #000;
+  border: 2px solid red;
+  margin: 12px 0px -10px 0px;
+  padding: 12px;
+  background-color: #f0f0f0;
+  font: bold smaller sans-serif;
 }
 #store #notice, #cartError {
-        color: #000;
-        border: 2px solid red;
-		border-radius:  16px 0px 2px 0px;
-        padding: 8px;
-        margin-bottom: 2em;
-        background-color: #F29F95;
-		background-image: url('graphics/circleSlash_hover.png');
-		background-position:  95% 50%;
-		background-repeat: no-repeat;
-        font: bold smaller sans-serif;
+  color: #000;
+  border: 2px solid red;
+  border-radius:  16px 0px 2px 0px;
+  padding: 8px;
+  margin-bottom: 2em;
+  background-color: #F29F95;
+  background-image: url('graphics/circleSlash_hover.png');
+  background-position:  95% 50%;
+  background-repeat: no-repeat;
+  font: bold smaller sans-serif;
 }
 #store #cartNotice {
-        color: #000;
-        border: 2px solid #DAA520;
-		border-radius:  16px 0px 2px 0px;
-        padding: 8px;
-        margin-bottom: 2em;
-        background-color: #FFE4B5;
-		background-image: url('graphics/triangleWarning.png');
-		background-position:  95% 50%;
-		background-repeat: no-repeat;
-        font: bold smaller sans-serif;
+	color: #000;
+	border: 2px solid #DAA520;
+	border-radius:  16px 0px 2px 0px;
+	padding: 8px;
+	margin-bottom: 2em;
+	background-color: #FFE4B5;
+	background-image: url('graphics/triangleWarning.png');
+	background-position:  95% 50%;
+	background-repeat: no-repeat;
+	font: bold smaller sans-serif;
 }
 #store h1 {
 	font:  150% sans-serif;
@@ -147,40 +120,52 @@ table {
 	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 #store h2{
-        color: #000;
-        border: 2px solid #DAA520;
-        padding: 8px;
-        margin-bottom: 2em;
-        background-color: #FFE4B5;
-		background-image: url('graphics/triangleWarning.png');
-		background-position:  95% 50%;
-		background-repeat: no-repeat;
-        font: bold small sans-serif;
+	color: #000;
+	border: 2px solid #DAA520;
+	padding: 8px;
+	margin-bottom: 2em;
+	background-color: #FFE4B5;
+	background-image: url('graphics/triangleWarning.png');
+	background-position:  95% 50%;
+	background-repeat: no-repeat;
+	font: bold small sans-serif;
 }
 #store h3{
-        color: #000;
-        border: 2px solid #2a932a;
-        padding: 8px;
-        margin-bottom: 2em;
-        background-color: #c4f3c4;
-		background-image: url('graphics/checkNotice.png');
-		background-position:  95% 50%;
-		background-repeat: no-repeat;
-        font: bold small sans-serif;
+	color: #000;
+	border: 2px solid #2a932a;
+	padding: 8px;
+	margin-bottom: 2em;
+	background-color: #c4f3c4;
+	background-image: url('graphics/checkNotice.png');
+	background-position:  95% 50%;
+	background-repeat: no-repeat;
+	font: bold small sans-serif;
+}
+#store h4 {
+  color: #000;
+  border: 2px solid red;
+  border-radius:  16px 0px 2px 0px;
+  padding: 8px;
+  margin-bottom: 2em;
+  background-color: #F29F95;
+  background-image: url('graphics/circleSlash_hover.png');
+  background-position:  95% 50%;
+  background-repeat: no-repeat;
+  font: bold smaller sans-serif;
 }
 #store .item_price, #store .total_line {
-		text-align: right;
-		padding-right:  8px;
+	text-align: right;
+	padding-right:  8px;
 } 
 /* Class within a class */
 #store .total_line .total_cell {
-		font-weight: bold;
-		border-top: 1px solid #595;
+	font-weight: bold;
+	border-top: 1px solid #595;
 } 
 /* Styles for products/index */
 #product_list table {
-		width:  50%;
-        border-collapse: collapse;
+	width:  50%;
+	border-collapse: collapse;
 }
 #product_list table tr td {
 	padding: 5px;
@@ -293,7 +278,7 @@ table {
   transition-duration: 0.1s;
 }
 .shopper li{
-  background-color:  #FFCDCD;
+  background-color:  #d3e8be;
   -webkit-transition-duration: 0.1s;
   -moz-transition-duration: 0.1s;
   transition-duration: 0.1s;
@@ -313,7 +298,7 @@ table {
   transition-duration: 0.25s;
 }
 .shopper li:hover{
-  background-color:  #FF9999;
+  background-color:  #7dbc41;
 }
 #adminOptions{
   margin-right:  10px;
@@ -324,17 +309,43 @@ table {
 /* An entry in the store catalog */
 
 #store  .entry {
+  position:  relative;
+  z-index:  1;
+  border:  1px solid #CCC;
   background-color:  #FFF;
   float:  left;
   width:  150px;
   height:  130px;
   margin: 8px 8px 0px 0px;
+  border-radius:  6px;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+}
+#store .itemMagnify{
+  display:  none;
+}
+#store  .entry:hover .itemMagnify{
+  display:  block;
+  position:  absolute;
+  z-index:  2;
+  top:  0px;
+  left:  0px;
+  right:  0px;
+  bottom:  0px;
+  background-color:  #000;
+  background-image:  url('graphics/magnifier.png');
+  width:  150px;
+  height:  130px;
+  margin: 0px 0px 0px 0px;
   border-radius:  4px;
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  opacity:  0.1;
+  filter:  alpha(opacity=10); /* For IE8 and earlier */
 }
-#store  .title {
+#store  .title {	
   padding-left:  5px;
   font-size: 120%;
   font-family: sans-serif;
@@ -374,6 +385,7 @@ table {
 		font: 120% bold;
 }
 .addItem{
+  position:  relative;
   float:  right;
   border: none;
   width:  14px;
@@ -383,12 +395,15 @@ table {
   background-color:  transparent;
   background: url(graphics/tinyGrnAdd.png) 0px 0px;
   background-repeat:  no-repeat;
+  z-index: 3;
 }
 .addItem:hover{
   background: url(graphics/tinyGrnAdd.png) -14px 0px;
+  z-index: 3;
 }
 .addItem:active{
   background: url(graphics/tinyGrnAdd.png) -28px 0px;
+  z-index: 3;
 }
 #cart{
   background-color:  #EEEEEE;

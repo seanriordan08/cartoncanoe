@@ -12,20 +12,20 @@
   color:  #990000;
   font-size:  1000%;
   background-image:  url('graphics/counterBG1.png');
-  z-index: 101;
+  z-index: 98;
 }
 #counterOverlay{
   top:  0px;
   padding-top:  90px;
   background-image:  url('graphics/counterOverlay.png');
-  z-index: 102;
+  z-index: 99;
 }
 #counterBG2 {
   top:  190px;
   padding-top:  0px;
   text-align:  center;
   background-image:  url('graphics/counterBG2or3.png');
-  z-index: 100;
+  z-index: 97;
 }
 #counterBG2 span{
   color:  #990000;
@@ -36,7 +36,7 @@
   padding-top:  0px;
   text-align:  center;
   background-image:  url('graphics/counterBG2or3.png');
-  z-index: 99;
+  z-index: 96;
 }
 #counterBG3 span{
   color:  #990000;
@@ -50,7 +50,7 @@
   right:  271px;
   background-repeat:  no-repeat;
   background-image:  url('graphics/counterClock.png');
-  z-index: 100;
+  z-index: 97;
 }
 #counterNeedle{
   position: absolute;
@@ -60,7 +60,7 @@
   right:  30px;
   background-repeat:  no-repeat;
   background-image:  url('graphics/counterNeedle.png');
-  z-index: 101;
+  z-index: 98;
 }
 .postItNotes {
   position: absolute;
@@ -75,19 +75,19 @@
   color:  #990000;
   font-size:  1000%;
   background-image:  url('graphics/noteToday.png');
-  z-index: 103;
+  z-index: 100;
 }
 #postItNotes2 {
   top:  195px;
   right:  25px;
   text-align:  center;
   background-image:  url('graphics/noteTomorrow.png');
-  z-index: 100;
+  z-index: 97;
 }
 #postItNotes3 {
   top:  285px;
   right:  25px;
   text-align:  center;
   background-image:  url('graphics/noteIn2days.png');
-  z-index: 99;
+  z-index: 96;
 }

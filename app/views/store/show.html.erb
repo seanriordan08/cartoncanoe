@@ -1,18 +1,31 @@
+<div style="width:95%">
+	<h1>Select Items</h1>
+	
+<% if flash[:notice] %>
+	<script>
+		$('h1').after("<h3></h3>");
+		$('h3').html("<%= flash[:notice] %>");
+		$('h3').hide();
+		$('h3').slideDown(600);
+		
+		$('h3').click(function() {
+		  $('h3').slideUp(400)
+		});
+	</script>
+<% end %>
 
-<h1>Select Items</h1>
-<div>
-	<% @products.each do |product| %>
-	 <div id="itemBox" class="entry" data-id="<%= product.id %>">
-	   <div><b><%= product.title %></b></div>
-	   <%= image_tag(product.image_url )%>
-	   <div style="display: none; width: 10px"><%= sanitize(product.description) %></div>
-	   <div class="price_line">
-		 <span class="price"><%= number_to_currency(product.price)%></span>
-			(<%= product.portion_size%> <%= product.unit_of_measure%>)
-		 
-	   </div>
-
-	 </div>
-	   <p>
-	<%  end %>
+	<div>
+		<% @products.each do |product| %>
+		 <div id="itemBox" class="entry" data-id="<%= product.id %>">
+		   <div><b><%= product.title %></b><%= button_to(' ', line_items_path(:product_id => product), :class => "addItem", :remote => true) %></div>
+		   <%= image_tag(product.image_url )%>
+		   <div style="display: none; width: 10px"><%= sanitize(product.description) %></div>
+		   <div class="price_line">
+			 <span class="price"><%= number_to_currency(product.price)%></span>
+				(<%= product.portion_size%> <%= product.unit_of_measure%>)			 
+		   </div>
+		 </div>
+		   <p>
+		<%  end %>
+	</div>
 </div>

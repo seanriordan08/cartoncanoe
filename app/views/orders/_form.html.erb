@@ -11,82 +11,114 @@
     </div>
   <% end %>
 
-<div>
-  <div class="field"  style="float:left">
+<div class="top">
+  <div class="field"  type="text" placeholder="test" style="float:left">
     <%= f.label :Title %><p/>
 	<%= f.select :prefix, Order::PREFIX, :prompt => '' %>
   </div>
   <div class="field"  style="float:left">
-    <%= f.label :first %>*<p/>
+    <%= f.label :first %><p/>
     <%= f.text_field :first_name, :size => 20 %>
   </div>
   <div class="field"  style="float:left">
-    <%= f.label :last %>*<p/>
+    <%= f.label :last %><p/>
     <%= f.text_field :last_name, :size => 20 %>
   </div>
   <div></div>
 </div>
 
-<div>
+<div class="top">
   <div class="field"  style="float:left">
-    <%= f.label :address %>*<p/>
+    <%= f.label :address %><p/>
     <%= f.text_area :address, :rows => 1, :cols => 40 %>
   </div>
   <div class="field"  style="float:left;">
-    <%= f.label :city %>*<p/>
+    <%= f.label :city %><p/>
 	<%= f.select :city, Order::DELIVERY_LOCATIONS, :prompt => 'Select City' %>
   </div>
   <div class="field"  style="float:left;">
-    <%= f.label :zip %>*<p/>
-	<%= f.text_field :zip, :size => 5%>
+    <%= f.label :zip %><p/>
+	<%= f.text_field :zip, :size => 5%>	
   </div>
   <div></div>
 </div>
+<br />
+<div class="mid">
+	<div class="field">
+		<%= f.label :email %>
+		<%= f.text_field :email, :size => 40 %>
+	</div>
+	<div class="field phone">
+		<%= f.label :phone %>
+		<%= f.text_field :phone_number, :size => 10, :onclick => "javascript:maskPhone()" %>
+	</div>
 
-<div>
-  <div class="field"  style="clear:both">
-    <%= f.label :email %>
-    <%= f.text_field :email, :size => 40 %>
-  </div>
-  <div class="field"  style="clear:both">
-    <%= f.label :phone %>*
-    <%= f.text_field :phone_number, :size => 10 %>
+  <div class="field">
+	<%= f.label :delivery_date %><p/>
+	<div style="clear:left; margin-left:4px; padding-top:2px">
+		<% if Order.where(:date_of_delivery => @day0).count == 5 || (Time.zone.now.hour > 11) || (Time.zone.now.hour < 8) %>
+			<%= f.radio_button :date_of_delivery, @day0, :disabled => true %>Today
+		<% else %>
+			<%= f.radio_button :date_of_delivery, @day0 %>Today
+		<% end %>
+		
+		<% if Order.where(:date_of_delivery => @day1).count == 5%>
+			<%= f.radio_button :date_of_delivery, @day1, :disabled => true %>Tomorrow
+		<% else %>
+			<%= f.radio_button :date_of_delivery, @day1 %>Tomorrow
+		<% end %>
+		
+		<% if Order.where(:date_of_delivery => @day2).count == 5%>
+			<%= f.radio_button :date_of_delivery, @day2, :disabled => true %><%= @day2 %>
+		<% else %>
+			<%= f.radio_button :date_of_delivery, @day2 %><%= @day2 %>
+		<% end %>
+	</div>	
   </div>
   <div class="field">
-	<%= f.label :delivery_date %>*<br />
-	<% if Order.where(:date_of_delivery => @day0).count == 5 || (Time.now.hour > 11) || (Time.now.hour < 8) %>
-		<%= f.radio_button :date_of_delivery, @day0, :disabled => true %>Today
-	<% else %>
-		<%= f.radio_button :date_of_delivery, @day0 %>Today
-	<% end %>
-	
-	<% if Order.where(:date_of_delivery => @day1).count == 5%>
-		<%= f.radio_button :date_of_delivery, @day1, :disabled => true %>Tomorrow
-	<% else %>
-		<%= f.radio_button :date_of_delivery, @day1 %>Tomorrow
-	<% end %>
-	
-	<% if Order.where(:date_of_delivery => @day2).count == 5%>
-		<%= f.radio_button :date_of_delivery, @day2, :disabled => true %><%= @day2 %>
-	<% else %>
-		<%= f.radio_button :date_of_delivery, @day2 %><%= @day2 %>
-	<% end %>	
+	<%= f.label :delivery_time %><p/>
+	<div style="clear:left; margin-left:4px; padding-top:2px">
+		<%= f.radio_button :delivery_time, '3:30pm' %>3:30pm
+		<%= f.radio_button :delivery_time, '4:00pm' %>4:00pm
+		<%= f.radio_button :delivery_time, '4:30pm' %>4:30pm
+		<%= f.radio_button :delivery_time, '5:00pm' %>5:00pm
+		<%= f.radio_button :delivery_time, '5:30pm' %>5:30pm
+	</div>
   </div>
   <div class="field">
-	<%= f.label :delivery_time %>*<br />
-	<%= f.radio_button :delivery_time, '3:30pm' %>3:30pm
-	<%= f.radio_button :delivery_time, '4:00pm' %>4:00pm
-	<%= f.radio_button :delivery_time, '4:30pm' %>4:30pm
-	<%= f.radio_button :delivery_time, '5:00pm' %>5:00pm
-	<%= f.radio_button :delivery_time, '5:30pm' %>5:30pm
+	<%= f.label :pay_type %><p/>
+	<div style="clear:left; margin-left:4px; padding-top:2px">
+		<%= f.radio_button :pay_type, 'Credit Card'%>Credit Card Only
+	</div>
   </div>
-  <div class="field">
-    <%= f.label :pay_type %><br />
-    <%= f.radio_button :pay_type, 'Credit Card'%>Credit Card Only
+  <div id="termsBox">
+	<a href="javascript:showTerms()" class="formButton">Terms of Service</a>
+	<ul style="margin-top:8px">
+		<li style="display:inline"><%= f.check_box :accept_terms %></li>
+		<li style="display:inline; margin-right:8px">I Agree</li>	
+		<li style="display:inline; text-decoration:none;margin-left:16px"><input type="checkbox" name="No Thanks"/>No Thanks</li>
+	</ul>
   </div>
-  <div>Terms & Conditions</div>
 </div>  
   <div class="actions">
     <%= f.submit 'Place Order'%>
   </div>
 <% end %>
+<div id="termsBoxInfo" title="Terms of Service">
+	<ul>
+		<li><span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0px 7px 50px 0px;"></span></li>
+		<li><span style="display:inline">Prices may vary as a result of sales added or removed within the last 24hrs.</span></li>
+		<br>
+		<li><span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0px 7px 50px -23px;"></span></li>
+		<li><span style="display:inline">Time of delivery may vary (+/-) 30min as a result of road conditions and delivery locations.</span></li>
+		<br>
+		<li><span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0px 7px 50px -23px;"></span></li>
+		<li><span style="display:inline">Alcohol purchases require the customer provide valid ID at the time of delivery.</span></li>
+		<br>
+		<li><span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0px 7px 50px -23px;"></span></li>
+		<li><span style="display:inline">Sales tax is not calculated into your cart total, but is printed on your paper copy receipt as provided with your items at the time of delivery.</span></li>
+		<br>
+		<li><span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0px 7px 50px -23px;"></span></li>
+		<li><span style="display:inline">In the event an item is unavailable, a substitution will be requested by phone before your order is complete.</span></li>
+	</ul>
+</div>

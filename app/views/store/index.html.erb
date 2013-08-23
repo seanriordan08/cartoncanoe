@@ -17,13 +17,16 @@
 	<div>
 		<% @products.each do |product| %>
 		 <div id="itemBox" class="entry" data-id="<%= product.id %>">
-		   <div><b><%= product.title %></b><%= button_to(' ', line_items_path(:product_id => product), :class => "addItem", :remote => true) %></div>
-		   <%= image_tag(product.image_url )%>
-		   <div style="display: none; width: 10px"><%= sanitize(product.description) %></div>
-		   <div class="price_line">
-			 <span class="price"><%= number_to_currency(product.price)%></span>
-				(<%= product.portion_size%> <%= product.unit_of_measure%>)			 
-		   </div>
+			   <div><b><%= product.title %></b><%= button_to(' ', line_items_path(:product_id => product), :class => "addItem", :remote => true) %></div>
+				<span data-id="<%= product.id %>" data-title="<%= product.title %>">
+				   <%= image_tag(product.image_url )%>
+				   <div id="desc" style="display: none; width: 10px"><%= sanitize(product.description) %></div>
+				   <div class="price_line">
+					 <span class="price"><%= number_to_currency(product.price)%></span>
+						(<%= product.portion_size%> <%= product.unit_of_measure%>)			 
+				   </div>
+				</span> 
+			 <div class="itemMagnify"></div>
 		 </div>
 		   <p>
 		<%  end %>

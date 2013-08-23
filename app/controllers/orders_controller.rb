@@ -29,9 +29,12 @@ class OrdersController < ApplicationController
   # GET /orders/new.json
   def new
 	@cart = current_cart
-	@day0 = Time.new.getlocal.strftime("%a, %b #{Time.now.day.ordinalize}")
-	@day1 = 1.day.from_now.strftime("%a, %b #{1.day.from_now.day.ordinalize}")
-	@day2 = 2.days.from_now.strftime("%a, %b #{2.days.from_now.day.ordinalize}")
+	currentTime = Time.zone.now
+	tomorrow = Time.zone.today + 1.day
+	dayAfter = Time.zone.today + 2.day
+	@day0 = currentTime.strftime("%a, %b #{currentTime.day.ordinalize}")
+	@day1 = tomorrow.strftime("%a, %b #{tomorrow.day.ordinalize}")
+	@day2 = dayAfter.strftime("%a, %b #{dayAfter.day.ordinalize}")
 	
 		if Order.where(:date_of_delivery => @day0).count == 5 && Order.where(:date_of_delivery => @day1).count == 5 && Order.where(:date_of_delivery => @day2).count == 5
 			flash[:error] = "Sorry, today we're booked!"
