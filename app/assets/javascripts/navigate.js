@@ -1,5 +1,5 @@
 ﻿var prodvarid;
-var prodvartitle;
+var prodvarbrand;
 
 //Index Navigation Buttons
 function doHome(){
@@ -49,7 +49,7 @@ $(document).ready(function(){
 	$(function(){
 		$('.entry').mouseover(function(){
 			prodvarid = $(this).data('id'),
-			prodvartitle = $(this).data('brand')
+			prodvarbrand = $(this).data('brand')
 		});
 		
 		$('.itemMagnify').click(function(){
@@ -58,7 +58,7 @@ $(document).ready(function(){
 				autoOpen: true,
 				show: 800,
 				modal: true,
-				title:  prodvartitle,
+				title:  prodvarbrand,
 				minWidth: 800,
 				close: function(event, ui){
 					$(this).dialog("destroy") //init'n removes the element, "destroy" restores element to pre init'n (fixes 'x' box).

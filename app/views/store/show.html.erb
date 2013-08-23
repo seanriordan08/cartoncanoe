@@ -16,7 +16,7 @@
 
 	<div id="storeItems">
 		<% @products.each do |product| %>
-			<div id="itemBox" class="entry ui-draggable" data-id="<%= product.id %>" data-title="<%= product.title %>">
+			<div id="itemBox" class="entry ui-draggable" data-id="<%= product.id %>" data-title="<%= product.title %>" data-brand="<%= product.brand %>">
 				<div><b><%= product.title %></b><%= button_to(' ', line_items_path(:product_id => product), :class => "addItem", :remote => true) %></div>
 					<span>
 					   <%= image_tag(product.image_url )%>
