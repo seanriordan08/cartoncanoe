@@ -162,6 +162,9 @@ table {
 	font-weight: bold;
 	border-top: 1px solid #595;
 } 
+#storeItemZoom{
+	display: none;
+}
 /* Styles for products/index */
 #product_list table {
 	width:  50%;
@@ -375,14 +378,27 @@ table {
   position: relative;
 }
 #store .entry  .price {
+  left:  0px;
+  bottom:  0px;
   color: #44a;
   font-weight: bold;
 }
-#store .entry  form, #store .entry form div {	
+#store .entry  form, #store .entry form div {
   display: inline;
 }
 #store .cart_title {
-		font: 120% bold;
+  font: 120% bold;
+}
+#itemBoxZoom {
+  display:  inline;
+}
+#itemBoxZoom  table tr td{
+  vertical-align:  top;
+}
+#itemBoxZoom  table tr td span{
+  vertical-align:  top;
+  padding:  0px 8px 0px 8px;
+  margin:  0px 0px 0px 8px;
 }
 .addItem{
   position:  relative;

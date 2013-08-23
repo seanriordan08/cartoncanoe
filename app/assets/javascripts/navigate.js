@@ -49,12 +49,12 @@ $(document).ready(function(){
 	$(function(){
 		$('.entry').mouseover(function(){
 			prodvarid = $(this).data('id'),
-			prodvartitle = $('.entry span').data('title')
+			prodvartitle = $(this).data('title')
 		});
 		
 		$('.itemMagnify').click(function(){
-			$('#desc').css("display","block", "float", "left");
-			$("span[data-id='" + prodvarid + "']").dialog({
+			$('#storeItemZoom').css({"display":"block"});
+			$("#itemBoxZoom[data-id='" + prodvarid + "']").dialog({
 				autoOpen: true,
 				show: 800,
 				modal: true,
@@ -62,7 +62,7 @@ $(document).ready(function(){
 				minWidth: 800,
 				close: function(event, ui){
 					$(this).dialog("destroy") //init'n removes the element, "destroy" restores element to pre init'n (fixes 'x' box).
-					$('#main #desc').css("display","none");
+					$('#storeItemZoom').css("display","none");
 				},
 				buttons: [{
 					text: "Add to Cart",
@@ -76,7 +76,7 @@ $(document).ready(function(){
 							dataType: "script"
 						});
 						$(this).dialog("destroy");
-						$('#desc').css("display","none");
+						$('#storeItemZoom').css("display","none");
 					}
 				}]
 			});
