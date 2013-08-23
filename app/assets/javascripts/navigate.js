@@ -49,7 +49,7 @@ $(document).ready(function(){
 	$(function(){
 		$('.entry').mouseover(function(){
 			prodvarid = $(this).data('id'),
-			prodvartitle = $(this).data('title')
+			prodvartitle = $(this).data('brand')
 		});
 		
 		$('.itemMagnify').click(function(){

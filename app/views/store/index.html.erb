@@ -33,7 +33,7 @@
 	
 	<div id="storeItemZoom">
 		<% @products.each do |product| %>
-			<div id="itemBoxZoom" data-id="<%= product.id %>" data-title="<%= product.title %>">
+			<div id="itemBoxZoom" data-id="<%= product.id %>" data-brand="<%= product.brand %>">
 				<table>
 					<tr>
 						<td><%= image_tag(product.image_url )%></td>
