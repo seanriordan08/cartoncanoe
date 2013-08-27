@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
   def new
 	Time.zone = 'MST'
 	@cart = current_cart
-	currentTime = Time.zone.now.in_time_zone("Mountain Time (US & Canada)")
+	currentTime = Time.zone.now
 	tomorrow = currentTime.today + 1.day
 	dayAfter = currentTime.today + 2.day
 	@day0 = currentTime.strftime("%a, %b #{currentTime.day.ordinalize}")
