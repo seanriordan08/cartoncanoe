@@ -44,7 +44,12 @@
 					<span class="price"><%= number_to_currency(product.price)%></span>
 					(<%= product.portion_size%> <%= product.unit_of_measure%>)			 
 				</div>
-			<div class="itemMagnify"></div>
+				<div class="itemMagnify">
+				</div>
+				<div class="btnQty">
+					<label for="spinner">Select a value:</label>
+					<input id="spinner" name="value" />
+				</div>
 			</div>
 			<p>
 		<%  end %>

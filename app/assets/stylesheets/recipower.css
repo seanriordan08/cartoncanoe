@@ -154,25 +154,31 @@ table {
   font: bold smaller sans-serif;
 }
 #store .item_price, #store .total_line {
-	text-align: right;
-	padding-right:  8px;
+  text-align: right;
+  padding-right:  8px;
 } 
 /* Class within a class */
 #store .total_line .total_cell {
-	font-weight: bold;
-	border-top: 1px solid #595;
+  font-weight: bold;
+  border-top: 1px solid #595;
 } 
 #storeItemZoom{
-	display: none;
+  display: none;
+}
+.btnQty{
+  display:  none;
+}
+#spinner{
+  display:  none;
 }
 /* Styles for products/index */
 #product_list table {
-	width:  50%;
-	border-collapse: collapse;
+  width:  50%;
+  border-collapse: collapse;
 }
 #product_list table tr td {
-	padding: 5px;
-	vertical-align: top;
+  padding: 5px;
+  vertical-align: top;
 }
 #product_list .list_image {
   width:        60px;

@@ -54,6 +54,7 @@ $(document).ready(function(){
 		
 		$('.itemMagnify').click(function(){
 			$('#storeItemZoom').css({"display":"block"});
+
 			$("#itemBoxZoom[data-id='" + prodvarid + "']").dialog({
 				autoOpen: true,
 				show: 800,
@@ -78,7 +79,12 @@ $(document).ready(function(){
 						$(this).dialog("destroy");
 						$('#storeItemZoom').css("display","none");
 					}
-				}]
+				}],
+				open: function() {
+					var btn1 = $("#spinner");
+					btn1.spinner();
+					$('.ui-dialog-buttonset').before(btn1.show());
+				},
 			});
 		});
 		
