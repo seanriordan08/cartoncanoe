@@ -45,49 +45,53 @@ function showTerms(){
 
 //Draggable Items Function
 $(document).ready(function(){
-	//Rollover Maginfy
-	$(function(){
-		$('.entry').mouseover(function(){
-			prodvarid = $(this).data('id'),
-			prodvarbrand = $(this).data('brand')
-		});
-		
-		$('.itemMagnify').click(function(){
-			$('#storeItemZoom').css({"display":"block"});
 
-			$("#itemBoxZoom[data-id='" + prodvarid + "']").dialog({
-				autoOpen: true,
-				show: 800,
-				modal: true,
-				title:  prodvarbrand,
-				minWidth: 800,
-				close: function(event, ui){
-					$(this).dialog("destroy") //init'n removes the element, "destroy" restores element to pre init'n (fixes 'x' box).
+	$('#storeItemZoom').hide();
+	$('.btnQty').hide();
+	$("#spinner[data-id='" + prodvarid + "']").hide();
+	
+	//init spinner
+	$('#spinner').spinner();
+	/*End spinner init*/
+
+	//Rollover Maginfy
+	$('.entry').mouseover(function(){
+		prodvarid = $(this).data('id'),
+		prodvarbrand = $(this).data('brand')
+	});
+	
+	$('.itemMagnify').click(function(){
+		$("#itemBoxZoom[data-id='" + prodvarid + "']").dialog({
+			autoOpen: true,
+			show: 400,
+			modal: true,
+			title:  prodvarbrand,
+			minWidth: 800,
+			create: function(){
+				$("#storeItemZoom[data-id='" + prodvarid + "']").show();
+				$(".btnQty[data-id='" + prodvarid + "']").show();
+				$("#spinner[data-id='" + prodvarid + "']").show();
+			},
+			close: function(event, ui){
+				$(this).dialog("destroy"); //init'n removes the element, "destroy" restores element to pre init'n (fixes 'x' box).
+				$('#storeItemZoom').css("display","none");
+			},
+			buttons: [{
+				text: "Add to Cart",
+				click: function() {
+					$.ajax({
+						type: "POST",
+						url: '/line_items',
+						beforeSend: function(xhr){
+							xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+						data: {product_id: prodvarid, remote: true},
+						dataType: "script"
+					});
+					$(this).dialog("destroy");
 					$('#storeItemZoom').css("display","none");
-				},
-				buttons: [{
-					text: "Add to Cart",
-					click: function() {
-						$.ajax({
-							type: "POST",
-							url: '/line_items',
-							beforeSend: function(xhr){
-								xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-							data: {product_id: prodvarid, remote: true},
-							dataType: "script"
-						});
-						$(this).dialog("destroy");
-						$('#storeItemZoom').css("display","none");
-					}
-				}],
-				open: function() {
-					var btn1 = $("#spinner");
-					btn1.spinner();
-					$('.ui-dialog-buttonset').before(btn1.show());
-				},
-			});
+				}
+			}],
 		});
-		
 	});
 	/*End Rollover Magnify*/
 

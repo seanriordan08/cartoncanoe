@@ -162,15 +162,15 @@ table {
   font-weight: bold;
   border-top: 1px solid #595;
 } 
-#storeItemZoom{
-  display: none;
+/*#storeItemZoom{
+  display: inline;
 }
 .btnQty{
-  display:  none;
+  display:  inline;
 }
 #spinner{
-  display:  none;
-}
+  display:  inline;
+}*/
 /* Styles for products/index */
 #product_list table {
   width:  50%;

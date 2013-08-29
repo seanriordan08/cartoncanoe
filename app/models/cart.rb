@@ -21,14 +21,14 @@ class Cart < ActiveRecord::Base
 	  current_item.destroy
 	end
 	current_item
-end
+ end
  
-  def total_price
+ def total_price
    line_items.to_a.sum { |item| item.total_price }
-  end
+ end
   
-  def total_items
+ def total_items
    line_items.sum(:quantity)
-  end
+ end
  
 end
