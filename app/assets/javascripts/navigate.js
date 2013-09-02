@@ -47,34 +47,25 @@ function showTerms(){
 $(document).ready(function(){
 
 	$('#storeItemZoom').hide();
+	$('#itemBoxZoom').hide();
 	$('.btnQty').hide();
 	$("#spinner[data-id='" + prodvarid + "']").hide();
-	
-	//init spinner
-	$('#spinner').spinner();
-	/*End spinner init*/
+	$(".btnQty[data-id='" + prodvarid + "'] label").hide();
 
-	//Rollover Maginfy
+	//Rollover Magnify
 	$('.entry').mouseover(function(){
-		prodvarid = $(this).data('id'),
-		prodvarbrand = $(this).data('brand')
-	});
-	
-	$('.itemMagnify').click(function(){
+		prodvarid = $(this).data('id');
+		prodvarbrand = $(this).data('brand');
+		//$("#spinner[data-id='" + prodvarid + "']").spinner();
+		
 		$("#itemBoxZoom[data-id='" + prodvarid + "']").dialog({
-			autoOpen: true,
+			autoOpen: false,
 			show: 400,
 			modal: true,
 			title:  prodvarbrand,
 			minWidth: 800,
-			create: function(){
-				$("#storeItemZoom[data-id='" + prodvarid + "']").show();
-				$(".btnQty[data-id='" + prodvarid + "']").show();
-				$("#spinner[data-id='" + prodvarid + "']").show();
-			},
 			close: function(event, ui){
-				$(this).dialog("destroy"); //init'n removes the element, "destroy" restores element to pre init'n (fixes 'x' box).
-				$('#storeItemZoom').css("display","none");
+				$(this).dialog("close");
 			},
 			buttons: [{
 				text: "Add to Cart",
@@ -87,11 +78,18 @@ $(document).ready(function(){
 						data: {product_id: prodvarid, remote: true},
 						dataType: "script"
 					});
-					$(this).dialog("destroy");
-					$('#storeItemZoom').css("display","none");
+					$(this).dialog("close");
 				}
-			}],
+			}]
 		});
+	});
+	
+	$('.itemMagnify').click(function(){
+		$("#itemBoxZoom[data-id='" + prodvarid + "']").dialog('open');
+		var qty1 = $(".btnQty[data-id='" + prodvarid + "'] input").spinner();
+		var lab1 = $(".btnQty[data-id='" + prodvarid + "'] label");
+		$(qty1).prependTo($('.ui-dialog-buttonset'));
+		$(lab1).prependTo($('.ui-dialog-buttonset'));
 	});
 	/*End Rollover Magnify*/
 

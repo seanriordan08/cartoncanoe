@@ -298,8 +298,8 @@ table {
   list-style-position:  inside;
   list-style-type:  none;
   background-color:  #CFFFFF;
-  -webkit-box-shadow: 1px 1px 8px #888;
-  -moz-box-shadow: 1px 1px 8px #888;
+  -webkit-box-shadow: 2px 2px 8px #333;
+  -moz-box-shadow: 2px 2px 8px #333;
   box-shadow: 2px 2px 8px #333;
   border-radius:  32px 4px 32px 4px;
   -webkit-transition-duration: 0.25s;
@@ -545,4 +545,35 @@ table {
   height:  16px;
   background:  url('graphics/tinyCart.png') 0px 0px;
   background-repeat:  no-repeat;
+}
+#order_list tr.list_line_odd td{
+  padding:  0px 0px 0px 8px;
+  line-height:  150%;
+}
+#order_list tr.list_line_even td{
+  padding:  0px 0px 0px 8px;
+  line-height:  150%;
+}
+[data-text="show"] a{
+  text-decoration:  none;
+  border:  1px solid #DDD;
+  background-color:  #EEE;
+  padding: 0px 8px 0px 8px;
+  -webkit-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  border-radius:  10px;
+}
+[data-text="show"] a:hover{
+  text-decoration:  none;
+  border:  1px solid #888;
+  padding: 0px 8px 0px 8px;
+  -webkit-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  border-radius:  10px;
+  background-color:  #7dbc41;
+  -webkit-transition-duration: 0.15s;
+  -moz-transition-duration: 0.15s;
+  transition-duration: 0.15s;
 }
