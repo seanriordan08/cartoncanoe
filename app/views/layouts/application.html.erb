@@ -78,6 +78,7 @@
     </div>
 	
 	<div id="mainContainer">
+	<% if session[:user_id] %>
 		<div id="counterBG1" class="counterBG"><%= 5 - Order.where(:date_of_delivery => @day0).count %></div>
 		<div id="counterClock">
 			<script type="text/javascript">updateClock();</script><div id="counterNeedle"></div>
@@ -88,6 +89,7 @@
 			<div id="postItNotes2" class="postItNotes"></div>
 				<div id="counterBG3" class="counterBG"><span><%= 5 - Order.where(:date_of_delivery => @day2).count %></span></div>
 				<div id="postItNotes3" class="postItNotes"></div>
+	<% end %>
 				<div id="main">
 					<% if session[:user_id] %>
 						<script>$('#main').css("width", "310%")</script>

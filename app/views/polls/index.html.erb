@@ -15,107 +15,61 @@
 	</script>
 <% end %>
 
-<div class="myFontClass">
-	<div id="header-fixed">
-		<div id="menu-style">
-			<div id="header">
-				<div id="logo"><img src="logo.jpg" style="width:100%; height:100%"></div>
-				<a href="javascript:doHome()" style="text-decoration:none;color:#00CCFF">
-					<div id="home" class="navElements" style="padding:0px 3% 0px 3%">Home</div></a>
-				<a href="javascript:doHealth()" style="text-decoration:none;color:#00CCFF">
-					<div id="health" class="navElements"style="padding:0px 3% 0px 3%">Your Health & Wellness</div></a>
-				<a href="javascript:doTime()" style="text-decoration:none;color:#00CCFF">
-					<div id="time" class="navElements"style="padding:0px 3% 0px 3%">Save Time</div></a>
-				<a href="javascript:doMoney()" style="text-decoration:none;color:#00CCFF">
-					<div id="money" class="navElements"style="padding:0px 3% 0px 3%">Save Money</div></a>
-				<a href="javascript:doContact()" style="text-decoration:none;color:#00CCFF">
-					<div id="contact" class="navElements" style="border:none;padding:0px 3% 0px 3%">Contact Us</div></a>
-			</div>
+	<div id="header-fixed" class="myFontClass">
+		<div id="header">
+			<a href="javascript:doHome()">
+				<div id="home" class="navElements">Home</div>
+			</a>
+			<a href="javascript:doHealth()">
+				<div id="health" class="navElements">About</div>
+			</a>
+			<a href="javascript:doTime()">
+				<div id="time" class="navElements">Workflow</div>
+			</a>
+			<a href="javascript:doMoney()">
+				<div id="money" class="navElements">Efficiency</div>
+			</a>
+			<a href="javascript:doContact()">
+				<div id="contact" class="navElements">Contact Us</div>
+			</a>
+			<div id="adminLink" class="navElements"><%= link_to 'Admin', login_path %></div>
 		</div>
 	</div>
-
-	<div id="mainBanner" class="landingImage"></div>
-	<div style="clear:both">
-		<div id="row0" class="curtail" style="width:100%; height:100%; clear:both">
-		<div id="containerText" style="float:left">
-			<div class="leftTxt">
-				<span style="font-size:1.4em">Eating healthy is a beautiful thing.</span>
-				<span style="font-size:1.2em"> Can you imagine serving mouth-watering healthy food more often? </span> 
-				ReciPower will empower each health-seeking individual with a dynamic new tool to plan healthy 
-				meals in less than 5 minutes on a budget. Forget the hours of searching for tasty recipes 
-				that fit your dietary restrictions or your child's finicky preferences. Be ready for fast 
-				and satisfying recipes that fit within your budget.
-			</div>
+	<div id="guts" class="folksText">
+		<div id="row-1" class="curtail">
+			<div id="logo"><img src="logoLanding.jpg"></div>
 		</div>
-			<div id="container">
-				<div id="featuredPartner" style="min-height:20px"><span class="folksText" style="line-height:100%">Featured Partner</span></div><p>
-				<div id="companyLogo" class="landingImage" style="padding-top:5px;clear:right"><img src="companyLogo1.jpg"></div>
-			</div>
+		<div id="row0" class="curtail">
+			<span class="droidTextSm">
+				Easy product delivery done your way
+			</span>
 		</div>
 		
-		<div id="row1" class="curtail" style="clear:both">
-			<img src="standardPic_healthWellness.jpg" class="landingImage" style="float:left">
-			<div style="min-height:20px"><span  class="folksText" style="float:left; line-height:100%; padding-left:14px">Your Health & Wellness</span></div><p>
-			<div class="rightTxt">
-				Eating healthy means something different for
-				everyone. For those who swear by the Paleo diet, "healthy" is different from
-				those who have Celiac disease or a dairy intolerance. For those with finicky
-				children, just getting a vegetable into the dinner is an ambitious goal. Our tool
-				will enable you to filter recipes by your specific dietary preferences.
-			</div>
+		<div id="row1" class="curtail">
+			<span class="droidTextSmlr">
+				CartonCanoe joins customers with your products online, then sends your ordering department a nice formatted listing with details for each item, and delivery info for each customer
+			</span>
 		</div>
 		
-		<div id="row2" class="curtail" style="clear:both">
-			<div id="containerText" style="float:left">
-				<span class="folksText" style="line-height:100%; width:100%">Save Time</span><br>
-				<div class="leftTxt">
-					Time Savings Pillar: Finding healthy meals that taste good and fit your dietary
-					needs requires time. Our tool takes the time out of planning healthy meals so
-					that you can spend more time doing what you love: cooking, playing with your
-					kids, being outside, or just relaxing.
-				</div>
-			</div>
-			<img src="standardPic_saveTime.jpg" class="landingImage" style="float:right">	
+		<div id="row2" class="curtail">
+			<span class="droidTextSm">
+				Open up more ways to provide products to customers, with less time on the phone
+			</span>
 		</div>
 		
 		<div id="row3" class="curtail">
-			<img src="standardPic_saveMoney.jpg" class="landingImage" style="float:left">
-			<div style="float:left; width:70%">
-				<span class="folksText" style="float:left; line-height:100%; padding-left:14px">Save Money</span>
-				<div class="rightTxt" style="clear:left">
-					Cost Savings Pillar: Healthy food is an investment in your overall well-being.  
-					However, we believe that eating healthy does not need to be a luxury. Our 
-					money-saving tool will allow you to have meals planned within your specified 
-					budget and to dictate items that you have in your fridge that you want included
-					in the recipes.
-				</div>
-			</div>
+
 		</div>
 		
 		<div id="row4" class="curtail">
 			<div id="contactUs" >
-			<p><span class="folksText" style="line-height:0%">Contact Us</span></p>
-				<div class="droidTextSm">
-					ReciPower is still in Beta development. If you are like us, and can't wait for delicious healthy food to browse through, then please leave your email address, and you'll be one of the first to know it's ready!
-				</div>
+			<p>Contact Us</p>
 				<div>
 					<%= render 'form' %>
 				</div>
 			</div>
-			<div id="connectwUs">
-			<p><span class="folksText" style="line-height:100%">Connect w/Us</span>
-			<div class="droidTextSm">
-				Stay in the loop about all things ReciPower
-			</div>
-			<img src="btnFB.png" style="margin-top:14px; float:left">
-			<img src="btnTwitter.png" style="margin-top:14px; float:left">
-			<img src="btnTumblr.png" style="margin-top:14px; float:left">
-			</div>
 		</div>
 		
-		<div id="footer" style="padding-top:14px; min-height:495px;text-align:center">Copyright 2013 ReciPower LLC.<br />
-		<div id="adminLink">
-			<%= link_to 'Admin', login_path %></div>
-		</div>
+		<div id="footer" style="padding-top:14px; min-height:495px;text-align:center"><br />
 	</div>
 </div>

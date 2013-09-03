@@ -12,6 +12,7 @@
   def show 
   	@search = Product.search do
 		fulltext params[:search]
+		paginate :page => 1, :per_page => 50
 	end
 	@products = @search.results
 	@cart = current_cart
