@@ -30,7 +30,7 @@ end
 			:message => 'must be a recognized unit (list is too long to mention).'}
 			
 	searchable do
-		text :title, :description
+		text :brand, :description
 	end
 	
 end
