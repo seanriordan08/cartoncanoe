@@ -1,6 +1,6 @@
-<div id="storeWrapper" style="width:95%">
+<div id="storeWrapper" style="width:95%">	
 	<h1>Select Items</h1>
-	
+	<p><span style="clear:both"><%= will_paginate @products %></span></p>
 <% if flash[:notice] %>
 	<script>
 		$('h1').after("<h3></h3>");
@@ -50,4 +50,3 @@
 		<%  end %>
 	</div>
 </div>
-<p><span style="clear:both"><%= will_paginate @products %></span></p>
