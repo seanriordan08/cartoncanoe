@@ -47,7 +47,7 @@
 }
 .droidTextSmlr{
 	font-family: 'DroidSerif';
-	font-size:  .8em;
+	font-size:  .7em;
 	line-height:  120%;
 }
 .leftTxt{
@@ -117,7 +117,7 @@
 	transition: background-color 0.08s ease-in;
 }
 #guts{
-  margin:  20px 50px 0px 5%;
+  margin:  20px 25px 0px 5%;
 }
 #row-1{
   clear:both;
@@ -150,19 +150,79 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', end
 }
 #row0{
   clear:both;
+  height:  400px;
   text-align:  center;
+  text-shadow: 2px 2px 1px #EEE;
   background-color:  #DDD;
   border-radius:  12px 12px 12px 12px;
+}
+#row0 span{
+  position:  relative;
+  top:  130px;
 }
 #row1{ 
   clear:  both;
   background-color:  #888;
+  width:  100%;
   border-radius:  12px 12px 12px 12px;
+}
+#row1Title{
+  width:  95%;
+  color:  #EEE;
+  padding-bottom:  16px;
+  border-bottom:  1px solid #AAA;
+  text-align:  center;
+  text-shadow: 2px 2px 1px #333;
+}
+#row1A{
+  float:  left;
+  padding-top:  16px;
+  width:  40%;
+  text-align:  left;
+  margin-right:  5%;
+}
+#row1A ul li{
+  border-radius:  8px;
+  background-color:  #DDD;
+  margin: 5px 0px 5px 0px;
+  padding: 10px 10px 10px 10px;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+#row1A span{
+  width:  16px;
+  max-height:  8px;
+  border-radius:  16px;
+  background-color:  #EEE;
+  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+}
+#row1B{
+  position:  relative;
+  float:  right;
+  width:  40%;
+  height:  90%;
+  margin: 5% 5% 5% 0px;
+  border-radius:  16px;
+  overflow:  visible;
+}
+#row1B img{
+  width:  100%;
+  height:  auto;
+  border-radius:  16px;
 }
 #row2{
   clear:  both;
+  height:  400px;
   background-color:  #d6e0ed;
   border-radius:  12px 12px 12px 12px;
+}
+#row2 span{
+  position:  relative;
+  top:  130px;
+  text-shadow: 1px 1px 1px #FFF;
 }
 #row3{
   clear:  both;
@@ -178,6 +238,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', end
 	float:  left; 
 	max-width:  65%;
 	text-align:  center;
+	vertical-align:  middle;
+}
+#row4Form{
+	margin-top:  -40px;
 }
 #container{
 	float:  right;
