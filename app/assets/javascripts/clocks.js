@@ -9,25 +9,25 @@ var currentSeconds = currentTime.getSeconds ();
 var currentHoursPosition = 0;
 if ( currentHours > 0 && currentHours < 13){
 	if (currentHours < 8 ){ 
-		currentHoursPosition = 0;
+		currentHoursPosition = 15;
 		$("#counterBG1").css( "color", "#990000");
 	}
 	else if ( currentHours === 8 ){ 
-		currentHoursPosition = 0;
+		currentHoursPosition = 15;
 	}
 	else if (currentHours === 9 ){ 
-		currentHoursPosition = 0;//30
+		currentHoursPosition = 30;//30
 		$("#counterBG1").css( "color", "#990000");
 	}
 	else if (currentHours === 10 ){ 
-		currentHoursPosition = 0;//65
+		currentHoursPosition = 65;//65
 		$("#counterBG1").css( "color", "#990000");
 	}
 	else if (currentHours === 11 ){ 
-		currentHoursPosition = 0;//98
+		currentHoursPosition = 98;//98
 	}
 	else if (currentHours === 12 ){ 
-		currentHoursPosition = 0;//132
+		currentHoursPosition = 132;//132
 	}
 	else { 
 		currentHoursPosition = 0;
@@ -35,7 +35,7 @@ if ( currentHours > 0 && currentHours < 13){
 	}
 }
 else { 
-	currentHoursPosition = 0;//166
+	currentHoursPosition = 166;//166
 	$("#counterBG1").css( "color", "#666666");
 }
 
