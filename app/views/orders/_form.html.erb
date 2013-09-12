@@ -93,11 +93,10 @@
   </div>
   <div id="termsBox">
 	<a href="javascript:showTerms()" class="formButton">Terms of Service</a>
-	<ul style="margin-top:8px">
-		<li style="display:inline"><%= f.check_box :accept_terms %></li>
-		<li style="display:inline; margin-right:8px">I Agree</li>	
-		<li style="display:inline; text-decoration:none;margin-left:16px"><input type="checkbox" name="No Thanks"/>No Thanks</li>
-	</ul>
+	<div id="termsBoxContainer">	
+		<%= f.check_box :accept_terms %>
+		<span style="margin-right:8px">I Agree</span>
+	</div>
   </div>
 </div>  
   <div class="actions">

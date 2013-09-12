@@ -66,10 +66,10 @@
 	padding-left: 14px;
 }
 .curtail{
-	width:  100%;
+	max-width:  100%;
 	height:  100%;
 	margin-top:  8px;
-	padding:  30px 0px 30px 30px;
+	padding:  30px 30px 30px 30px;
 	overflow:  auto;
 }
 .landingImage{
@@ -117,10 +117,12 @@
 	transition: background-color 0.08s ease-in;
 }
 #guts{
-  margin:  20px 25px 0px 5%;
+  margin:  20px 0px 0px 5%;
+  max-width:  100%;
 }
 #row-1{
   clear:both;
+  max-width:  100%;
   background-color:  #DDD;
   border-radius:  12px 12px 12px 12px;
   border:  1px solid #DDD;  
@@ -150,7 +152,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', end
 }
 #row0{
   clear:both;
-  height:  400px;
+  height:  200px;
   text-align:  center;
   text-shadow: 2px 2px 1px #EEE;
   background-color:  #DDD;
@@ -158,12 +160,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', end
 }
 #row0 span{
   position:  relative;
-  top:  130px;
+  top:  50px;
 }
 #row1{ 
   clear:  both;
   background-color:  #888;
-  width:  100%;
   border-radius:  12px 12px 12px 12px;
 }
 #row1Title{
@@ -215,14 +216,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', end
 }
 #row2{
   clear:  both;
-  height:  400px;
+  height:  200px;
   background-color:  #d6e0ed;
   border-radius:  12px 12px 12px 12px;
 }
 #row2 span{
-  position:  relative;
-  top:  130px;
+  float:  left;
+  max-width:  80%;
+  text-align:  left;
   text-shadow: 1px 1px 1px #FFF;
+}
+#row2 img{
+  float:  right;
 }
 #row3{
   clear:  both;
@@ -234,20 +239,38 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebf1f6', end
   background-color:  #DDD;
   border-radius:  12px 12px 12px 12px;
 }
+#row4 table{
+  max-width:  100%;
+}
 #contactUs{
 	float:  left; 
-	max-width:  65%;
+	min-width:  100%;
 	text-align:  center;
 	vertical-align:  middle;
 }
 #row4Form{
 	margin-top:  -40px;
 }
-#container{
-	float:  right;
-	padding-left:  14px;
-	max-width:  100%;
-	overflow:  auto;
+#tryNow{
+	margin:  8px 0px 8px 8px;
+	padding:  8px 8px 8px 8px;
+	min-width:  100%;
+	min-height:  100%;
+	float:  left;
+	color:  #FFF;
+	text-shadow: 1px 1px 1px #333;
+	border:  1px solid #BBB;
+	border-radius:  16px;
+	background: rgb(180,227,145); /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2I0ZTM5MSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzYxYzQxOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNiNGUzOTEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top, rgba(180,227,145,1) 0%, rgba(97,196,25,1) 50%, rgba(180,227,145,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(180,227,145,1)), color-stop(50%,rgba(97,196,25,1)), color-stop(100%,rgba(180,227,145,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(180,227,145,1) 0%,rgba(97,196,25,1) 50%,rgba(180,227,145,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(180,227,145,1) 0%,rgba(97,196,25,1) 50%,rgba(180,227,145,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(180,227,145,1) 0%,rgba(97,196,25,1) 50%,rgba(180,227,145,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(180,227,145,1) 0%,rgba(97,196,25,1) 50%,rgba(180,227,145,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=0 ); /* IE6-8 */
 }
 #featuredPartner{ 
 	clear:  right;

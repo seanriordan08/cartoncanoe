@@ -28,7 +28,6 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.json
   def new
-	Time.zone = 'MST'
 	@cart = current_cart
 	currentTime = Time.zone.now
 	tomorrow = Time.zone.today + 1.day
