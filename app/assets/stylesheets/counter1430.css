@@ -1,4 +1,16 @@
-﻿.counterBG {
+﻿.counterBGSm {
+  display:  none;
+}
+#counterSmDay0 {
+  display:  none;
+}
+#counterSmDay1 {
+  display:  none;
+}
+#counterSmDay2 {
+  display:  none;
+}
+.counterBG {
   position: absolute;
   width:  201px;
   height:  202px;

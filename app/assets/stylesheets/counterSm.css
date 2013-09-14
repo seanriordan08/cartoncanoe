@@ -1,0 +1,85 @@
+﻿@font-face{ 
+	font-family: 'SF_Arch_Rival-webfont';
+	src: url('fonts/SF_Arch_Rival-webfont.eot');
+	src: url('fonts/SF_Arch_Rival-webfont.eot?iefix') format('eot'),
+	     url('fonts/SF_Arch_Rival-webfont.woff') format('woff'),
+	     url('fonts/SF_Arch_Rival-webfont.ttf') format('truetype'),
+	     url('fonts/SF_Arch_Rival-webfont.svg') format('svg');
+}
+.counterBGSm {
+  position: absolute;
+  top:  0px;
+  right:  200px;
+  min-width:  284px;
+  height:  80px;
+  background-image:  url('graphics/counterSmall.png');
+  background-repeat:  no-repeat;
+}
+#counterSmDay0 {
+  position: absolute;
+  top:  25px;
+  right:  202px;
+  width:  43px;
+  text-align:  center;
+  font-family: 'SF_Arch_Rival-webfont';
+  z-index: 98;
+}
+#counterSmDay1 {
+  position: absolute;
+  top:  25px;
+  right:  127px;
+  width:  45px;
+  text-align:  center;
+  font-family: 'SF_Arch_Rival-webfont';
+  -webkit-transform: rotate(-8deg);
+  -moz-transform: rotate(-8deg);
+  z-index: 99;
+}
+#counterSmDay2 {
+  position: absolute;
+  top:  25px;
+  right:  52px;
+  width:  45px;
+  text-align:  center;
+  font-family: 'SF_Arch_Rival-webfont';
+  z-index: 99;
+}
+.counterBG{
+  display:  none;
+}
+#counterBG1 {
+  display:  none;
+}
+#counterOverlay{
+  display:  none;
+}
+#counterBG2 {
+  display:  none;
+}
+#counterBG2 span{
+  display:  none;
+}
+#counterBG3 {
+  display:  none;
+}
+#counterBG3 span{
+  display:  none;
+}
+#counterClock{
+  display:  none;
+}
+#counterNeedle{
+  display:  none;
+}
+.postItNotes {
+  display:  none;
+}
+#postItNotes1 {
+  display:  none;
+}
+#postItNotes2 {
+  display:  none;
+}
+#postItNotes3 {
+  display:  none;
+}

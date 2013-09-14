@@ -13,21 +13,21 @@ if ( currentHours > 0 && currentHours < 13){
 		$("#counterBG1").css( "color", "#990000");
 	}
 	else if ( currentHours === 8 ){ 
-		currentHoursPosition = 15;
+		currentHoursPosition = 30;//30
 	}
 	else if (currentHours === 9 ){ 
-		currentHoursPosition = 30;//30
-		$("#counterBG1").css( "color", "#990000");
-	}
-	else if (currentHours === 10 ){ 
 		currentHoursPosition = 65;//65
 		$("#counterBG1").css( "color", "#990000");
 	}
-	else if (currentHours === 11 ){ 
+	else if (currentHours === 10 ){ 
 		currentHoursPosition = 98;//98
+		$("#counterBG1").css( "color", "#990000");
+	}
+	else if (currentHours === 11 ){ 
+		currentHoursPosition = 132;//132
 	}
 	else if (currentHours === 12 ){ 
-		currentHoursPosition = 132;//132
+		currentHoursPosition = 166;//166
 	}
 	else { 
 		currentHoursPosition = 0;

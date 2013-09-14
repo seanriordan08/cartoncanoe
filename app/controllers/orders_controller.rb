@@ -4,6 +4,12 @@ class OrdersController < ApplicationController
   # GET /orders.json
   
   def index
+    @currentTime = Time.zone.now
+	tomorrow = Time.zone.today + 1.day
+	dayAfter = Time.zone.today + 2.day
+	@stickyDay1 = tomorrow.strftime("%a")
+	@stickyDay2 = dayAfter.strftime("%a")
+  
 	@orders = Order.find(:all, :order => 'date_of_delivery')
     @orders = Order.paginate :page => params[:page], :order => 'created_at desc',
 		:per_page => 25	
@@ -17,6 +23,13 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+  
+    @currentTime = Time.zone.now
+	tomorrow = Time.zone.today + 1.day
+	dayAfter = Time.zone.today + 2.day
+	@stickyDay1 = tomorrow.strftime("%a")
+	@stickyDay2 = dayAfter.strftime("%a")
+  
     @order = Order.find(params[:id])
 
     respond_to do |format|
@@ -35,6 +48,8 @@ class OrdersController < ApplicationController
 	@day0 = currentTime.strftime("%a, %b #{Time.zone.now.day.ordinalize}")
 	@day1 = tomorrow.strftime("%a, %b #{tomorrow.day.ordinalize}")
 	@day2 = dayAfter.strftime("%a, %b #{dayAfter.day.ordinalize}")
+	@stickyDay1 = tomorrow.strftime("%a")
+	@stickyDay2 = dayAfter.strftime("%a")
 	
 		if Order.where(:date_of_delivery => @day0).count == 5 && Order.where(:date_of_delivery => @day1).count == 5 && Order.where(:date_of_delivery => @day2).count == 5
 			flash[:error] = "Sorry, today we're booked!"

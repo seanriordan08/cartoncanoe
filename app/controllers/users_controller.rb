@@ -2,6 +2,12 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    @currentTime = Time.zone.now
+	tomorrow = Time.zone.today + 1.day
+	dayAfter = Time.zone.today + 2.day
+	@stickyDay1 = tomorrow.strftime("%a")
+	@stickyDay2 = dayAfter.strftime("%a")
+  
     @users = User.order(:name)
 
     respond_to do |format|
