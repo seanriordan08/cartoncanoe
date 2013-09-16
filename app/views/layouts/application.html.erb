@@ -95,16 +95,34 @@
 		<!-- Small Clock -->
 		<div class="counterBGSm">
 			<div id="counterSmDay0">
-				<ul><li>Today</li>
-					<li><%= 5 - Order.where(:date_of_delivery => @day0).count %></li></ul>
+				<ul>
+				<% if Order.where(:date_of_delivery => @day0).count == 5 || (Time.zone.now.hour > 12)%>
+					<li><strike>Today</strike></li>
+				<% else %>
+					<li>Today</li>
+				<% end %>
+					<li><%= 5 - Order.where(:date_of_delivery => @day0).count %></li>
+				</ul>
 			</div>
 			<div id="counterSmDay1">
-				<ul><li><%= @stickyDay1 %></li>
-					<li><%= 5 - Order.where(:date_of_delivery => @day1).count %></li></ul>
+				<ul>
+					<% if Order.where(:date_of_delivery => @day1).count == 5%>
+						<li><strike><%= @stickyDay1 %></strike></li>
+					<% else%>
+						<li><%= @stickyDay1 %></li>
+					<% end %>
+					<li><%= 5 - Order.where(:date_of_delivery => @day1).count %></li>
+				</ul>
 			</div>
 			<div id="counterSmDay2">
-				<ul><li><%= @stickyDay2 %></li>
-					<li><%= 5 - Order.where(:date_of_delivery => @day2).count %></li></ul>
+				<ul>
+					<% if Order.where(:date_of_delivery => @day2).count == 5%>
+						<li><strike><%= @stickyDay2 %></strike></li>
+					<% else%>
+						<li><%= @stickyDay2 %></li>
+					<% end %>
+					<li><%= 5 - Order.where(:date_of_delivery => @day2).count %></li>
+				</ul>
 			</div>
 		</div>
 	<% end %>
