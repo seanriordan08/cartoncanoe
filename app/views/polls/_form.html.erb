@@ -12,7 +12,7 @@
   <% end %>
 
   <div id="email" class="field">
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :placeholder => "Email", :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}' %>
   </div>
   
   <div id="submit" class="actions">
