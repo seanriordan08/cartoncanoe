@@ -33,13 +33,18 @@
 	
 	<div id="storeItemZoom">
 		<% @products.each do |product| %>
-			<div id="itemBoxZoom" data-id="<%= product.id %>" data-brand="<%= product.brand %>">
-				<table>
+			<div id="itemBoxZoom" data-id="<%= product.id %>" data-brand="<%= product.brand %>" >
+				<div id="tableWrapper"><table>
 					<tr>
 						<td><%= image_tag(product.image_url )%></td>
 						<td><span><%= sanitize(product.description) %></span></td>
 					</tr>
-				</table>
+				</table></div>
+				
+				<!--<div id="itemBoxZoomEdit">
+					Edit Panel
+				</div>-->
+				
 				<div class="price_line">
 					<span class="price"><%= number_to_currency(product.price)%></span>
 					(<%= product.portion_size%> <%= product.unit_of_measure%>)			 
