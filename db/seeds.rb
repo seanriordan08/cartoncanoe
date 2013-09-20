@@ -16,7 +16,7 @@
 #---
 # encoding: utf-8
 Product.delete_all
-Product.create(:title => 'Web Design for Developers',
+Product.create(:title => 'Broccoli',
   :description => 'green broccoli',
   :brand => 'Sunny Farms',
   :image_url =>   'images/broccoli.jpg',
@@ -32,7 +32,6 @@ Product.create(:title => 'Bread',
   :portion_size => 1,
   :unit_of_measure => 'ea')
 # . . .
-
 Product.create(:title => 'Bell Peppers',
   :description => '3 colors',
   :brand => 'Sunny Farms',
@@ -40,3 +39,4 @@ Product.create(:title => 'Bell Peppers',
   :price => 2.75,
   :portion_size => 1,
   :unit_of_measure => 'ea')
+ # . . .

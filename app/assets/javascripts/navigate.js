@@ -18,7 +18,15 @@ function doContact(){
 	$('html,body').animate({ scrollTop: $('#row4').offset().top - 80}, 1500, 'easeOutExpo');
 };
 /*End Navigation Buttons*/
-
+function doStore(){
+	window.location.href='/store/index'; //go to store/index
+	$("#side").css("display", "block");
+	$("#clock").css("display", "block");
+};
+function doCloseSidebar(){
+	$("#side").css("display", "none");
+	$("#clock").css("display", "none");
+};
 //Phone form mask
 function maskPhone(){
 	$("#order_phone_number").mask("(999) 999-9999",{placeholder:" "});

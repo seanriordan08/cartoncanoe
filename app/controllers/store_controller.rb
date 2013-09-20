@@ -11,6 +11,7 @@
   
 	@search = Product.search do
 		fulltext params[:search]
+		paginate :page => params[:page] || 1, :per_page => 30
 	end
 	@products = @search.results
 	@cart = current_cart

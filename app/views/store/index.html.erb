@@ -1,6 +1,6 @@
-<div id="storeWrapper" style="width:95%">
+<div id="storeWrapper">
 	<h1>Select Items</h1>
-	
+	<p><span style="clear:both"><%= will_paginate @products %></span></p>
 <% if flash[:notice] %>
 	<script>
 		$('h1').after("<h3></h3>");
@@ -38,12 +38,18 @@
 					<tr>
 						<td><%= image_tag(product.image_url )%></td>
 						<td><span><%= sanitize(product.description) %></span></td>
+						<% if session[:user_id] %>
+							<td><div id="itemBoxZoomAdminPanel">
+								<div id="topHalf">Admin Panel</div>
+								<div id="bottomHalf">
+								<ul>
+									<li><%= link_to 'Edit', edit_product_path(product) %><br/></li>
+								</ul>
+								</div>
+							</div></td>
+						<% end %>
 					</tr>
 				</table></div>
-				
-				<!--<div id="itemBoxZoomEdit">
-					Edit Panel
-				</div>-->
 				
 				<div class="price_line">
 					<span class="price"><%= number_to_currency(product.price)%></span>

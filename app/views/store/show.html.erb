@@ -1,4 +1,4 @@
-<div id="storeWrapper" style="width:95%">	
+<div id="storeWrapper">	
 	<h1>Select Items</h1>
 	<p><span style="clear:both"><%= will_paginate @products %></span></p>
 <% if flash[:notice] %>
@@ -33,20 +33,35 @@
 
 	<div id="storeItemZoom">
 		<% @products.each do |product| %>
-			<div id="itemBoxZoom" data-id="<%= product.id %>" data-brand="<%= product.brand %>">
-				<table>
+			<div id="itemBoxZoom" data-id="<%= product.id %>" data-brand="<%= product.brand %>" >
+				<div id="tableWrapper"><table>
 					<tr>
 						<td><%= image_tag(product.image_url )%></td>
 						<td><span><%= sanitize(product.description) %></span></td>
+						<% if session[:user_id] %>
+							<td><div id="itemBoxZoomAdminPanel">
+								<div id="topHalf">Admin Panel</div>
+								<div id="bottomHalf">
+								<ul>
+									<li><%= link_to 'Edit', edit_product_path(product) %><br/></li>
+								</ul>
+								</div>
+							</div></td>
+						<% end %>
 					</tr>
-				</table>
+				</table></div>
+				
 				<div class="price_line">
 					<span class="price"><%= number_to_currency(product.price)%></span>
 					(<%= product.portion_size%> <%= product.unit_of_measure%>)			 
 				</div>
-			<div class="itemMagnify"></div>
+				<div class="itemMagnify" data-id="<%= product.id %>">
+				</div>
+				<div class="btnQty" data-id="<%= product.id %>">
+					<label for="spinner">Quantity:</label>
+					<input id="spinner" name="value" size="1" value="1" min="1" max="100" data-id="<%= product.id %>"/>
+				</div>
 			</div>
-			<p>
 		<%  end %>
 	</div>
 </div>
