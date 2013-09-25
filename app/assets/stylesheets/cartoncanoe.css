@@ -167,10 +167,11 @@ table {
   min-width: 100%;
 }
 #itemBoxZoomAdminPanel {
-  width:  100px;
-  max-width:  100px;
+  width:  60px;
+  max-width:  60px;
   height:  100%;
   min-height:  100px;
+  text-align:  center;
   border-radius:  4px;
   background-color:  #555;
   -webkit-box-shadow: 1px 1px 3px #333;
@@ -183,40 +184,13 @@ table {
   height:  20px;
   padding-top:  4px;
   color:  #000;
-  background-color:  #EEE;
+  background-color:  #eeffff;
   border-radius:  4px 4px 0px 0px;
   text-align:  center;
   font-size:  .9em;
   -webkit-box-shadow: 0px 1px 2px #333;
   -moz-box-shadow: 0px 1px 2px #333;
   box-shadow: 0px 1px 2px #333;
-}
-
-#itemBoxZoomAdminPanel #bottomHalf{
-  text-decoration:  none;
-  margin-top:  4px;
-  padding: 0px 8px 0px 8px;
-  border:  1px solid #DDD;
-  background-color:  #EEE;
-  text-align:  center;
-  -webkit-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-  border-radius:  10px;
-}
-#itemBoxZoomAdminPanel #bottomHalf:hover{
-  text-decoration:  none;
-  margin-top:  4px;
-  border:  1px solid #888;
-  padding: 0px 8px 0px 8px;
-  -webkit-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-  border-radius:  10px;
-  background-color:  #7dbc41;
-  -webkit-transition-duration: 0.15s;
-  -moz-transition-duration: 0.15s;
-  transition-duration: 0.15s;
 }
 /* Styles for products/index */
 
@@ -436,6 +410,15 @@ table {
   color: #44a;
   font-weight: bold;
 }
+#quantityLine {
+  margin-top:  8px;
+}
+#quantity {
+  position:  absolute;
+  right:  24px;
+  bottom:  0px;
+  font-weight: bold;
+}
 #store .entry  form, #store .entry form div {
   display: inline;
 }
@@ -443,7 +426,9 @@ table {
   font: 120% bold;
 }
 #itemBoxZoom {
-  display:  inline;
+  position:  relative;
+  width:  100%;
+  height:  100%;
 }
 #itemBoxZoom  table tr td{
   vertical-align:  top;

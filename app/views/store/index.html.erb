@@ -34,33 +34,34 @@
 	<div id="storeItemZoom">
 		<% @products.each do |product| %>
 			<div id="itemBoxZoom" data-id="<%= product.id %>" data-brand="<%= product.brand %>" >
-				<div id="tableWrapper"><table>
-					<tr>
-						<td><%= image_tag(product.image_url )%></td>
-						<td><span><%= sanitize(product.description) %></span></td>
-						<% if session[:user_id] %>
-							<td><div id="itemBoxZoomAdminPanel">
-								<div id="topHalf">Admin Panel</div>
-								<div id="bottomHalf">
-								<ul>
-									<li><%= link_to 'Edit', edit_product_path(product) %><br/></li>
-								</ul>
-								</div>
-							</div></td>
-						<% end %>
-					</tr>
-				</table></div>
+				<div id="tableWrapper">
+					<table>
+						<tr>
+							<td><%= image_tag(product.image_url )%></td>
+							<td><span><%= sanitize(product.description) %></span></td>
+							<% if session[:user_id] %>
+								<td><div id="itemBoxZoomAdminPanel">
+									<div id="topHalf">Admin</div>
+									<ul>
+										<li><%= button_to 'Edit', edit_product_path(product), :method => :get %><br/></li>
+									</ul>
+								</div></td>
+							<% end %>
+						</tr>
+					</table>
+				</div>
 				
-				<div class="price_line">
-					<span class="price"><%= number_to_currency(product.price)%></span>
-					(<%= product.portion_size%> <%= product.unit_of_measure%>)			 
+				<div id="quantityLine" data-id="<%= product.id %>">
+					<span><%= number_to_currency(product.price)%></span>
+					(<%= product.portion_size%> <%= product.unit_of_measure%>)				
 				</div>
-				<div class="itemMagnify" data-id="<%= product.id %>">
+				<div id="quantity" data-id="<%= product.id %>">
+					<form>
+						Quantity:
+						<input name="quantity" type="number" min="1" max="99" step="1" value="1" />
+					</form>
 				</div>
-				<div class="btnQty" data-id="<%= product.id %>">
-					<label for="spinner">Quantity:</label>
-					<input id="spinner" name="value" size="1" value="1" min="1" max="100" data-id="<%= product.id %>"/>
-				</div>
+				<div class="itemMagnify" data-id="<%= product.id %>"></div>
 			</div>
 		<%  end %>
 	</div>

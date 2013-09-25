@@ -1,5 +1,6 @@
 ﻿var prodvarid;
 var prodvarbrand;
+var qtySelected = 1;
 
 //Index Navigation Buttons
 function doHome(){
@@ -78,14 +79,16 @@ $(document).ready(function(){
 			buttons: [{
 				text: "Add to Cart",
 				click: function() {
+					qtySelected = $("#quantity[data-id='" + prodvarid + "'] input").val();//inputValue check
 					$.ajax({
 						type: "POST",
 						url: '/line_items',
 						beforeSend: function(xhr){
 							xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-						data: {product_id: prodvarid, remote: true},
+						data: {product_id: prodvarid, qty_selected: qtySelected, remote: true},
 						dataType: "script"
 					});
+					$("#quantity[data-id='" + prodvarid + "'] input").val(1); //reset default value on submit
 					$(this).dialog("close");
 				}
 			}]
@@ -138,4 +141,9 @@ $(document).ready(function(){
 	function emailWarningHide(){
 		$('#emailWarning').hide();
 	};
+	
+	$("#order_city :selected").hover(function(){
+		alert("tester");
+	});
+	
 });
