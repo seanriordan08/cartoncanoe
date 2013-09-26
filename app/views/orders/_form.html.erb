@@ -78,11 +78,8 @@
   <div class="field">
 	<%= f.label :delivery_time %><p/>
 	<div style="clear:left; margin-left:4px; padding-top:2px">
-		<%= f.radio_button :delivery_time, '3:30pm' %>3:30pm
-		<%= f.radio_button :delivery_time, '4:00pm' %>4:00pm
-		<%= f.radio_button :delivery_time, '4:30pm' %>4:30pm
-		<%= f.radio_button :delivery_time, '5:00pm' %>5:00pm
-		<%= f.radio_button :delivery_time, '5:30pm' %>5:30pm
+		<%= f.radio_button :delivery_time, '3:30-4:30pm' %>3:30-4:30pm
+		<%= f.radio_button :delivery_time, '4:30-5:30pm' %>4:30-5:30pm
 	</div>
   </div>
   <div class="field">
@@ -118,6 +115,9 @@
 		<li><span style="display:inline">Sales tax is not calculated into your cart total, but is printed on your paper copy receipt as provided with your items at the time of delivery.</span></li>
 		<br>
 		<li><span class="ui-icon ui-icon-circle-check" style="float: left; margin: 0px 7px 50px -23px;"></span></li>
-		<li><span style="display:inline">In the event an item is unavailable, a substitution will be requested by phone before your order is complete.</span></li>
+		<li><span style="display:inline">If an item is out of season, or unavailable, a substitution will be requested by phone before your order is complete.</span></li>
 	</ul>
 </div>
+
+<div id="triangle"></div>
+<div id="cityFee"></div>

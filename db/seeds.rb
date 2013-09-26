@@ -40,3 +40,59 @@ Product.create(:title => 'Bell Peppers',
   :portion_size => 1,
   :unit_of_measure => 'ea')
  # . . .
+ Product.create(:title => 'Cabbage',
+  :description => 'Great for coleslaw',
+  :brand => 'Sunny Farms',
+  :image_url => 'images/cabbage.jpg',
+  :price => 4,
+  :portion_size => 1,
+  :unit_of_measure => 'ea')
+ # . . .
+ Product.create(:title => 'Butter Lettuce',
+  :description => 'Great for coleslaw',
+  :brand => 'Sunny Farms',
+  :image_url => 'images/butterLettuce.jpg',
+  :price => 4,
+  :portion_size => 1,
+  :unit_of_measure => 'ea')
+ # . . .
+ Product.create(:title => 'Cheddar',
+  :description => 'Great for coleslaw',
+  :brand => 'Sunny Farms',
+  :image_url => 'images/cheddar.jpg',
+  :price => 4,
+  :portion_size => 1,
+  :unit_of_measure => 'ea')
+ # . . .
+ Product.create(:title => 'Chile Peppers',
+  :description => 'Great for coleslaw',
+  :brand => 'Sunny Farms',
+  :image_url => 'images/chilePepper.jpg',
+  :price => 4,
+  :portion_size => 1,
+  :unit_of_measure => 'ea')
+ # . . .
+ Product.create(:title => 'Savoy Cabbage',
+  :description => 'Great for coleslaw',
+  :brand => 'Sunny Farms',
+  :image_url => 'images/savoyCabbage.jpg',
+  :price => 4,
+  :portion_size => 1,
+  :unit_of_measure => 'ea')
+ # . . .
+ Product.create(:title => 'Smart Bacon',
+  :description => 'Great for coleslaw',
+  :brand => 'Sunny Farms',
+  :image_url => 'images/SmartBacon.jpg',
+  :price => 4,
+  :portion_size => 1,
+  :unit_of_measure => 'ea')
+ # . . .
+ Product.create(:title => 'Spinach',
+  :description => 'Great for coleslaw',
+  :brand => 'Sunny Farms',
+  :image_url => 'images/spinach.jpg',
+  :price => 4,
+  :portion_size => 1,
+  :unit_of_measure => 'ea')
+ # . . .

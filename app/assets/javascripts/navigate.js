@@ -24,33 +24,10 @@ function doStore(){
 	$("#side").css("display", "block");
 	$("#clock").css("display", "block");
 };
-function doCloseSidebar(){
+function doLandingPage(){
 	$("#side").css("display", "none");
 	$("#clock").css("display", "none");
 };
-//Phone form mask
-function maskPhone(){
-	$("#order_phone_number").mask("(999) 999-9999",{placeholder:" "});
-};
-/*End Phone form mask*/
-
-//Terms of Service
-function showTerms(){
-	$('#termsBoxInfo').dialog({
-		autoOpen: true,
-		show: 800,
-		modal: true,
-		title:  "Terms of Service",
-		minWidth: 800,
-		buttons: [{
-			text: "Got It",
-			click: function() {
-			  $( this ).dialog( "close" );
-			}
-		}]
-	});
-};
-/*End Terms of Service*/
 
 //Draggable Items Function
 $(document).ready(function(){
@@ -132,6 +109,7 @@ $(document).ready(function(){
 	});
 	/*End Drag & Drop Feature*/
 	
+	/*
 	//Effects
 	function menuSlide(){
 		$('#side').animate("slide",1000,'easeOutExpo');
@@ -140,10 +118,5 @@ $(document).ready(function(){
 	//Warnings
 	function emailWarningHide(){
 		$('#emailWarning').hide();
-	};
-	
-	$("#order_city :selected").hover(function(){
-		alert("tester");
-	});
-	
+	};*/
 });

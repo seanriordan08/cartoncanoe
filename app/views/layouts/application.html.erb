@@ -12,9 +12,10 @@
   <%= stylesheet_link_tag 'counterSm', :media => 'screen and (max-width: 1429px)'%>
   <%= stylesheet_link_tag 'print', :media => "print" %>
   <!-- END:stylesheet -->
+  
   <%= javascript_include_tag 'application', 'jquery-1.9.1', 'jquery-ui-1.10.3.custom.min', 'jquery-ui-1.10.3.custom',  'jquery.maskedinput' %>
   <%= javascript_include_tag 'jquery.ui.core', 'jquery.ui.widget', 'jquery.ui.button' %>
-  <%= javascript_include_tag 'navigate', 'clocks' %>
+  <%= javascript_include_tag 'navigate', 'orderForm', 'clocks' %>
 
   <%= csrf_meta_tag %><!-- <label id="code.csrf"/> -->
   <meta name="Description" content="ReciPower is an app that empowers each health-seeking individual with a dynamic new tool to plan healthy meals in less than 5 minutes on a budget." />
@@ -36,98 +37,98 @@
 </script>
 </head>
 <body>
-	<div id="store" style="min-height:100%">
-		<div id="columns">
-			<div id="side" style="min-height:100%">
-				<span id="sideLogo"><%= image_tag("logo.png") %></span>
-				<% if session[:user_id] %>
-					<div id="adminOptions" style="min-height:100%">	
-						<br>
-							<ol class="adminClass">
-								<li onclick="javascript:location.href='/orders'">Order History</li><br/>
-								<li onclick="javascript:location.href='/users'">Admins</li><br/>
-								<li onclick="javascript:location.href='/polls_show'">Waiting List</li><br/>
-							</ol>
-						<br>
-							<%= button_to 'Logout', logout_path, :method => :delete %>
-							<div style="min-height:100%"></div><!--extend column whitespace-->
-					</div>
-				<% else %>
-					<script>$('#adminOptions').hide()</script>			
-				<% end %>
-				<br>
-				<ol class="adminClass shopper">
-					<li onclick="javascript:location.href='/store/index'">Select Items</li><br/>
-				</ol>
-				<%= form_tag store_show_path, :method => :get do%>
-				<p>
-					<%= text_field_tag :search, params[:search] %>
-					<%= submit_tag "Search", :name => nil %>
-				</p>
-				<% end %>
-				
-				<div id="cart">
-				<%if @cart%>
-					<% if @cart.line_items.all %>
-						<%= render @cart %>
+		<div id="store" style="min-height:100%">
+			<div id="columns">
+				<div id="side" style="min-height:100%">
+					<span id="sideLogo"><%= image_tag("logo.png") %></span>
+					<% if session[:user_id] %>
+						<div id="adminOptions" style="min-height:100%">	
+							<br>
+								<ol class="adminClass">
+									<li onclick="javascript:location.href='/orders'">Order History</li><br/>
+									<li onclick="javascript:location.href='/users'">Admins</li><br/>
+									<li onclick="javascript:location.href='/polls_show'">Waiting List</li><br/>
+								</ol>
+							<br>
+								<%= button_to 'Logout', logout_path, :method => :delete %>
+								<div style="min-height:100%"></div><!--extend column whitespace-->
+						</div>
+					<% else %>
+						<script>$('#adminOptions').hide()</script>			
 					<% end %>
-				<% end %>
-				<br>
+					<br>
+					<ol class="adminClass shopper">
+						<li onclick="javascript:location.href='/store/index'">Select Items</li><br/>
+					</ol>
+					<%= form_tag store_show_path, :method => :get do%>
+					<p>
+						<%= text_field_tag :search, params[:search] %>
+						<%= submit_tag "Search", :name => nil %>
+					</p>
+					<% end %>
+					
+					<div id="cart">
+					<%if @cart%>
+						<% if @cart.line_items.all %>
+							<%= render @cart %>
+						<% end %>
+					<% end %>
+					<br>
+					</div>
 				</div>
-			</div>
 
-			<div id="mainContainer">
-				<div id="clock">
-					<!-- Large Clock -->
-					<div id="counterBG1" class="counterBG"><%= 5 - Order.where(:date_of_delivery => @day0).count %></div>
-					<div id="counterClock">
-						<script type="text/javascript">updateClock();</script><div id="counterNeedle"></div>
-					</div>
-					<div id="counterOverlay" class="counterBG"></div>
-					<div id="postItNotes1" class="postItNotes"></div>
-					<div id="counterBG2" class="counterBG"><span><%= 5 - Order.where(:date_of_delivery => @day1).count %></span></div>
-					<div id="postItNotes2" class="postItNotes"></div>
-					<div id="counterBG3" class="counterBG"><span><%= 5 - Order.where(:date_of_delivery => @day2).count %></span></div>
-					<div id="postItNotes3" class="postItNotes"></div>
-					<!-- Small Clock -->
-					<div class="counterBGSm">
-						<div id="counterSmDay0">
-							<ul>
-							<% if Order.where(:date_of_delivery => @day0).count == 5 || (Time.zone.now.hour > 12)%>
-								<li><strike>Today</strike></li>
-							<% else %>
-								<li>Today</li>
-							<% end %>
-								<li><%= 5 - Order.where(:date_of_delivery => @day0).count %></li>
-							</ul>
+				<div id="mainContainer">
+					<div id="clock">
+						<!-- Large Clock -->
+						<div id="counterBG1" class="counterBG"><%= 5 - Order.where(:date_of_delivery => @day0).count %></div>
+						<div id="counterClock">
+							<script type="text/javascript">updateClock();</script><div id="counterNeedle"></div>
 						</div>
-						<div id="counterSmDay1">
-							<ul>
-								<% if Order.where(:date_of_delivery => @day1).count == 5%>
-									<li><strike><%= @stickyDay1 %></strike></li>
-								<% else%>
-									<li><%= @stickyDay1 %></li>
+						<div id="counterOverlay" class="counterBG"></div>
+						<div id="postItNotes1" class="postItNotes"></div>
+						<div id="counterBG2" class="counterBG"><span><%= 5 - Order.where(:date_of_delivery => @day1).count %></span></div>
+						<div id="postItNotes2" class="postItNotes"></div>
+						<div id="counterBG3" class="counterBG"><span><%= 5 - Order.where(:date_of_delivery => @day2).count %></span></div>
+						<div id="postItNotes3" class="postItNotes"></div>
+						<!-- Small Clock -->
+						<div class="counterBGSm">
+							<div id="counterSmDay0">
+								<ul>
+								<% if Order.where(:date_of_delivery => @day0).count == 5 || (Time.zone.now.hour > 12)%>
+									<li><strike>Today</strike></li>
+								<% else %>
+									<li>Today</li>
 								<% end %>
-								<li><%= 5 - Order.where(:date_of_delivery => @day1).count %></li>
-							</ul>
-						</div>
-						<div id="counterSmDay2">
-							<ul>
-								<% if Order.where(:date_of_delivery => @day2).count == 5%>
-									<li><strike><%= @stickyDay2 %></strike></li>
-								<% else%>
-									<li><%= @stickyDay2 %></li>
-								<% end %>
-								<li><%= 5 - Order.where(:date_of_delivery => @day2).count %></li>
-							</ul>
+									<li><%= 5 - Order.where(:date_of_delivery => @day0).count %></li>
+								</ul>
+							</div>
+							<div id="counterSmDay1">
+								<ul>
+									<% if Order.where(:date_of_delivery => @day1).count == 5%>
+										<li><strike><%= @stickyDay1 %></strike></li>
+									<% else%>
+										<li><%= @stickyDay1 %></li>
+									<% end %>
+									<li><%= 5 - Order.where(:date_of_delivery => @day1).count %></li>
+								</ul>
+							</div>
+							<div id="counterSmDay2">
+								<ul>
+									<% if Order.where(:date_of_delivery => @day2).count == 5%>
+										<li><strike><%= @stickyDay2 %></strike></li>
+									<% else%>
+										<li><%= @stickyDay2 %></li>
+									<% end %>
+									<li><%= 5 - Order.where(:date_of_delivery => @day2).count %></li>
+								</ul>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div id="main">
-					<%= yield %><!-- <label id="code.depot.e.include"/> -->
+					<div id="main">
+						<%= yield %><!-- <label id="code.depot.e.include"/> -->
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 </body>
 </html>

@@ -27,6 +27,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-image:  url('images/woodTanSmLighter.jpg');
+	background-repeat:  repeat;
 }
 ol, ul {
 	list-style: none;
@@ -49,9 +51,12 @@ table {
   margin: 10px 10px 10px 0px;
   background-color:  #AAA;
   border-radius:  16px 0px 16px 0px;
+  -moz-border-radius: 16px 0px 16px 0px;
+  -webkit-border-radius: 16px 0px 16px 0px;
   -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  overflow:  hidden;
 }
 #btnDelete{
   width:  21px;
@@ -115,6 +120,7 @@ table {
 	height:  50px;
 	margin: 10px 0px 8px 0px;
 	padding:  8px 0px 8px 8px;
+	border-radius:  2px;
 	-webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -256,7 +262,7 @@ table {
   float: left;
 }
 #columns {
-  background: #FFF;
+  /*background: #FFF; left sidebar background*/ 
   min-width: 225px;
   min-height: 100%;
   overflow:  auto;
@@ -269,11 +275,11 @@ table {
   max-width:  80%;
   height:  100%;
   padding: 0px 4px 8px 8px;
-  background: #FFF;
+  /*background: #FFF; main background*/ 
   overflow:  hidden;
 }
 #storeWrapper {
-  width:  95%;
+  width:  78%;
 }
 #side {
   float: left;
@@ -348,9 +354,9 @@ table {
   height:  130px;
   margin: 8px 8px 0px 0px;
   border-radius:  6px;
-  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
-  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.9);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.9);
 }
 #store .itemMagnify{
   display:  none;
