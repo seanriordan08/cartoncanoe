@@ -1,0 +1,46 @@
+<div id="clock">
+	<!-- Large Clock -->
+	<div id="counterBG1" class="counterBG"><%= 5 - Order.where(:date_of_delivery => @day0).count %></div>
+	<div id="counterClock">
+		<script type="text/javascript">updateClock();</script><div id="counterNeedle"></div>
+	</div>
+	<div id="counterOverlay" class="counterBG"></div>
+	<div id="postItNotes1" class="postItNotes"></div>
+	<div id="counterBG2" class="counterBG"><span><%= 5 - Order.where(:date_of_delivery => @day1).count %></span></div>
+	<div id="postItNotes2" class="postItNotes"></div>
+	<div id="counterBG3" class="counterBG"><span><%= 5 - Order.where(:date_of_delivery => @day2).count %></span></div>
+	<div id="postItNotes3" class="postItNotes"></div>
+	<!-- Small Clock -->
+	<div class="counterBGSm">
+		<div id="counterSmDay0">
+			<ul>
+			<% if Order.where(:date_of_delivery => @day0).count == 5 || (Time.zone.now.hour > 12)%>
+				<li><strike>Today</strike></li>
+			<% else %>
+				<li>Today</li>
+			<% end %>
+				<li><%= 5 - Order.where(:date_of_delivery => @day0).count %></li>
+			</ul>
+		</div>
+		<div id="counterSmDay1">
+			<ul>
+				<% if Order.where(:date_of_delivery => @day1).count == 5%>
+					<li><strike><%= @stickyDay1 %></strike></li>
+				<% else%>
+					<li><%= @stickyDay1 %></li>
+				<% end %>
+				<li><%= 5 - Order.where(:date_of_delivery => @day1).count %></li>
+			</ul>
+		</div>
+		<div id="counterSmDay2">
+			<ul>
+				<% if Order.where(:date_of_delivery => @day2).count == 5%>
+					<li><strike><%= @stickyDay2 %></strike></li>
+				<% else%>
+					<li><%= @stickyDay2 %></li>
+				<% end %>
+				<li><%= 5 - Order.where(:date_of_delivery => @day2).count %></li>
+			</ul>
+		</div>
+	</div>
+</div>

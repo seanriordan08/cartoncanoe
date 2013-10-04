@@ -96,3 +96,12 @@ Product.create(:title => 'Bell Peppers',
   :portion_size => 1,
   :unit_of_measure => 'ea')
  # . . .
+ Product.create(:title => 'Delivery Fee SM',
+  :description => 'Delivery Fee SM',
+  :brand => 'none',
+  :image_url => 'images/noImage2.jpg',
+  :price => 10,
+  :portion_size => 1,
+  :unit_of_measure => 'ea',
+  :upc => 0000000009501)
+ # . . .

@@ -32,8 +32,8 @@
 	get :who_bought, :on => :member
   end
 
-  delete 'line_items' => 'line_items#destroy'
-
+	delete 'line_items' => 'line_items#destroy'  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,7 +1,7 @@
 ﻿class Order < ActiveRecord::Base
   attr_accessible :prefix, :first_name, :last_name, :address, :email, :phone_number,
 	:date_of_delivery, :delivery_time, :pay_type, :city, :zip, :accept_terms
-  PREFIX = ["Mrs.", "Miss", "Ms.", "Mr."]
+  PREFIX = ["Mrs.", "Miss ", "Ms.", "Mr."]
   PAYMENT_TYPES = ["Credit Card"]
   DELIVERY_LOCATIONS = ["Boulder", "Gunbarrel", "Longmont",  "Louisville", "Superior", "N/A"]
   

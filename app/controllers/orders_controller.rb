@@ -4,9 +4,12 @@ class OrdersController < ApplicationController
   # GET /orders.json
   
   def index
-    @currentTime = Time.zone.now
+  	currentTime = Time.zone.now
 	tomorrow = Time.zone.today + 1.day
 	dayAfter = Time.zone.today + 2.day
+	@day0 = currentTime.strftime("%a, %b #{Time.zone.now.day.ordinalize}")
+	@day1 = tomorrow.strftime("%a, %b #{tomorrow.day.ordinalize}")
+	@day2 = dayAfter.strftime("%a, %b #{dayAfter.day.ordinalize}")
 	@stickyDay1 = tomorrow.strftime("%a")
 	@stickyDay2 = dayAfter.strftime("%a")
   
@@ -24,9 +27,12 @@ class OrdersController < ApplicationController
   # GET /orders/1.json
   def show
   
-    @currentTime = Time.zone.now
+  	currentTime = Time.zone.now
 	tomorrow = Time.zone.today + 1.day
 	dayAfter = Time.zone.today + 2.day
+	@day0 = currentTime.strftime("%a, %b #{Time.zone.now.day.ordinalize}")
+	@day1 = tomorrow.strftime("%a, %b #{tomorrow.day.ordinalize}")
+	@day2 = dayAfter.strftime("%a, %b #{dayAfter.day.ordinalize}")
 	@stickyDay1 = tomorrow.strftime("%a")
 	@stickyDay2 = dayAfter.strftime("%a")
   
@@ -41,6 +47,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   # GET /orders/new.json
   def new
+ 
 	@cart = current_cart
 	currentTime = Time.zone.now
 	tomorrow = Time.zone.today + 1.day
@@ -51,7 +58,7 @@ class OrdersController < ApplicationController
 	@stickyDay1 = tomorrow.strftime("%a")
 	@stickyDay2 = dayAfter.strftime("%a")
 	
-		if Order.where(:date_of_delivery => @day0).count == 5 && Order.where(:date_of_delivery => @day1).count == 5 && Order.where(:date_of_delivery => @day2).count == 5
+		if (Order.where(:date_of_delivery => @day0).count == 5 || Time.zone.now.hour > 12) && Order.where(:date_of_delivery => @day1).count == 5 && Order.where(:date_of_delivery => @day2).count == 5
 			flash[:error] = "Sorry, today we're booked!"
 			redirect_to store_index_url
 			return
@@ -81,15 +88,17 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
+	cart = current_cart
     @order = Order.new(params[:order])
 	@order.add_line_items_from_cart(current_cart)
+	@cartPrice = cart.total_price
 	
     respond_to do |format|
       if @order.save
 		Cart.destroy(session[:cart_id])
 		session[:cart_id] = nil
-		#Notifier.order_shipped(@order).deliver
-		flash[:notice] = 'Thank You for your order! You will be contacted shortly for payment details'
+		Notifier.order_received(@order, @cartPrice).deliver
+		flash[:notice] = "Thank You for your order! We'll give you a call #{@order.date_of_delivery} for payment details"
         format.html { redirect_to(store_index_url) }
         format.json { render json: @order, status: :created, location: @order }
       else

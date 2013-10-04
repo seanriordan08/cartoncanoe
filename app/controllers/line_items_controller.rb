@@ -42,21 +42,22 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-	 @cart = current_cart
-	 product = Product.find(params[:product_id])
-	 ctlQty = params[:qty_selected]
-	 @line_item = @cart.add_product(product.id, ctlQty)
+	@cart = current_cart
 
-	 respond_to do |format|
-	 if @line_item.save
-	  format.html { redirect_to(store_index_url) }
-	  format.js   { @current_item = @line_item }
-	  format.json { render json: @line_item, status: :created, :location => @line_item }
-	  else
-	   format.html { render :action => "new" }
-	   format.json { render json: @line_item.errors, status: :unprocessable_entity }
-	  end
-	 end
+	product = Product.find(params[:product_id])
+	ctlQty = params[:qty_selected] #parameter from itemBoxZoom user selected quantity in jquery dialog widget
+	@line_item = @cart.add_product(product.id, ctlQty) #passes in user selected quantity
+	 
+	respond_to do |format|
+		if @line_item.save
+			format.html { redirect_to(store_index_url) }
+			format.js   { @current_item = @line_item }
+			format.json { render json: @line_item, status: :created, :location => @line_item }
+		else
+			format.html { render :action => "new" }
+			format.json { render json: @line_item.errors, status: :unprocessable_entity }
+		end
+	end
   end
 
   # PUT /line_items/1
@@ -78,13 +79,27 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
+  	@cart = current_cart
+  
+	params[:ajax_id] = params[:ajax_id] || nil
+	if params[:ajax_id]
+		line_item = LineItem.last
+		params[:id] = line_item.id
+	end
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
-
+	params[:ajax_id] = nil
+	
     respond_to do |format|
-      format.html { redirect_to(store_index_url) }
-	  format.js
-      format.json { head :no_content }
+		if params[:ajax_id]
+			format.html { redirect_to(store_index_url) }
+			format.js
+			format.json { head :no_content }
+		else
+			format.html { redirect_to(store_index_url) }
+			format.js
+			format.json { head :no_content }
+		end
     end
   end
   
@@ -106,5 +121,5 @@ class LineItemsController < ApplicationController
       end
     end
   end
-   
+  
 end

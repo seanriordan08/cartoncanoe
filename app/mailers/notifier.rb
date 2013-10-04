@@ -1,15 +1,16 @@
 class Notifier < ActionMailer::Base
-  default from: "sean.riordan08@gmail.com"
+  default from: "customer_service@cartoncanoe.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.notifier.order_received.subject
   #
-  def order_received(order)
+  def order_received(order, cartPrice)
     @order = order
+	@cartPrice = cartPrice
 
-    mail :to => order.email, :subject => 'VenuZip Order Confirmation'
+    mail :to => order.email, :subject => 'Order Received'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -20,6 +21,6 @@ class Notifier < ActionMailer::Base
   def order_shipped(order)
     @order = order
 
-    mail :to => order.email, :subject => 'VenuZip Order Shipped!'
+    mail :to => order.email, :subject => 'Your Groceries Are Enroute'
   end
 end

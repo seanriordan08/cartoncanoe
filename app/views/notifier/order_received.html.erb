@@ -1,0 +1,30 @@
+<div style="padding:4px;width:90%;border:1px solid #EEE;background-color:#FFF;border-radius:16px;-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">
+	<p>
+		Dear <%= @order.prefix %><%= @order.first_name %> <%= @order.last_name %>,
+	</p>
+	<p>
+		Thank you for shopping with us! We wanted to let you know that your order has been received, and that we'll give you a call for payment details before your scheduled delivery (<%= @order.delivery_time%> on <%= @order.date_of_delivery%>).
+	</p>
+	<p>
+		We'll be delivering the following items:
+	</p>
+	<div id="emailOrderContents" style="padding:10px 10px 5px 10px;width:300px;background-color:#EEE;border:1px solid #DDD;border-radius:16px;-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);">
+		<table>
+			<tr style="border-bottom: 1px solid #DDD"><th>Qty</th><th>Description</th><th>Price</th></tr>
+			<% @order.line_items.each do |item|%>
+				<tr>
+					<td><%= item.quantity %>&times;</td>
+					<td><%= item.product.title %></td>
+					<td><%= number_to_currency(item.total_price) %></td>
+				</tr>
+			<% end %>
+		</table>
+		<p>
+			<span style="border-top: 1px solid #333">Est. total: <%= number_to_currency(@cartPrice) %> (not including tax)</span>
+		</p>
+	</div>
+	<p>
+	We appreciate your business, and look forward to your next visit!
+	</p>
+	-Alfalfa's Delivery Team
+</div>

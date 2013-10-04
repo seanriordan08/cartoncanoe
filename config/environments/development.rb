@@ -39,12 +39,12 @@ Depot::Application.configure do
   config.action_mailer.delivery_method = :smtp
   
   config.action_mailer.smtp_settings = {
-	:address			=> "smtp.gmail.com",
+  	:authentication 	=> "plain",
+	:address			=> "smtp.mailgun.org",
 	:port				=> 587,
-	:domain				=> "domain.of.sender.net",
-	:authentication 	=> "plain",
-	:user_name			=> "sean.riordan08@gmail.com",
-	:password			=> "harmanka",
+	:domain				=> "cartoncanoe.com",
+	:user_name			=> "postmaster@cartoncanoe.com",
+	:password			=> "74kg5-5fouj0",
 	:enable_starttls_auto	=> true
 	}
 end
