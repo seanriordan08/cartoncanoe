@@ -1,6 +1,7 @@
 ﻿var feeSelected = 0;
 var feeFlag = 0; //thrown to ensure only one instance
 var prevSelection = 0; //thrown to track & remove last instance
+var cartCoverFlag = 0; //track if order form is in focus
 
 //Phone form mask
 function maskPhone(){
@@ -26,7 +27,26 @@ function showTerms(){
 };
 /*End Terms of Service*/
 
-//Draggable Items Function
+//Set order flag for cartCover
+function setCover(){
+	cartCoverFlag = 1;
+};
+
+//Clear order flag for cartCover
+function clearCover(){
+	cartCoverFlag = 0;
+};
+
+//Order flag for cartCover
+function cartCover(){
+	if (cartCoverFlag == 1){
+		$('#cartCover').show();
+	}
+	else{
+		$('#cartCover').hide();
+	}
+};
+
 $(document).ready(function(){
 
 	//city selection popup
@@ -107,15 +127,9 @@ $(document).ready(function(){
 		$("#triangle").fadeOut(800);
 		$("#cityFee").fadeOut(800);
 		
-		// $("#cart").ready(function(){
-			// var w = $("#cart").outerWidth();
-			// var h = $("#cart").outerHeight();
-			// $("#cartCover").css({
-				// minWidth:  w,
-				// minHeight:  h
-			// });
-		// });		
+		setCover();
+		cartCover();		
 		return false(event);
 	});
-
+	
 });

@@ -1,0 +1,40 @@
+Agenda – Recipower						Jul 19th 2013 	1:30pm
+
+Subject
+Tech Review 
+
+Attendees
+Sean Riordan – sean@recipower.com
+Christine English – christine@recipower.com
+Tim Holley
+_____________________
+_____________________
+_____________________
+
+ 
+Talking points											Est. Time (min)		
+1)	Brief Prototype Demonstration								10
+2)	Brief discussion of expectations							5
+3)	Discussion of top-level mechanics							10
+	a.	Does this fit store needs?
+	b.	What data should be +/- ?
+4)	Discussion of product availability online & dev strategy	10
+5)	Define details of SMS data availability						10
+	a.	Are there product category fields?
+	b.	Are there “organically grown” indicators?
+	c.	What minimum data refresh rate will be required?
+6)	Remaining discussion/hanging topics							15
+
+Notes
+_______________________________________________________________________________
+_______________________________________________________________________________
+_______________________________________________________________________________
+_______________________________________________________________________________
+_______________________________________________________________________________
+_______________________________________________________________________________
+_______________________________________________________________________________
+_______________________________________________________________________________
+_______________________________________________________________________________
+_______________________________________________________________________________
+_______________________________________________________________________________
+_______________________________________________________________________________

@@ -37,55 +37,56 @@
 </script>
 </head>
 <body>
-		<div id="store" style="min-height:100%">
-			<div id="columns">
-				<div id="side" style="min-height:100%">
-					<span id="sideLogo"><%= image_tag("logo.png") %></span>
-					<% if session[:user_id] %>
-						<div id="adminOptions" style="min-height:100%">	
-							<br>
-								<ol class="adminClass">
-									<li onclick="javascript:location.href='/orders'">Order History</li><br/>
-									<li onclick="javascript:location.href='/users'">Admins</li><br/>
-									<li onclick="javascript:location.href='/polls_show'">Waiting List</li><br/>
-								</ol>
-							<br>
-								<%= button_to 'Logout', logout_path, :method => :delete %>
-								<div style="min-height:100%"></div><!--extend column whitespace-->
-						</div>
-					<% else %>
-						<script>$('#adminOptions').hide()</script>			
-					<% end %>
-					<br>
-					<ol class="adminClass shopper">
-						<li onclick="javascript:location.href='/store/index'">Select Items</li><br/>
-					</ol>
-					<%= form_tag store_show_path, :method => :get do%>
-					<p>
-						<%= text_field_tag :search, params[:search] %>
-						<%= submit_tag "Search", :name => nil %>
-					</p>
-					<% end %>
-					
-					<div id="cartCover"></div>
-					<div id="cart">
-						<%if @cart%>
-							<% if @cart.line_items.all %>
-								<%= render @cart %>
-							<% end %>
+	<div id="store" style="min-height:100%">
+		<div id="columns">
+			<div id="side" style="min-height:100%">
+				<span id="sideLogo"><%= image_tag("logo.png") %></span>
+				<% if session[:user_id] %>
+					<div id="adminOptions" style="min-height:100%">	
+						<br>
+							<ol class="adminClass">
+								<li onclick="javascript:location.href='/orders'">Order History</li><br/>
+								<li onclick="javascript:location.href='/users'">Admins</li><br/>
+								<li onclick="javascript:location.href='/polls_show'">Waiting List</li><br/>
+							</ol>
+						<br>
+							<%= button_to 'Logout', logout_path, :method => :delete %>
+							<div style="min-height:100%"></div><!--extend column whitespace-->
+					</div>
+				<% else %>
+					<script>$('#adminOptions').hide()</script>			
+				<% end %>
+				<br>
+				<ol class="adminClass shopper">
+					<li onclick="javascript:location.href='/store/index'">Select Items</li><br/>
+				</ol>
+				<%= form_tag store_show_path, :method => :get do%>
+				<p>
+					<%= text_field_tag :search, params[:search] %>
+					<%= submit_tag "Search", :name => nil %>
+				</p>
+				<% end %>
+				
+				<script>clearCover()</script> <!--Enable the cart-->
+				
+				<div id="cart">
+				<div id="cartCover"></div>
+					<%if @cart%>
+						<% if @cart.line_items.all %>
+							<%= render @cart %>
 						<% end %>
-						
-					</div>
-					
+					<% end %>						
 				</div>
+				
+			</div>
 
-				<div id="mainContainer">
-					<%= render "layouts/clock" %>				
-					<div id="main">
-						<%= yield %><!-- <label id="code.depot.e.include"/> -->
-					</div>
+			<div id="mainContainer">
+				<%= render "layouts/clock" %>				
+				<div id="main">
+					<%= yield %><!-- <label id="code.depot.e.include"/> -->
 				</div>
 			</div>
 		</div>
+	</div>
 </body>
 </html>

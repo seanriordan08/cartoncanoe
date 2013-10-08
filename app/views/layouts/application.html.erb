@@ -67,8 +67,10 @@
 					</p>
 					<% end %>
 					
-					<div id="cartCover"></div>
+					<script>clearCover()</script> <!--Enable the cart-->
+					
 					<div id="cart">
+					<div id="cartCover"></div>
 						<%if @cart%>
 							<% if @cart.line_items.all %>
 								<%= render @cart %>

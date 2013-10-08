@@ -1,22 +1,12 @@
-
+<script>setCover()</script> <!--Disable the cart while order form is visible-->
+<script>$('#cartCover').show()</script>
+   
 <h1>New order</h1>
 
 <div class="depot_form">
  <fieldset>
    <legend>Please Enter Your Details</legend>
-   <script>
-	$('#cart').show();
-   	//$("#cart").ready(function(){
-		//var w = $("#cart").outerWidth();
-		//var h = $("#cart").outerHeight();
-		//$("#cartCover").css({
-			//minWidth:  w,
-			//minHeight:  h
-		//});
-		//alert(w + " & " + h + " & " + p);
-		//$("#cartCover").toggle();
-	//});
-   </script>
+
    <%= render 'form' %>
  </fieldset>
 </div>
