@@ -16,19 +16,22 @@
 
 	<div id="storeItems">
 		<% @products.each do |product| %>
-			<div id="itemBox" class="entry ui-draggable" data-id="<%= product.id %>" data-title="<%= product.title %>" data-brand="<%= product.brand %>">
-				<div><b><%= product.title %></b><%= button_to(' ', line_items_path(:product_id => product), :class => "addItem", :remote => true) %></div>
-					<span>
-					   <%= image_tag(product.image_url )%>
-					   <div class="price_line">
-						 <span class="price"><%= number_to_currency(product.price)%></span>
-							(<%= product.portion_size%> <%= product.unit_of_measure%>)			 
-					   </div>
-					</span> 
-				 <div class="itemMagnify"></div>
-			</div>
-			<p>
-		<%  end %>
+			<% if product.not_for_sale == 0%>
+				<div id="itemBox" class="entry ui-draggable" data-id="<%= product.id %>" data-title="<%= product.title %>" data-brand="<%= product.brand %>">
+					<div><b><%= product.title %></b><%= button_to(' ', line_items_path(:product_id => product), :class => "addItem", :remote => true) %></div>
+						<span>
+						   <%= image_tag(product.image_url )%>
+						   <div class="price_line">
+							 <span class="price"><%= number_to_currency(product.price)%></span>
+								(<%= product.portion_size%> <%= product.unit_of_measure%>)			 
+						   </div>
+						</span>
+					 <div class="itemMagnify"></div>
+				</div>
+				<p>
+			<% else %>
+			<% end %>
+		<% end %>
 	</div>
 	
 	<div id="storeItemZoom">
@@ -53,12 +56,16 @@
 				
 				<div id="quantityLine" data-id="<%= product.id %>">
 					<span><%= number_to_currency(product.price)%></span>
-					(<%= product.portion_size%> <%= product.unit_of_measure%>)				
+					(<%= product.portion_size%> <%= product.unit_of_measure%>)
 				</div>
 				<div id="quantity" data-id="<%= product.id %>">
 					<form>
 						Quantity:
-						<input name="quantity" type="number" min="1" max="99" step="1" value="1" />
+						<% if product.scalable == 1>
+							<input name="quantity" type="range" min="1" max="99" step="1" value="1" />
+						<% else %>
+							<input name="quantity" type="number" min="1" max="99" step="1" value="1" />
+						<% end %>
 					</form>
 				</div>
 				<div class="itemMagnify" data-id="<%= product.id %>"></div>
