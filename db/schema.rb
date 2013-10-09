@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130820210824) do
+ActiveRecord::Schema.define(:version => 20131008190539) do
 
   create_table "carts", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(:version => 20130820210824) do
     t.decimal  "portion_size",    :precision => 8, :scale => 2
     t.string   "priority"
     t.integer  "upc"
+    t.integer  "scalable"
+    t.integer  "not_for_sale"
   end
 
   create_table "users", :force => true do |t|
