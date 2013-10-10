@@ -435,6 +435,7 @@ table {
   position:  absolute;
   right:  24px;
   bottom:  0px;
+  width:  160px;
   font-weight: bold;
 }
 #store .entry  form, #store .entry form div {
@@ -455,6 +456,14 @@ table {
   vertical-align:  top;
   padding:  0px 8px 0px 8px;
   margin:  0px 0px 0px 8px;
+}
+#quantity form table tr td:nth-child(1){
+  padding-right:  5px;
+}
+#quantity form table tr td:nth-child(2){
+  min-width:  43px;
+  border: 1px solid #888;
+  background-color:  #FFF;
 }
 .addItem{
   position:  relative;

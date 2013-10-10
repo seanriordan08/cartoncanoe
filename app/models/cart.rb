@@ -7,11 +7,11 @@ class Cart < ActiveRecord::Base
 	
 	current_item = line_items.find_by_product_id(product_id)	
 	if current_item
-		current_item.quantity += current_qty.to_i
+		current_item.quantity += current_qty.to_f
 	else
 		current_item = line_items.build(:product_id => product_id)
 		if qty_selected
-			current_item.quantity += current_qty.to_i - 1 #removes unnecessary default value of 1
+			current_item.quantity += current_qty.to_f - 1 #removes unnecessary default value of 1
 		end
 	end
 	
