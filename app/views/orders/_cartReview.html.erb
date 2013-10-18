@@ -1,0 +1,19 @@
+<div id="cartReview" title="Your Cart">
+	<div id="cartReviewTableEdge">
+		<table>		
+			 <% @cart.line_items.each do |item| %>
+				<tr>
+					<td><%= item.quantity %>&nbsp<%= item.product.unit_of_measure %> &times;</td>
+					<td>&nbsp<%= item.product.title %></td>
+					<td class="item_price">&nbsp<%= number_to_currency(item.total_price) %></td>
+				</tr>
+			<% end %>
+			
+			<tr class="total_line cartReviewTotal">
+				<td colspan="2">Total</td>
+				<td class="total_cell">&nbsp<%= number_to_currency(@cart.total_price) %></td>
+			</tr>		
+		</table>
+	</div>
+	<div id="btnPurchase" onclick="javascript:purchase()">Purchase</div>
+</div>

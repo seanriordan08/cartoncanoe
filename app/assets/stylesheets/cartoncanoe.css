@@ -168,35 +168,41 @@ table {
   font-weight: bold;
   border-top: 1px solid #595;
 }
+#itemBoxZoom {
+  position:  relative;
+  width:  100%;
+  height:  100%;
+}
+#itemBoxZoom  table tr td{
+  vertical-align:  top;
+}
+#itemBoxZoom  table tr td span{
+  vertical-align:  top;
+  padding:  0px 8px 0px 8px;
+  margin:  0px 0px 0px 8px;
+}
 #tableWrapper table{
   padding:  12px 0px 12px 0px;
   min-width: 100%;
 }
 #itemBoxZoomAdminPanel {
+  float:  right;
   width:  60px;
-  max-width:  60px;
-  height:  100%;
-  min-height:  100px;
-  text-align:  center;
-  border-radius:  4px;
-  background-color:  #555;
-  -webkit-box-shadow: 1px 1px 3px #333;
-  -moz-box-shadow: 1px 1px 3px #333;
-  box-shadow: 1px 1px 3px #333;
-  overflow:  hidden;
+  min-height:  40px;
+  max-height:  40px;
 }
-#itemBoxZoomAdminPanel #topHalf{
-  min-width:  100%;
-  height:  20px;
-  padding-top:  4px;
-  color:  #000;
-  background-color:  #eeffff;
-  border-radius:  4px 4px 0px 0px;
-  text-align:  center;
-  font-size:  .9em;
-  -webkit-box-shadow: 0px 1px 2px #333;
-  -moz-box-shadow: 0px 1px 2px #333;
-  box-shadow: 0px 1px 2px #333;
+#itemBoxZoomAdminPanelBG {
+  position:  absolute;
+  top:  0px;
+  left:  0px;
+  width:  100%;
+  min-height:  40px;
+  max-height:  40px;
+  border-radius:  2px;
+  background-color:  #000;
+  opacity:  0.5;
+  filter:  alpha(opacity=10); /* For IE8 and earlier */
+  z-index:  -1;
 }
 /* Styles for products/index */
 
@@ -443,19 +449,6 @@ table {
 }
 #store .cart_title {
   font: 120% bold;
-}
-#itemBoxZoom {
-  position:  relative;
-  width:  100%;
-  height:  100%;
-}
-#itemBoxZoom  table tr td{
-  vertical-align:  top;
-}
-#itemBoxZoom  table tr td span{
-  vertical-align:  top;
-  padding:  0px 8px 0px 8px;
-  margin:  0px 0px 0px 8px;
 }
 #quantity form table tr td:nth-child(1){
   padding-right:  5px;

@@ -10,7 +10,7 @@ function maskPhone(){
 /*End Phone form mask*/
 
 //Terms of Service
-function showTerms(){
+function termsBoxInfo(){
 	$('#termsBoxInfo').dialog({
 		autoOpen: true,
 		show: 800,
@@ -26,6 +26,24 @@ function showTerms(){
 	});
 };
 /*End Terms of Service*/
+
+//Cart Review
+function cartReview(){
+	$('#cartReview').dialog({
+		autoOpen: true,
+		show: 800,
+		modal: true,
+		title:  "Order Review",
+		minWidth: 800,
+		buttons: [{
+			text: "Back to Details",
+			click: function() {
+			  $( this ).dialog( "close" );
+			}
+		}]
+	});
+};
+/*End Cart Review*/
 
 //Set order flag for cartCover
 function setCover(){
@@ -45,6 +63,17 @@ function cartCover(){
 	else{
 		$('#cartCover').hide();
 	}
+};
+//Send Order to Store
+function purchase(){
+	$.ajax({
+		type: "POST",
+		url: '/orders',
+		beforeSend: function(xhr){
+			xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+		data: {remote: true},
+		dataType: "script"
+	});
 };
 
 $(document).ready(function(){
