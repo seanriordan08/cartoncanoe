@@ -14,13 +14,13 @@
 	</script>
 <% end %>
 
-	<div id="storeItems">
+	<div id="storeItems"> <!-- Initial View -->
 		<% @products.each do |product| %>
 			<% if product.not_for_sale == 0%>
 				<div id="itemBox" class="entry ui-draggable" data-id="<%= product.id %>" data-title="<%= product.title %>" data-brand="<%= product.brand %>">
 					<div><b><%= product.title %></b><%= button_to(' ', line_items_path(:product_id => product), :class => "addItem", :remote => true) %></div>
 						<span>
-						   <%= image_tag product.image_url(:thumb).to_s %>
+						   <%= image_tag product.image_url.to_s %>
 						   <div class="price_line">
 							 <span class="price"><%= number_to_currency(product.price)%></span>
 								(<%= product.portion_size%> <%= product.unit_of_measure%>)			 

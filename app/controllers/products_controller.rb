@@ -31,7 +31,6 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
-	@product.image_url = "images/noImage.jpg" #Set default image
 	
     respond_to do |format|
       format.html # new.html.erb
@@ -64,7 +63,7 @@ class ProductsController < ApplicationController
   # PUT /products/1.json
   def update
     @product = Product.find(params[:id])
-
+	
     respond_to do |format|
       if @product.update_attributes(params[:product])
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
