@@ -13,7 +13,7 @@
 	@stickyDay2 = dayAfter.strftime("%a")
   
 	@search = Product.search do
-		fulltext params[:search]
+		fulltext params[:search] || "lettuce"
 		paginate :page => params[:page] || 1, :per_page => 30
 	end
 	@products = @search.results
