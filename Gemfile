@@ -1,11 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
+
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
 gem 'carrierwave'
-gem 'mini_magick', :git => 'git://github.com/minimagick/minimagick.git', :ref => '6d0f8f953112cce6324a524d76c7e126ee14f392'
+gem 'fog', '~> 1.3.1'
+gem 'mini_magick', '3.4.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
