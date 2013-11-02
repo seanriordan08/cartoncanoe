@@ -18,7 +18,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url 
-    "http://cartoncanoeproducts.s3.amazonaws.com/uploads/product/image/noimage/noImage2.jpg" #+ [version_name, "default.png"].compact.join('_')
+    "http://cartoncanoeproducts.s3.amazonaws.com/uploads/#{model.class.to_s.underscore}/#{mounted_as}/noimage/noImage2.jpg" #+ [version_name, "default.png"].compact.join('_')
   end
 
   # Process files as they are uploaded:
