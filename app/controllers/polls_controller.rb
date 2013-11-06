@@ -10,7 +10,6 @@ class PollsController < ApplicationController
   end
   
   def show
-  
     @currentTime = Time.zone.now
 	tomorrow = Time.zone.today + 1.day
 	dayAfter = Time.zone.today + 2.day
