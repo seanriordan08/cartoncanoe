@@ -13,77 +13,69 @@
 		});
 	</script>
 <% end %>
-	<script>doLandingPage();</script>
 
-	<div id="header-fixed" class="myFontClass">
+	<div id="header-fixed">
 		<div id="header">
-			<a href="javascript:doHome()">
-				<div id="home" class="navElements">Home</div>
-			</a>
-			<a href="javascript:doHealth()">
-				<div id="health" class="navElements">About</div>
-			</a>
-			<a href="javascript:doTime()">
-				<div id="time" class="navElements">Workflow</div>
-			</a>
-			<a href="javascript:doMoney()">
-				<div id="money" class="navElements">Efficiency</div>
-			</a>
-			<a href="javascript:doContact()">
-				<div id="contact" class="navElements">Contact Us</div>
-			</a>
-			<div id="adminLink" class="navElements"><%= link_to 'Admin', login_path %></div>
+			<div id="logo"><img src="logoLanding1.png" width="237px" height="122px"></div>
 		</div>
 	</div>
-	<div id="guts" class="folksText">
-		<div id="row-1" class="curtail">
-			<div id="logo"><img src="logoLanding.jpg"></div>
-		</div>
-		<div id="row0" class="curtail">
-			<span class="droidTextSm">
-				Easy product delivery, for thousands of items, done your way.
-			</span>
-		</div>
-		
-		<div id="row1" class="curtail">
-			<div id="row1Title">What's it Do?</div>
-			<span style="clear:both">
-				<div id="row1A" class="droidTextSmlr">
-					<ul>
-						<li><img src="checkNoticeFront.png"> Joins customers with your products online
-						<li><img src="checkNoticeFront.png"> Auto-Sends the ordering department your customers' list
-						<li><img src="checkNoticeFront.png"> Item details and delivery info are provided for each customer
-					</ul>
-				</div>
-				<div id="row1B">
-					<img src="row1B_graphic.jpg">
-				</div>
-			</span>
-		</div>
-		
-		<div id="row2" class="curtail">
-			<span class="droidTextSm">
-				Open up more ways to provide products to customers, with less time on the phone
-			</span>
-			<img src="noPhone.png" width="178px" height="178px">
-		</div>
-		
-		<div id="row3" class="curtail">
-
-		</div>
-		
-		<div id="row4" class="curtail">
-			<div id="contactUs">
-				<span>Contact Us</span>
-				<div id="row4Form">
-					<%= render 'form' %>
-				</div>
+	<div id="guts">
+		<div id="row0">
+			<div id="row0Text">TEXT BRIEFLY DESCRIBING <br />WHAT 'CARTON CANOE' DOES</div>
+			<div id="callToAction" onclick="javascript:doStore()">
+				<div id="callBtnText">CALL TO ACTION</div>
 			</div>
-
-			<div id="browseGroceries" onclick="javascript:doStore()">
-				<span>Browse Groceries</span>
+		</div>
+		<div id="row1">
+			<div id="iconWrap">
+				<img src="iconLP.png" width="84px" height="84px">
+				<span>EFFICIENT PICKUP <br />& DELIVERY</span>
+			</div>				
+			<div id="iconWrap">
+				<img src="iconLP.png" width="84px" height="84px">
+				<span>BIG DATA HANDLING THOUSANDS OF ITEMS</span>
+			</div>					
+			<div id="iconWrap">
+				<img src="iconLP.png" width="84px" height="84px">
+				<span>RISK FREE, <br />NO SETUP FEES </span>
 			</div>
 		</div>
 		
-		<div id="footer"><br /></div>
+		<div id="row2">
+			<img src="graph.png" width="852px" height="213px">
+		</div>
+		
+		<div id="row3">
+			<div id="rowTitle">BIG DATA MEANS EVERY STORE ITEM IS COVERED</div>
+			<div id="veggies">
+				<img src="iconProduce.png" width="84px" height="84px">
+				<img src="iconProduce.png" width="84px" height="84px">
+				<img src="iconProduce.png" width="84px" height="84px">
+				<img src="iconProduce.png" width="84px" height="84px">
+				<img src="iconProduce.png" width="84px" height="84px">
+				<img src="iconProduce.png" width="84px" height="84px">
+				<img src="iconProduce.png" width="84px" height="84px">
+			</div>
+		</div>
+		
+		<div id="row4">
+			<div id="rowTitle">RISK FREE MEANS NO SETUP FEES</div>
+			<div id="statement">
+				WE WANT HAPPY CUSTOMERS. IF AT THE END OF YOUR TRIAL PERIOD YOU AREN'T <br /> COMPLETELY SATISFIED, YOU CAN CANCEL AT NO CHARGE
+			</div>
+			<div id="callToAction" onclick="javascript:doStore()">
+				<div id="callBtnText">SIGN UP</div>
+			</div>
+		</div>
+		
+		<div id="row5">
+
+		</div>
+		
+		<div id="footer">
+			<div id="logoSmall"><img src="logoSmall.png" width="36px" height="35px"></div>		
+			<div id="adminLink">
+				<%= link_to label_tag('admin'), login_path %>
+			</div>
+		</div>
 	</div>

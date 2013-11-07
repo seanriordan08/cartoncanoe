@@ -13,9 +13,11 @@
   <%= stylesheet_link_tag 'print', :media => "print" %>
   <!-- END:stylesheet -->
   
+  <%= favicon_link_tag 'graphics/favicon.ico', rel: 'shortcut-icon', type: 'image/ico' %>
+  
   <%= javascript_include_tag 'application', 'jquery-1.9.1', 'jquery-ui-1.10.3.custom.min', 'jquery-ui-1.10.3.custom',  'jquery.maskedinput' %>
   <%= javascript_include_tag 'jquery.ui.core', 'jquery.ui.widget', 'jquery.ui.button' %>
-  <%= javascript_include_tag 'navigate', 'orderForm', 'clocks' %>
+  <%= javascript_include_tag 'landingPage', 'orderForm', 'clocks' %>
 
   <%= csrf_meta_tag %><!-- <label id="code.csrf"/> -->
   <meta name="Description" content="Easy product delivery for thousands of items - connect your customers to your store today" />
