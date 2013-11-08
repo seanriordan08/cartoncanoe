@@ -34,17 +34,19 @@ $(document).ready(function() {
 		if ($('body').scrollTop() > 110) {	//Set action trigger to 110px
 			if ($nav.data('size') == 'big') {	//if element is it's normal size after the trigger
 				$nav.data('size','small').stop().animate({	//set element to 50px
-					height:'50px',
+					height:'52px',
 					padding:'0px 0px 0px 0px'
 				}, 600);
+				$(".bigLogo").toggleClass("medLogo");
 			}
 		} else {
 			if ($nav.data('size') == 'small') {
 				$nav.data('size','big').stop().animate({
 					height:'160px',
 					padding:'20px 0px 0px 20%'
-				}, 600);
-			}  
+				}, 300);
+				$(".bigLogo").toggleClass("medLogo");
+			}
 		}
 	});
 	/*End Shrinking Header*/
