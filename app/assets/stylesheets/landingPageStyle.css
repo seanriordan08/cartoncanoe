@@ -81,6 +81,9 @@
 	background-image:  url('graphics/logoBig.png');
 	background-size:  100% 100%;
 	background-repeat:  no-repeat;
+	-moz-transition: 0.2s ease-in;
+    -webkit-transition: 0.2s ease-in;
+    transition: 0.2s ease-in;
 }
 .medLogo{
 	width:  100%;
@@ -91,6 +94,9 @@
 	background-image:  url('graphics/logoMedium.png');
 	background-size:  281px 35px;
 	background-repeat:  no-repeat;
+	-moz-transition: 0.2s ease-in;
+    -webkit-transition: 0.2s ease-in;
+    transition: 0.2s ease-in;
 }
 body{
 	margin:  0px;
