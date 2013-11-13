@@ -177,6 +177,20 @@ body{
 	margin:  75px 3% 0% 3%;
 	text-align:  center;
 }
+#iconWrap img{
+	position:  relative;
+	top:  10px;
+	-moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+#iconWrap img:hover{
+	position:  relative;
+	top:  0px;
+	-moz-transition: 0.2s;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
 #iconWrap span{
 	display:  block;
 	width:  230px;
